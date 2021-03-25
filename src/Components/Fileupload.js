@@ -1,7 +1,7 @@
 import React from "react";
 import useImagehandler from "../Hooks/useImagehandler";
 import Uploadbtn from "./Uploadbtn";
-
+import Previewimage from "./Previewimage";
 export const Fileupload = () => {
   const { onChange, imagedata } = useImagehandler();
 
@@ -18,13 +18,7 @@ export const Fileupload = () => {
         <br />
         <Uploadbtn imagedata={imagedata}>Search</Uploadbtn>
       </form>
-      <div className="image-container">
-        {imagedata ? (
-          <img src={imagedata} alt="" />
-        ) : (
-          <p>no image selected</p>
-        )}
-      </div>
+      <Previewimage imagedata={imagedata} />
     </>
   );
 };
