@@ -1,8 +1,10 @@
 import React from "react";
-import useFetchanime from "./useFetchanime";
+import useImagehandler from "../Hooks/useImagehandler";
+import Uploadbtn from "./Uploadbtn";
 
 export const Fileupload = () => {
-  const { onchange, Uploadimage } = useFetchanime();
+  const { onChange, imagedata } = useImagehandler();
+
   return (
     <>
       <form id="myform">
@@ -11,13 +13,18 @@ export const Fileupload = () => {
           type="file"
           id="input"
           accept="image/*"
-          onChange={onchange}
+          onChange={onChange}
         />
         <br />
-        <button type="submit" onClick={Uploadimage}>
-          Search
-        </button>
+        <Uploadbtn imagedata={imagedata}>Search</Uploadbtn>
       </form>
+      <div className="image-container">
+        {imagedata ? (
+          <img src={imagedata} alt="" />
+        ) : (
+          <p>no image selected</p>
+        )}
+      </div>
     </>
   );
 };
