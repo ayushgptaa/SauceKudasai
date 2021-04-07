@@ -1,9 +1,10 @@
 import './App.css';
+import useImagehandler from './Hooks/UseImagehandler';
+import { UseFetchdata } from './Hooks/UseFetchdata';
 import Fileupload from './Components/Fileupload';
 import Uploadbtn from './Components/Uploadbtn';
 import Previewimage from './Components/Previewimage';
-import useImagehandler from './Hooks/useImagehandler';
-import { UseFetchdata } from './Hooks/UseFetchdata';
+import Results from './Components/Results';
 
 function App() {
 	const { onChange, imagedata } = useImagehandler(); // Hook that converts input image to data
@@ -14,7 +15,7 @@ function App() {
 			<Fileupload onchange={onChange} />
 			<Uploadbtn fileupload={fileUpload}>Search</Uploadbtn>
 			<Previewimage imagedata={imagedata} />
-			{console.log(apidata)}
+			<Results apidata={apidata} />
 		</div>
 	);
 }

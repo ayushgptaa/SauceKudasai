@@ -1,5 +1,6 @@
+// This is the the hook for converting input image to Base64 EnCoded Image
 import { useState, useEffect } from 'react';
-const useImagehandler = () => {
+const UseImagehandler = () => {
 	const [image, setimage] = useState('');
 	const [imagedata, setImagedata] = useState('');
 
@@ -24,4 +25,4 @@ const useImagehandler = () => {
 	return { onChange, imagedata };
 };
 
-export default useImagehandler;
+export default UseImagehandler;
