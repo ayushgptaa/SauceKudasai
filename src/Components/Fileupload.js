@@ -1,26 +1,15 @@
-import React from "react";
-import useImagehandler from "../Hooks/useImagehandler";
-import Uploadbtn from "./Uploadbtn";
-import Previewimage from "./Previewimage";
-export const Fileupload = () => {
-  const { onChange, imagedata } = useImagehandler();
+import React from 'react';
 
-  return (
-    <>
-      <form id="myform">
-        <label htmlFor="input">Select the image</label>
-        <input
-          type="file"
-          id="input"
-          accept="image/*"
-          onChange={onChange}
-        />
-        <br />
-        <Uploadbtn imagedata={imagedata}>Search</Uploadbtn>
-      </form>
-      <Previewimage imagedata={imagedata} />
-    </>
-  );
+export const Fileupload = ({ onchange }) => {
+	return (
+		<>
+			<form id='myform'>
+				<label htmlFor='input'>Select the image</label>
+				<input type='file' id='input' accept='image/*' onChange={onchange} />
+				<br />
+			</form>
+		</>
+	);
 };
 
 export default Fileupload;
