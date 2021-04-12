@@ -1,8 +1,9 @@
 // This is the Hook for getting data from the Api
 import { useState } from 'react';
 import { instance, TRACE_MOE_QUERY } from '../Api/constant';
+import { animedata } from './useanimeinfo';
 
-export const UseFetchdata = imagedata => {
+export const useFetchdata = imagedata => {
 	const [apidata, setApidata] = useState([]);
 
 	const fileUpload = async e => {
@@ -10,10 +11,12 @@ export const UseFetchdata = imagedata => {
 		const body = JSON.stringify({
 			image: imagedata,
 		});
+
 		try {
-			const { data } = await instance.post(TRACE_MOE_QUERY, body); // post request to the server
+			const { data } = await instance.post(TRACE_MOE_QUERY, body);
+			console.log(data);
 			setApidata(data.docs);
-			console.log(data.docs);
+			animedata(data.docs[0].anilist_id);
 		} catch (error) {
 			console.error(error);
 		}
