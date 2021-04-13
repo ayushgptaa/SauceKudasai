@@ -18,7 +18,9 @@ export const useFetchdata = imagedata => {
 			setApidata(data.docs);
 			animedata(data.docs[0].anilist_id);
 		} catch (error) {
-			console.error(error);
+			if (error.response) return console.log('Something went wrong in the backend', error);
+			if (error.request) return console.log('Due to network issue', error);
+			return console.log('something else happened', error);
 		}
 	};
 	return { fileUpload, apidata };
