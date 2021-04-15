@@ -4,8 +4,8 @@ import { instance, TRACE_MOE_QUERY } from '../Api/constant';
 // import { animedata } from './useanimeinfo';
 
 export const useFetchdata = imagedata => {
-	const [apidata, setApidata] = useState('');
-	const [anilistid, setanilistid] = useState('xyz');
+	const [apidata, setApidata] = useState(null);
+	const [anilistid, setanilistid] = useState(null);
 
 	const fileUpload = async e => {
 		e.preventDefault();

@@ -1,19 +1,15 @@
 const Results = ({ apidata }) => {
-	const style = {
-		border: '1px solid black',
-		textAlign: 'left',
-		position: 'absolute',
-		bottom: '0',
-	};
-	const Databox = (
-		<div className='result' style={style}>
-			{apidata.map(({ filename }, index) => {
-				return <li key={index}>{filename}</li>;
-			})}
+	if(apidata){
+	const {bannerImage,description}=apidata
+		const Databox=(
+		<div>
+			<img src={bannerImage} alt="xyz"/>
+			<p>{description}</p>
 		</div>
-	);
-
-	return <div className='result-container'>{apidata ? Databox : null}</div>;
+		)
+	return <div className='result-container'>{Databox}</div>;}
+	return null
 };
+
 
 export default Results;
