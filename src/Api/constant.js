@@ -26,15 +26,11 @@ export const query = `
 query ($id: Int) {
   Media (id:$id, type: ANIME) { 
     title {
-      romaji
       english
       native
     }
-    status
     description(asHtml:false)
-    season
     seasonYear
-    episodes
     trailer {
       id
     }

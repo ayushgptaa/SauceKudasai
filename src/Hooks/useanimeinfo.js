@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { instance, ANILIST_QUERY, query } from '../Api/constant';
 
-export const useAnimedata = anilistid => {
-	const [information, setinformation] = useState(null);
+export const useAnimeinfo = anilistid => {
+	const [animeinfo, setanimeinfo] = useState(null);
 
 	useEffect(() => {
 		if (anilistid) {
@@ -20,13 +20,13 @@ export const useAnimedata = anilistid => {
 		};
 		try {
 			const { data } = await instance.post(ANILIST_QUERY, body);
+			setanimeinfo(data.data.Media);
 			console.log(data.data.Media);
-			setinformation(data.data.Media);
 		} catch (error) {
 			console.log(error);
 		}
 	};
 
-	if (information) return information;
+	if (animeinfo) return animeinfo;
 	return null;
 };
