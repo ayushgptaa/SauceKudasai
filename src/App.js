@@ -5,7 +5,7 @@ import Fileupload from './Components/Fileupload';
 import Uploadbtn from './Components/Uploadbtn';
 import Previewimage from './Components/Previewimage';
 import Results from './Components/Results';
-import { useAnimeinfo } from './Hooks/useAnimeinfo';
+import { useAnimeinfo } from './Hooks/useanimeinfo';
 
 function App() {
 	const { onChange, imagedata } = useImagehandler(); // Hook that converts input image to data

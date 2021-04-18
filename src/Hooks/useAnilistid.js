@@ -1,11 +1,18 @@
 // This is the Hook for getting Amilistid
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { instance, TRACE_MOE_QUERY } from '../Api/constant';
 
 export const useAnilistid = imagedata => {
 	const [anilistid, setanilistid] = useState(null);
 	const [loading, setloading] = useState(false);
 	const [video, setVideo] = useState(null);
+
+	// Use effect is used to remove video when new image is selected
+	useEffect(() => {
+		return () => {
+			setVideo(null);
+		};
+	}, [imagedata]);
 
 	const fileUpload = async e => {
 		e.preventDefault();
@@ -23,11 +30,10 @@ export const useAnilistid = imagedata => {
 					filename
 				)}?t=${at}&token=${tokenthumb}`
 			);
-			console.log(config);
 			setVideo(config.url);
-
-			// const video = await instance.post;
+			setloading(false);
 		} catch (error) {
+			setloading(false);
 			if (error.response) return console.log('Something went wrong in the backend', error);
 			if (error.request) return console.log('Due to network issue', error);
 			return console.log('something else happened', error);

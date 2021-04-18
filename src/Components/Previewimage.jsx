@@ -19,7 +19,6 @@ const Previewimage = ({ imagedata , loading, video}) => {
           loop
           muted 
           src={video}>
-          
       </video>
      } 
     </div>
