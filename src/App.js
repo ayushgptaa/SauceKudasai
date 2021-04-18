@@ -10,7 +10,7 @@ import { useAnimeinfo } from './Hooks/useanimeinfo';
 function App() {
 	const { onChange, imagedata } = useImagehandler(); // Hook that converts input image to data
 	const { fileUpload, anilistid, loading, video } = useAnilistid(imagedata); // Hook that fetches data from server
-	const info = useAnimeinfo(anilistid);
+	const info = useAnimeinfo(anilistid, imagedata);
 	return (
 		<div className='App'>
 			<h1>Whats the sauce </h1>
