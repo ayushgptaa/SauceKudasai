@@ -16,8 +16,8 @@ const useImagehandler = () => {
 		return setImagedata(null);
 	}, [image]);
 
-	const onChange = async e => {
-		const file = e.target.files[0];
+	const onChange = async acceptedfile => {
+		const file = acceptedfile[0];
 		if (file && file.type.substr(0, 5) === 'image') return setimage(file);
 	};
 
