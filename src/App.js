@@ -8,15 +8,15 @@ import Results from './Components/Results';
 import { useAnimeinfo } from './Hooks/useanimeinfo';
 
 function App() {
-	const { onChange, imagedata } = useImagehandler(); // Hook that converts input image to data
-	const { fileUpload, anilistid, loading, video } = useAnilistid(imagedata); // Hook that fetches data from server
-	const info = useAnimeinfo(anilistid, imagedata);
+	const { onChange, image } = useImagehandler(); // Hook that converts input image to data
+	const { fileUpload, anilistid, loading, video } = useAnilistid(image); // Hook that fetches data from server
+	const info = useAnimeinfo(anilistid, image);
 	return (
 		<div className='App'>
 			<h1>Whats the sauce </h1>
 			<Fileupload onchange={onChange} />
 			<Uploadbtn fileupload={fileUpload} />
-			<Previewimage imagedata={imagedata} loading={loading} video={video} />
+			<Previewimage image={image} loading={loading} video={video} />
 			<Results apidata={info} />
 		</div>
 	);

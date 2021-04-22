@@ -7,7 +7,7 @@ export const ANILIST_QUERY = 'https://graphql.anilist.co';
 // General options for Axios instance
 export const options = {
 	headers: {
-		'Content-Type': 'application/json',
+		// 'Content-Type': 'application/json',
 		'	Accept': 'application/json',
 	},
 };

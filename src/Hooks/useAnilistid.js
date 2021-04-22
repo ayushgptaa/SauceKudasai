@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { instance, TRACE_MOE_QUERY } from '../Api/constant';
 
-export const useAnilistid = imagedata => {
+export const useAnilistid = image => {
 	const [anilistid, setanilistid] = useState(null);
 	const [loading, setloading] = useState(false);
 	const [video, setVideo] = useState(null);
@@ -12,17 +12,17 @@ export const useAnilistid = imagedata => {
 		return () => {
 			setVideo(null);
 		};
-	}, [imagedata]);
+	}, [image]);
 
 	const fileUpload = async e => {
 		e.preventDefault();
+		let formData = new FormData();
+		formData.set('image', image);
 		setloading(true);
-		const body = JSON.stringify({
-			image: imagedata,
-		});
-
+		const body = formData;
 		try {
 			const { data } = await instance.post(TRACE_MOE_QUERY, body);
+			console.log(data);
 			const { anilist_id, filename, at, tokenthumb } = data.docs[0];
 			setanilistid(anilist_id);
 			const { config } = await instance.get(
