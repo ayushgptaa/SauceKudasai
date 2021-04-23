@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { instance, ANILIST_QUERY, query } from '../Api/constant';
 
-export const useAnimeinfo = (anilistid, image) => {
+export const useAnimeinfo = (anilistid, image, url) => {
 	const [animeinfo, setanimeinfo] = useState(null);
 
 	// to remove the anime info card when new image is selected
@@ -11,6 +11,11 @@ export const useAnimeinfo = (anilistid, image) => {
 			setanimeinfo(null);
 		};
 	}, [image]);
+	useEffect(() => {
+		return () => {
+			setanimeinfo(null);
+		};
+	}, [url]);
 	useEffect(() => {
 		if (anilistid) {
 			return fetchdata(anilistid);

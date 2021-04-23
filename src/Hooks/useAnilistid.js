@@ -13,6 +13,11 @@ export const useAnilistid = (image, url) => {
 			setVideo(null);
 		};
 	}, [image]);
+	useEffect(() => {
+		return () => {
+			setVideo(null);
+		};
+	}, [url]);
 
 	const fileUpload = async e => {
 		e.preventDefault();

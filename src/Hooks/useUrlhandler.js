@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 const useUrlhandler = image => {
-	const [url, seturl] = useState();
+	const [url, seturl] = useState('');
 	useEffect(() => {
 		if (image) return seturl('');
 	}, [image]);

@@ -23,7 +23,6 @@ export const Fileupload = ({ onchange, urlhandler, url }) => {
 				id='url'
 				placeholder='Enter the url'
 				pattern='https://.*'
-				required
 				autoComplete='off'
 				onChange={urlhandler}
 				value={url}

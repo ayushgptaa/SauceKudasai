@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-const Previewimage = ({ image, video, loading }) => {
+const Previewimage = ({ image, video, loading, url }) => {
 	const [preview, setpreview] = useState(null);
 	useEffect(() => {
 		if (image) {
 			setpreview(URL.createObjectURL(image));
 		}
 	}, [image]);
+	useEffect(() => {
+		if (url) {
+			setpreview(null);
+		}
+	}, [url]);
 
 	return (
 		<div>
