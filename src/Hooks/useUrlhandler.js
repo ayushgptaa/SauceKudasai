@@ -1,8 +1,11 @@
-import { useState } from 'react';
-const useUrlhandler = () => {
-	const [url, seturl] = useState(null);
+import { useState, useEffect } from 'react';
+const useUrlhandler = image => {
+	const [url, seturl] = useState();
+	useEffect(() => {
+		if (image) return seturl('');
+	}, [image]);
+
 	const urlhandler = async e => {
-		console.log('working');
 		const url = e.target.value;
 		if (url) return seturl(url);
 	};

@@ -1,7 +1,7 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 
-export const Fileupload = ({ onchange, urlhandler }) => {
+export const Fileupload = ({ onchange, urlhandler, url }) => {
 	return (
 		<>
 			<Dropzone onDrop={onchange} accept='image/*' multiple={false}>
@@ -25,8 +25,8 @@ export const Fileupload = ({ onchange, urlhandler }) => {
 				pattern='https://.*'
 				required
 				autoComplete='off'
-				list=''
 				onChange={urlhandler}
+				value={url}
 			/>
 		</>
 	);
