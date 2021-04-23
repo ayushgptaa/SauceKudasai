@@ -10,8 +10,8 @@ import useUrlhandler from './Hooks/useUrlhandler';
 
 function App() {
 	const { onChange, image } = useImagehandler(); // Hook that get input image
-	const { urlhandler } = useUrlhandler();
-	const { fileUpload, anilistid, loading, video } = useAnilistid(image); //  Hook that fetches anilistid from server using tracemoe api
+	const { urlhandler, url } = useUrlhandler();
+	const { fileUpload, anilistid, loading, video } = useAnilistid(image, url); //  Hook that fetches anilistid from server using tracemoe api
 	const info = useAnimeinfo(anilistid, image); // Hook that fetches animeinfo with anilistid using Anilist api
 	return (
 		<div className='App'>

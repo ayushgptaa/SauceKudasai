@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { instance, TRACE_MOE_QUERY } from '../Api/constant';
 
-export const useAnilistid = image => {
+export const useAnilistid = (image, url) => {
 	const [anilistid, setanilistid] = useState(null);
 	const [loading, setloading] = useState(false);
 	const [video, setVideo] = useState(null);
@@ -16,22 +16,46 @@ export const useAnilistid = image => {
 
 	const fileUpload = async e => {
 		e.preventDefault();
+		if (url) console.log(url);
 		let formData = new FormData();
 		formData.set('image', image);
 		setloading(true);
 		const body = formData;
 		try {
-			const { data } = await instance.post(TRACE_MOE_QUERY, body);
-			console.log(data);
-			const { anilist_id, filename, at, tokenthumb } = data.docs[0];
-			setanilistid(anilist_id);
-			const { config } = await instance.get(
-				`https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(
-					filename
-				)}?t=${at}&token=${tokenthumb}`
-			);
-			setVideo(config.url);
-			setloading(false);
+			if (url) {
+				const { data } = await instance.post(`?url=${url}`, body);
+				const { anilist_id, filename, at, tokenthumb } = data.docs[0];
+				setanilistid(anilist_id);
+				const { config } = await instance.get(
+					`https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(
+						filename
+					)}?t=${at}&token=${tokenthumb}`
+				);
+				setVideo(config.url);
+				setloading(false);
+			} else {
+				const { data } = await instance.post(TRACE_MOE_QUERY, body);
+				const { anilist_id, filename, at, tokenthumb } = data.docs[0];
+				setanilistid(anilist_id);
+				const { config } = await instance.get(
+					`https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(
+						filename
+					)}?t=${at}&token=${tokenthumb}`
+				);
+				setVideo(config.url);
+				setloading(false);
+			}
+
+			// const { data } = await instance.post(TRACE_MOE_QUERY, body);
+			// const { anilist_id, filename, at, tokenthumb } = data.docs[0];
+			// setanilistid(anilist_id);
+			// const { config } = await instance.get(
+			// 	`https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(
+			// 		filename
+			// 	)}?t=${at}&token=${tokenthumb}`
+			// );
+			// setVideo(config.url);
+			// setloading(false);
 		} catch (error) {
 			setloading(false);
 			if (error.response) return console.log('Something went wrong in the backend', error);

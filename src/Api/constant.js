@@ -18,6 +18,7 @@ export const options = {
  *any data provided in instance.get will be merged with options
  */
 export const instance = axios.create({
+	baseURL: TRACE_MOE_QUERY,
 	options,
 });
 

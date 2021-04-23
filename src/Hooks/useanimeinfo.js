@@ -9,7 +9,6 @@ export const useAnimeinfo = (anilistid, image) => {
 	useEffect(() => {
 		return () => {
 			setanimeinfo(null);
-			console.log('Animeinfgo use state');
 		};
 	}, [image]);
 	useEffect(() => {
