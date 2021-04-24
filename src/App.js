@@ -1,12 +1,10 @@
 import './App.css';
-import useImagehandler from './Hooks/useImagehandler';
-import { useAnilistid } from './Hooks/useAnilistid';
+
+import { useAnilistid, useAnimeinfo, useImagehandler, useUrlhandler } from './Hooks/index';
 import Fileupload from './Components/Fileupload';
 import Uploadbtn from './Components/Uploadbtn';
 import Previewimage from './Components/Previewimage';
 import Results from './Components/Results';
-import { useAnimeinfo } from './Hooks/useanimeinfo';
-import useUrlhandler from './Hooks/useUrlhandler';
 
 function App() {
 	const { onChange, image } = useImagehandler(); // Hook that get input image
@@ -19,7 +17,7 @@ function App() {
 			<Fileupload onchange={onChange} urlhandler={urlhandler} url={url} />
 			<Uploadbtn fileupload={fileUpload} />
 			<Previewimage image={image} loading={loading} video={video} url={url} />
-			<Results apidata={info} />
+			<Results animeinfo={info} />
 		</div>
 	);
 }

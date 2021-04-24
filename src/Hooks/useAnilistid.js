@@ -9,10 +9,10 @@ export const useAnilistid = (image, url) => {
 
 	// Use effect is used to remove video when new image is selected
 	useEffect(() => {
-		return () => {
-			setVideo(null);
-		};
+		if (image) return setVideo(null);
 	}, [image]);
+
+	// Use effect is used to remove video when new url is selected
 	useEffect(() => {
 		return () => {
 			setVideo(null);
@@ -21,11 +21,10 @@ export const useAnilistid = (image, url) => {
 
 	const fileUpload = async e => {
 		e.preventDefault();
-		if (url) console.log(url);
 		let formData = new FormData();
 		formData.set('image', image);
-		setloading(true);
 		const body = formData;
+		setloading(true);
 		try {
 			if (url) {
 				const { data } = await instance.post(`?url=${url}`, body);
@@ -50,17 +49,6 @@ export const useAnilistid = (image, url) => {
 				setVideo(config.url);
 				setloading(false);
 			}
-
-			// const { data } = await instance.post(TRACE_MOE_QUERY, body);
-			// const { anilist_id, filename, at, tokenthumb } = data.docs[0];
-			// setanilistid(anilist_id);
-			// const { config } = await instance.get(
-			// 	`https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(
-			// 		filename
-			// 	)}?t=${at}&token=${tokenthumb}`
-			// );
-			// setVideo(config.url);
-			// setloading(false);
 		} catch (error) {
 			setloading(false);
 			if (error.response) return console.log('Something went wrong in the backend', error);

@@ -11,16 +11,21 @@ export const useAnimeinfo = (anilistid, image, url) => {
 			setanimeinfo(null);
 		};
 	}, [image]);
+
+	// to remove the anime info card when new url is selected
 	useEffect(() => {
 		return () => {
 			setanimeinfo(null);
 		};
 	}, [url]);
+
+	// If Anilist id exits then fetchdata is called
 	useEffect(() => {
 		if (anilistid) {
 			return fetchdata(anilistid);
 		}
 	}, [anilistid]);
+
 	const fetchdata = async anilistid => {
 		var variables = {
 			id: anilistid,
@@ -32,7 +37,6 @@ export const useAnimeinfo = (anilistid, image, url) => {
 		try {
 			const { data } = await instance.post(ANILIST_QUERY, body);
 			setanimeinfo(data.data.Media);
-			console.log(data.data.Media);
 		} catch (error) {
 			console.log(error);
 		}
