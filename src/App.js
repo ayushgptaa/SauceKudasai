@@ -1,6 +1,5 @@
 import { useAnilistid, useAnimeinfo, useImagehandler, useUrlhandler } from './Hooks/index';
 import Fileupload from './Components/Fileupload';
-import Previewimage from './Components/Previewimage';
 import Results from './Components/Results';
 import { GlobalStyle } from './styles/GlobalStyle';
 import Navbar from './Components/Navbar';
@@ -19,9 +18,11 @@ function App() {
 				urlhandler={urlhandler}
 				url={url}
 				fileUpload={fileUpload}
+				image={image}
+				loading={loading}
+				video={video}
 			/>
 
-			<Previewimage image={image} loading={loading} video={video} url={url} />
 			<Results animeinfo={info} />
 		</div>
 	);
