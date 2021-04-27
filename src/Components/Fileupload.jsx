@@ -6,10 +6,11 @@ import Previewimage from './Previewimage';
 import { Imagecontainer } from '../styles/mixins';
 
 const DropArea = styled.div`
+	background: var(--secondary);
 	border: 2px dashed var(--border);
-	height: 200px;
-	width: 90%;
-	border-radius: var(--radius);
+	/* height: 200px; */
+	width: clamp(290px, 80vw, 70%);
+	border-radius: calc(var(--radius) / 2);
 	padding: 1rem;
 	margin: 2rem auto;
 	text-align: center;
@@ -26,20 +27,12 @@ export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loadi
 			{({ getRootProps, getInputProps }) => (
 				<section>
 					<DropArea {...getRootProps()}>
-						{image ? (
-							<PreviewContainer onClick={e => e.stopPropagation()}>
-								<Previewimage
-									image={image}
-									loading={loading}
-									video={video}
-									url={url}
-								/>
-							</PreviewContainer>
-						) : null}
+						<PreviewContainer>
+							<Previewimage image={image} loading={loading} video={video} url={url} />
+						</PreviewContainer>
 
 						<input {...getInputProps()} />
 						<p>Drag 'n' drop some files here, or click to select files</p>
-
 						<input
 							onClick={e => e.stopPropagation()}
 							type='url'

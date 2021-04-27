@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { IconContext } from 'react-icons';
+import { MdCloudUpload } from 'react-icons/md';
 
 const Image = styled.img`
 	border-radius: calc(var(--radius) / 2);
+`;
+const Iconcontainer = styled.div`
+	height: 60px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 
 const Previewimage = ({ image, video, loading, url }) => {
@@ -29,8 +38,14 @@ const Previewimage = ({ image, video, loading, url }) => {
 				loading ? (
 					<p>Loading....</p>
 				) : preview ? (
-					<Image src={preview} alt='' />
-				) : null
+					<Image src={preview} alt='' onClick={e => e.stopPropagation()} />
+				) : (
+					<IconContext.Provider value={{ size: '3rem' }}>
+						<Iconcontainer>
+							<MdCloudUpload />
+						</Iconcontainer>
+					</IconContext.Provider>
+				)
 			) : (
 				<video autoPlay loop muted src={video}></video>
 			)}
