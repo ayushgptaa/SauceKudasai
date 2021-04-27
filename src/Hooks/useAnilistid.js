@@ -20,7 +20,8 @@ export const useAnilistid = (image, url) => {
 	}, [url]);
 
 	const fileUpload = async e => {
-		e.preventDefault();
+		e.stopPropagation();
+		console.log('working');
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;

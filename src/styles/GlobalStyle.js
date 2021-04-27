@@ -4,6 +4,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 	:root {
 		--primary: #1d2125;
 		--secondary: #2a2e35;
+		--border: #4b4d50;
 		--radius: 0.9rem;
 	}
 
@@ -19,12 +20,14 @@ export const GlobalStyle = styled.createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-family: 'Inter', sans-serif;
+		/* overflow: hidden; */
 	}
 	*,
 	*:before,
 	*:after {
 		padding: 0;
 		margin: 0;
+		box-sizing: border-box;
 	}
 	img {
 		height: 100%;
