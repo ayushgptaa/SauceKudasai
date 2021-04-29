@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-	padding: 0.4rem 2rem;
+	padding: 0.5rem 2rem;
 	background: var(--button);
 	font-family: inherit;
 	font-weight: 700;

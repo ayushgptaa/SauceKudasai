@@ -8,33 +8,51 @@ import { Imagecontainer } from '../styles/mixins';
 const DropArea = styled.div`
 	background: var(--primary);
 	border: 2px solid #fff;
-	height: 60vh;
 	width: clamp(90%, 60vw, 70%);
 	padding: 1rem;
 	margin: 2rem auto;
 	text-align: center;
+	& p {
+		font-weight: 600;
+		font-size: 0.8rem;
+		margin-top: 1rem;
+		letter-spacing: 1px;
+	}
 `;
 const PreviewContainer = styled(Imagecontainer)`
-	height: clamp(120px, 8vh, 200px);
-	width: clamp(200px, 10vw, 400px);
+	height: clamp(150px, 8vh, 200px);
+	width: clamp(250px, 10vw, 400px);
 	margin: auto;
 	border-radius: calc(var(--radius) / 2);
 `;
 export const Url = styled.input`
+	margin-top: 1rem;
 	border: none;
 	width: 250px;
-	background: var(--dropzone);
-	padding: 0.45rem 3rem;
-	background-color: #2a5262;
+	background: #f1880c;
+	padding: 0.7rem 3rem;
 	border: var(--border);
 	font-family: inherit;
 	font-weight: 500;
 	color: #fff;
 	&::placeholder {
 		text-align: center;
-		font-weight: 800;
+		font-weight: 700;
 		color: inherit;
+		letter-spacing: 1px;
 	}
+`;
+const Camerabtn = styled.button`
+	margin-top: 1rem;
+	border: none;
+	width: 250px;
+	background: #6523ba;
+	padding: 0.7rem 2rem;
+	border: var(--border);
+	font-family: inherit;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: 1px;
 `;
 
 export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loading, video }) => {
@@ -48,8 +66,8 @@ export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loadi
 						</PreviewContainer>
 
 						<input {...getInputProps()} />
-						<p>Drag 'n' drop some files here, or click to select files</p>
-
+						<p>Drag and Drop anywhere to Upload</p>
+						<Camerabtn>Upload from camera roll</Camerabtn>
 						<Url
 							onClick={e => e.stopPropagation()}
 							type='url'

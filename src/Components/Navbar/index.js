@@ -12,6 +12,7 @@ const Navbar = styled.nav`
 const Title = styled.h1`
 	font-size: clamp(1.5rem, 2vw, 4rem);
 	font-weight: 900;
+	color: #000;
 `;
 
 const index = () => {
