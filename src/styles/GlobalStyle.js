@@ -2,10 +2,12 @@ import * as styled from 'styled-components';
 
 export const GlobalStyle = styled.createGlobalStyle`
 	:root {
-		--primary: #1d2125;
-		--secondary: #2a2e35;
-		--border: #4b4d50;
+		--primary: #000;
+		--dropzone: #000;
+		--nav: #fff;
+		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
+		--button: #2a9d8f;
 	}
 
 	html,
@@ -20,7 +22,6 @@ export const GlobalStyle = styled.createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-family: 'Inter', sans-serif;
-		/* overflow: hidden; */
 	}
 	*,
 	*:before,

@@ -6,11 +6,10 @@ import Previewimage from './Previewimage';
 import { Imagecontainer } from '../styles/mixins';
 
 const DropArea = styled.div`
-	background: var(--secondary);
-	border: 2px dashed var(--border);
-	/* height: 200px; */
-	width: clamp(290px, 80vw, 70%);
-	border-radius: calc(var(--radius) / 2);
+	background: var(--primary);
+	border: 2px solid #fff;
+	height: 60vh;
+	width: clamp(90%, 60vw, 70%);
 	padding: 1rem;
 	margin: 2rem auto;
 	text-align: center;
@@ -21,6 +20,23 @@ const PreviewContainer = styled(Imagecontainer)`
 	margin: auto;
 	border-radius: calc(var(--radius) / 2);
 `;
+export const Url = styled.input`
+	border: none;
+	width: 250px;
+	background: var(--dropzone);
+	padding: 0.45rem 3rem;
+	background-color: #2a5262;
+	border: var(--border);
+	font-family: inherit;
+	font-weight: 500;
+	color: #fff;
+	&::placeholder {
+		text-align: center;
+		font-weight: 800;
+		color: inherit;
+	}
+`;
+
 export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loading, video }) => {
 	return (
 		<Dropzone onDrop={onchange} accept='image/*' multiple={false}>
@@ -33,12 +49,13 @@ export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loadi
 
 						<input {...getInputProps()} />
 						<p>Drag 'n' drop some files here, or click to select files</p>
-						<input
+
+						<Url
 							onClick={e => e.stopPropagation()}
 							type='url'
 							name='url'
 							id='url'
-							placeholder='Enter the url'
+							placeholder='Paste image or url'
 							pattern='https://.*'
 							autoComplete='off'
 							onChange={urlhandler}
