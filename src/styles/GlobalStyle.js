@@ -15,13 +15,20 @@ export const GlobalStyle = styled.createGlobalStyle`
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-		background: var(--primary);
+		overflow: hidden;
 		height: 100vh;
 		width: 100vw;
 		color: #fff;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-family: 'Inter', sans-serif;
+		background: linear-gradient(
+			164.58deg,
+			#d9f0fa -4.48%,
+			#d9d9f9 39.87%,
+			#fad9f3 103.31%,
+			#fad9f3 103.31%
+		);
 	}
 	*,
 	*:before,

@@ -7,11 +7,16 @@ const Navbar = styled.nav`
 	display: grid;
 	place-items: center;
 	background: var(--nav);
+	background: #ffffff;
+	border-radius: 35px;
+	width: 50vw;
+	margin: auto;
+	margin-top: 3rem;
 `;
 
 const Title = styled.h1`
-	font-size: clamp(1.5rem, 2vw, 4rem);
-	font-weight: 900;
+	font-size: 1.3rem;
+	font-weight: 600;
 	color: #000;
 `;
 

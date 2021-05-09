@@ -7,11 +7,15 @@ import { Imagecontainer } from '../styles/mixins';
 
 const DropArea = styled.div`
 	background: var(--primary);
-	border: 2px solid #fff;
-	width: clamp(90%, 60vw, 70%);
+	/* border: 2px solid #fff; */
+	width: 50vw;
+	height: 65vh;
 	padding: 1rem;
 	margin: 2rem auto;
 	text-align: center;
+	background: #ffffff;
+	box-shadow: 0px 15px 40px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 60px;
 	& p {
 		font-weight: 600;
 		font-size: 0.8rem;
