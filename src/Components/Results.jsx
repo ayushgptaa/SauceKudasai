@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import bannerimg from './images/101921-GgvvFhlNhzlF.jpg';
+import coverimg from './images/bx101921-qSV6zMacSDm4.png';
 
 const Animeinfo = styled.div`
 	position: absolute;
@@ -32,6 +33,8 @@ const Banneroverlay = styled.div`
 	z-index: 2;
 	border-radius: var(--card-radius);
 `;
+
+// const Coverimg=
 const Results = ({ animeinfo }) => {
 	if (animeinfo) {
 		const { bannerImage, description } = animeinfo;
@@ -50,6 +53,7 @@ const Results = ({ animeinfo }) => {
 				<Bannerimg src={bannerimg}></Bannerimg>
 				<Banneroverlay></Banneroverlay>
 			</Banner>
+			<img src={coverimg} alt='' />
 		</Animeinfo>
 	);
 };

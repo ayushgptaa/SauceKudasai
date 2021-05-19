@@ -8,7 +8,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
 		--button: #2a9d8f;
-		--card-radius: 40px 40px 0px 0px;
+		--card-radius: 35px 35px 0px 0px;
 	}
 
 	html,
