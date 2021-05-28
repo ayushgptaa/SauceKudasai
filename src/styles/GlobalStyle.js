@@ -8,7 +8,8 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
 		--button: #2a9d8f;
-		--card-radius: 35px 35px 0px 0px;
+		--card-radius: 30px 30px 0px 0px;
+		--zindex-max: 99999;
 	}
 
 	html,
@@ -41,5 +42,6 @@ export const GlobalStyle = styled.createGlobalStyle`
 	img {
 		height: 100%;
 		width: 100%;
+		object-fit: cover;
 	}
 `;

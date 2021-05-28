@@ -1,6 +1,6 @@
 import { useAnilistid, useAnimeinfo, useImagehandler, useUrlhandler } from './Hooks/index';
 import Fileupload from './Components/Fileupload';
-import Results from './Components/Results';
+import Results from './Components/Resultcard/Results';
 import { GlobalStyle } from './styles/GlobalStyle';
 import Navbar from './Components/Navbar';
 
