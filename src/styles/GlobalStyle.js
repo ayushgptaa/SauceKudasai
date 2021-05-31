@@ -2,15 +2,20 @@ import * as styled from 'styled-components';
 
 export const GlobalStyle = styled.createGlobalStyle`
 	:root {
+		/* Colors */
 		--primary: #000;
 		--dropzone: #000;
 		--lavenderlight: #f0f3ff;
+		--lightblue: #2b2bde;
 		--nav: #fff;
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
 		--button: #2a9d8f;
 		--card-radius: 30px 30px 0px 0px;
 		--zindex-max: 99999;
+
+		/* Font Weights */
+		--semi-bold: 700;
 	}
 
 	html,
