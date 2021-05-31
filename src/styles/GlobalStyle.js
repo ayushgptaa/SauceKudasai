@@ -4,6 +4,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 	:root {
 		--primary: #000;
 		--dropzone: #000;
+		--lavenderlight: #f0f3ff;
 		--nav: #fff;
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
