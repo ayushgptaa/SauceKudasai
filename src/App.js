@@ -1,5 +1,5 @@
 import { useAnilistid, useAnimeinfo, useImagehandler, useUrlhandler } from './Hooks/index';
-import Fileupload from './Components/Fileupload';
+import Fileupload from './Components/Fileupload/Fileupload';
 import Results from './Components/Resultcard/Results';
 import { GlobalStyle } from './styles/GlobalStyle';
 import Navbar from './Components/Navbar';
@@ -23,7 +23,7 @@ function App() {
 				video={video}
 			/>
 
-			<Results animeinfo={info} />
+			{/* <Results animeinfo={info} /> */}
 		</div>
 	);
 }

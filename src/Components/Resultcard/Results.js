@@ -33,9 +33,7 @@ const Results = ({ animeinfo }) => {
 				<Cover>
 					<Coverimg src={coverimg} alt=''></Coverimg>
 				</Cover>
-				<Animedetails>
-					<h1>Kagya Sama</h1>
-				</Animedetails>
+				<Animedetails></Animedetails>
 			</Animeinfo>
 		</Animecard>
 	);
