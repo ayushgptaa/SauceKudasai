@@ -20,3 +20,6 @@ export const Uploadtext = styled.div`
 		cursor: pointer;
 	}
 `;
+export const Video = styled.video`
+	border-radius: calc(var(--radius) / 2);
+`;

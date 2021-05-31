@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Image, Uploadimg, Uploadtext } from './PreviewStyles';
+import { Image, Uploadimg, Uploadtext, Video } from './PreviewStyles';
 import Upload from '../images/uploadimg.png';
 
 const Previewimage = ({ image, video, loading, url, click }) => {
@@ -36,7 +36,7 @@ const Previewimage = ({ image, video, loading, url, click }) => {
 					</>
 				)
 			) : (
-				<video autoPlay loop muted src={video}></video>
+				<Video autoPlay loop muted src={video}></Video>
 			)}
 		</>
 	);
