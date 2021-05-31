@@ -9,16 +9,15 @@ const Dropcontainer = styled.div`
 	height: 75%;
 	margin: 0.5rem;
 	background: var(--lavenderlight);
-	background-color: #f0f3ff;
-	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23CACAE6FF' stroke-width='5' stroke-dasharray='6%2c12' stroke-dashoffset='13' stroke-linecap='square'/%3e%3c/svg%3e");
-	border-radius: 17px;
+	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23DADAE6FF' stroke-width='4' stroke-dasharray='6%2c12' stroke-dashoffset='13' stroke-linecap='square'/%3e%3c/svg%3e");
 	border-radius: 17px;
 `;
 
 const PreviewContainer = styled(Imagecontainer)`
-	height: clamp(150px, 8vh, 200px);
-	width: clamp(250px, 10vw, 400px);
+	height: clamp(130px, 8vh, 200px);
+	width: clamp(220px, 10vw, 400px);
 	margin: auto;
+	padding-top: 1rem;
 	border-radius: calc(var(--radius) / 2);
 `;
 export const DropZone = ({ onchange, image, video, url, loading }) => {

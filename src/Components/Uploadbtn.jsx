@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-	padding: 0.5rem 2rem;
-	background: var(--button);
+	border: none;
+	padding: 0.7rem 2rem;
+	background: var(--lavender);
 	font-family: inherit;
-	font-weight: 700;
-	color: #fff;
-	letter-spacing: 2px;
+	font-weight: var(--semi-bold);
+	color: #000;
 	border: var(--border);
-	border-bottom: 3px solid #fff;
-	margin-top: 1rem;
+	border-radius: calc(var(--radius) * 2);
+	margin-top: 0.7rem;
+	letter-spacing: 0;
+	font-size: 1.2rem;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `;
 const Uploadbtn = ({ fileupload }) => {
 	return (

@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { IconContext } from 'react-icons';
-import { MdCloudUpload } from 'react-icons/md';
 import Upload from './images/uploadimg.png';
 
-const Image = styled.img``;
-const Iconcontainer = styled.div`
-	height: 60px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+const Image = styled.img`
+	border-radius: calc(var(--radius) / 2);
 `;
 const Uploadimg = styled.img`
 	margin-top: 1.3rem;

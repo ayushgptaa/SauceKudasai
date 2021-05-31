@@ -3,8 +3,7 @@ import * as styled from 'styled-components';
 export const GlobalStyle = styled.createGlobalStyle`
 	:root {
 		/* Colors */
-		--primary: #000;
-		--dropzone: #000;
+		--lavender: #d9d9f9;
 		--lavenderlight: #f0f3ff;
 		--lightblue: #2b2bde;
 		--nav: #fff;
@@ -16,6 +15,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 
 		/* Font Weights */
 		--semi-bold: 700;
+		--bold: 800;
 	}
 
 	html,
