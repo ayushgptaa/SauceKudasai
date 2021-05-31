@@ -3,20 +3,19 @@ import styled from 'styled-components';
 
 const Navbar = styled.nav`
 	height: 50px;
-	background: var(--secondary);
+	background: #fff;
 	display: grid;
 	place-items: center;
-	background: var(--nav);
-	background: #ffffff;
 	border-radius: 35px;
-	width: 50vw;
+	width: 90%;
 	margin: auto;
-	margin-top: 3rem;
+	margin-top: 2rem;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 `;
 
 const Title = styled.h1`
 	font-size: 1.3rem;
-	font-weight: 600;
+	font-weight: var(--semi-bold);
 	color: #000;
 `;
 

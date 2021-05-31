@@ -3,6 +3,7 @@ import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 import Previewimage from '../../Preview/Previewimage';
 import { Imagecontainer } from '../../../styles/mixins';
+import { Filebtn } from '../Buttons/Filebtn';
 const Dropcontainer = styled.div`
 	color: #000;
 	height: 75%;
@@ -35,6 +36,7 @@ export const DropZone = ({ onchange, image, video, url, loading }) => {
 								click={click}
 							/>
 						</PreviewContainer>
+						<Filebtn />
 					</Dropcontainer>
 				)}
 			</Dropzone>

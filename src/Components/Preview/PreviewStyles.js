@@ -4,7 +4,7 @@ export const Image = styled.img`
 	border-radius: calc(var(--radius) / 2);
 `;
 export const Uploadimg = styled.img`
-	margin-top: 1.3rem;
+	margin-top: 0.6rem;
 	height: 65px;
 	width: 40px;
 `;
