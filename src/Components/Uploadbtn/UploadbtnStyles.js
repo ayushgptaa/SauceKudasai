@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const Button = styled.button`
+export const Button = styled.button`
 	border: none;
 	padding: 0.7rem 2rem;
 	background: var(--lavender);
@@ -14,13 +13,3 @@ const Button = styled.button`
 	font-size: 1.2rem;
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 `;
-const Uploadbtn = ({ fileupload }) => {
-	return (
-		<div>
-			<Button onClick={fileupload} type='submit'>
-				Search
-			</Button>
-		</div>
-	);
-};
-export default Uploadbtn;
