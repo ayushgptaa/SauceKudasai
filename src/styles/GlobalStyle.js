@@ -9,11 +9,11 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--nav: #fff;
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
-		--button: #2a9d8f;
 		--card-radius: 30px 30px 0px 0px;
 		--zindex-max: 99999;
 
 		/* Font Weights */
+		--medium: 600;
 		--semi-bold: 700;
 		--bold: 800;
 	}
@@ -49,5 +49,8 @@ export const GlobalStyle = styled.createGlobalStyle`
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
+	}
+	button {
+		border: none;
 	}
 `;

@@ -1,10 +1,10 @@
-import { Button } from './UploadbtnStyles';
+import { SearchBtn } from './UploadbtnStyles';
 const Uploadbtn = ({ fileupload }) => {
 	return (
 		<div>
-			<Button onClick={fileupload} type='submit'>
+			<SearchBtn onClick={fileupload} type='submit'>
 				Search
-			</Button>
+			</SearchBtn>
 		</div>
 	);
 };
