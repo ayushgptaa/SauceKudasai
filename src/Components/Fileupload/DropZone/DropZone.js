@@ -1,8 +1,9 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
-import Upload from '../../images/uploadimg.png';
 
+import Previewimage from '../../Previewimage';
+import { Imagecontainer } from '../../../styles/mixins';
 const Dropcontainer = styled.div`
 	color: #000;
 	height: 75%;
@@ -13,24 +14,13 @@ const Dropcontainer = styled.div`
 	border-radius: 17px;
 	border-radius: 17px;
 `;
-const Uploadimg = styled.img`
-	margin-top: 0.5rem;
-	height: 70px;
-	width: 50px;
-`;
-const Uploadtext = styled.div`
-	margin: 0;
-	font-size: 1rem;
-	letter-spacing: 0px;
-	font-weight: var(--semi-bold);
-	opacity: 80%;
 
-	span {
-		color: var(--lightblue);
-		cursor: poointer;
-	}
+const PreviewContainer = styled(Imagecontainer)`
+	height: clamp(150px, 8vh, 200px);
+	width: clamp(250px, 10vw, 400px);
+	margin: auto;
+	border-radius: calc(var(--radius) / 2);
 `;
-
 export const DropZone = ({ onchange, image, video, url, loading }) => {
 	return (
 		<>
@@ -38,10 +28,15 @@ export const DropZone = ({ onchange, image, video, url, loading }) => {
 				{({ getRootProps, getInputProps, click }) => (
 					<Dropcontainer {...getRootProps()}>
 						<input {...getInputProps()} />
-						<Uploadimg src={Upload} alt='Upload' />
-						<Uploadtext>
-							Drop your images, <span onClick={click}> browse </span> or import from
-						</Uploadtext>
+						<PreviewContainer>
+							<Previewimage
+								image={image}
+								loading={loading}
+								video={video}
+								url={url}
+								click={click}
+							/>
+						</PreviewContainer>
 					</Dropcontainer>
 				)}
 			</Dropzone>

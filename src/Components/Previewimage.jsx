@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { MdCloudUpload } from 'react-icons/md';
+import Upload from './images/uploadimg.png';
 
 const Image = styled.img``;
 const Iconcontainer = styled.div`
@@ -11,8 +12,25 @@ const Iconcontainer = styled.div`
 	justify-content: center;
 	align-items: center;
 `;
+const Uploadimg = styled.img`
+	margin-top: 1.3rem;
+	height: 65px;
+	width: 40px;
+`;
+const Uploadtext = styled.div`
+	margin: 0;
+	font-size: 1rem;
+	letter-spacing: 0px;
+	font-weight: var(--semi-bold);
+	opacity: 80%;
 
-const Previewimage = ({ image, video, loading, url }) => {
+	span {
+		color: var(--lightblue);
+		cursor: poointer;
+	}
+`;
+
+const Previewimage = ({ image, video, loading, url, click }) => {
 	const [preview, setpreview] = useState(null);
 
 	// This is use to set preview to the image selected by the user
@@ -38,11 +56,12 @@ const Previewimage = ({ image, video, loading, url }) => {
 				) : preview ? (
 					<Image src={preview} alt='' onClick={e => e.stopPropagation()} />
 				) : (
-					<IconContext.Provider value={{ size: '3rem' }}>
-						<Iconcontainer>
-							<MdCloudUpload />
-						</Iconcontainer>
-					</IconContext.Provider>
+					<>
+						<Uploadimg src={Upload} alt='Upload' />
+						<Uploadtext>
+							Drop your images, <span onClick={click}> browse </span> or import from
+						</Uploadtext>
+					</>
 				)
 			) : (
 				<video autoPlay loop muted src={video}></video>

@@ -60,7 +60,7 @@ const Camerabtn = styled.button`
 
 export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loading, video }) => {
 	return (
-		<DropArea onchange={onchange} image loading video url>
+		<DropArea>
 			{/* <Dropzone onDrop={onchange} accept='image/*' multiple={false}>
 				{({ getRootProps, getInputProps }) => (
 					<section>
@@ -93,7 +93,7 @@ export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loadi
 					</section>
 				)}
 			</Dropzone> */}
-			<DropZone />
+			<DropZone onchange={onchange} image={image} loading={loading} video={video} url={url} />
 		</DropArea>
 	);
 };
