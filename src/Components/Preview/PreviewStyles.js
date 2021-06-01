@@ -10,7 +10,7 @@ export const Uploadimg = styled.img`
 `;
 export const Uploadtext = styled.div`
 	margin: 0;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	letter-spacing: 0px;
 	font-weight: var(--semi-bold);
 	opacity: 80%;

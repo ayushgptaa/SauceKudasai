@@ -6,6 +6,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--lavender: #d9d9f9;
 		--lavenderlight: #f0f3ff;
 		--lightblue: #2b2bde;
+		--link: #0019f6;
 		--nav: #fff;
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
@@ -58,5 +59,13 @@ export const GlobalStyle = styled.createGlobalStyle`
 	button {
 		border: none;
 		cursor: pointer;
+		outline: none;
+	}
+	div,
+	p {
+		outline: none;
+	}
+	a {
+		text-decoration: none;
 	}
 `;

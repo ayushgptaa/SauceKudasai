@@ -9,7 +9,7 @@ export const DropArea = styled.div`
 	text-align: center;
 	background: #ffffff;
 	box-shadow: 0px 15px 40px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 8px rgba(0, 0, 0, 0.25);
-	border-radius: 40px;
+	border-radius: 30px;
 	& p {
 		font-weight: 600;
 		font-size: 0.8rem;

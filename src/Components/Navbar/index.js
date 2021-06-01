@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Navbar = styled.nav`
 	height: 50px;
-	background: #fff;
+	background: var(--lavender);
 	display: grid;
 	place-items: center;
 	border-radius: 35px;
