@@ -30,10 +30,12 @@ const Results = ({ animeinfo }) => {
 					<Bannerimg src={bannerimg}></Bannerimg>
 					<Banneroverlay></Banneroverlay>
 				</Banner>
-				<Cover>
-					<Coverimg src={coverimg} alt=''></Coverimg>
-				</Cover>
-				<Animedetails></Animedetails>
+				<Animedetails>
+					<Cover>
+						<Coverimg src={coverimg} alt=''></Coverimg>
+					</Cover>
+					<h1>Kaguya sama</h1>
+				</Animedetails>
 			</Animeinfo>
 		</Animecard>
 	);

@@ -5,7 +5,7 @@ export const Animecard = styled.div`
 	bottom: 0;
 `;
 export const Animeinfo = styled.div`
-	height: 55vh;
+	height: 45vh;
 	width: 100vw;
 	background: #1d1c1c;
 	border-radius: var(--card-radius);
@@ -33,12 +33,11 @@ export const Banneroverlay = styled.div`
 `;
 
 export const Cover = styled.div`
-	height: 320px;
-	width: 220px;
-	border-radius: 0.2rem;
-	/* position: absolute;
+	width: 110px;
+	border-radius: 0.25rem;
+	position: absolute;
 	top: 4rem;
-	left: 2rem; */
+	left: 1.2rem;
 	z-index: var(--zindex-max);
 `;
 
@@ -46,5 +45,7 @@ export const Coverimg = styled.img`
 	border-radius: inherit;
 `;
 export const Animedetails = styled.div`
-	border: 1px solid red;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
 `;

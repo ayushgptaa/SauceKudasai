@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Uploadimg, Uploadtext, Video } from './PreviewStyles';
-import Upload from '../images/uploadimg.png';
+import Upload from '../images/Ei-share-apple.svg';
 
 const Previewimage = ({ image, video, loading, url, click }) => {
 	const [preview, setpreview] = useState(null);

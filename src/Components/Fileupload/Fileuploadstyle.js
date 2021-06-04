@@ -8,13 +8,18 @@ export const DropArea = styled.div`
 	margin: 1.5em auto;
 	text-align: center;
 	background: #ffffff;
-	box-shadow: 0px 15px 40px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 8px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.25);
 	border-radius: 30px;
+
 	& p {
 		font-weight: 600;
 		font-size: 0.8rem;
 		margin-top: 1rem;
 		letter-spacing: 1px;
+	}
+	@media (min-width: 768px) {
+		height: 400px;
+		width: 700px;
 	}
 `;
 export const Url = styled.input`

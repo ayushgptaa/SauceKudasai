@@ -7,6 +7,7 @@ export const Uploadimg = styled.img`
 	margin-top: 0.6rem;
 	height: 65px;
 	width: 40px;
+	opacity: 80%;
 `;
 export const Uploadtext = styled.div`
 	margin: 0;

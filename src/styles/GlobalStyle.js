@@ -39,6 +39,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 			#fad9f3 103.31%
 		);
 	}
+
 	*,
 	*:before,
 	*:after {
