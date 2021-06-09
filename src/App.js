@@ -11,9 +11,9 @@ function App() {
 	const { fileUpload, anilistid, loading, video } = useAnilistid(image, url); //  Hook that fetches anilistid from server using tracemoe api
 	const info = useAnimeinfo(anilistid, image, url); // Hook that fetches animeinfo with anilistid using Anilist api
 	return (
-		<div className='App'>
+		<div className="App">
 			<GlobalStyle />
-			{/* <Navbar></Navbar> */}
+			<Navbar></Navbar>
 			<Fileupload
 				onchange={onChange}
 				urlhandler={urlhandler}

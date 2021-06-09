@@ -31,13 +31,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-family: 'Inter', sans-serif;
-		background: linear-gradient(
-			164.58deg,
-			#d9f0fa -4.48%,
-			#d9d9f9 39.87%,
-			#fad9f3 103.31%,
-			#fad9f3 103.31%
-		);
+		background: linear-gradient(116.2deg, #d9e5fa -0.48%, #fad9f3 102.36%);
 	}
 
 	*,
@@ -68,5 +62,8 @@ export const GlobalStyle = styled.createGlobalStyle`
 	}
 	a {
 		text-decoration: none;
+	}
+	button:hover {
+		background: #d1d1e6;
 	}
 `;

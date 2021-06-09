@@ -9,7 +9,7 @@ const Dropcontainer = styled.div`
 	height: 75%;
 	margin: 0.5rem;
 	background: var(--lavenderlight);
-	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23DADAE6FF' stroke-width='4' stroke-dasharray='6%2c12' stroke-dashoffset='13' stroke-linecap='square'/%3e%3c/svg%3e");
+	/* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23DADAE6FF' stroke-width='4' stroke-dasharray='6%2c12' stroke-dashoffset='13' stroke-linecap='square'/%3e%3c/svg%3e"); */
 	border-radius: 15px;
 	cursor: pointer;
 `;
@@ -24,7 +24,7 @@ const PreviewContainer = styled(Imagecontainer)`
 export const DropZone = ({ onchange, image, video, url, loading }) => {
 	return (
 		<>
-			<Dropzone onDrop={onchange} accept='image/*' multiple={false}>
+			<Dropzone onDrop={onchange} accept="image/*" multiple={false}>
 				{({ getRootProps, getInputProps, click }) => (
 					<Dropcontainer {...getRootProps()}>
 						<input {...getInputProps()} />
