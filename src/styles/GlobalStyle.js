@@ -67,4 +67,12 @@ export const GlobalStyle = styled.createGlobalStyle`
 	button:hover {
 		background: #d1d1e6;
 	}
+	ul {
+		list-style: none;
+		display: inline-block;
+	}
+	li {
+		/* display: inline-block; */
+		list-style: none;
+	}
 `;

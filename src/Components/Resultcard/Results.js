@@ -17,6 +17,7 @@ import {
 
 // const Coverimg=
 const Results = ({ animeinfo }) => {
+	const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
 	if (animeinfo) {
 		const { bannerImage, description } = animeinfo;
 		return (
@@ -49,7 +50,11 @@ const Results = ({ animeinfo }) => {
 							Known for being both brilliant and powerful, Miyuki Shirogane and Kaguya
 							.....
 						</p>
-						<Links>Links:</Links>
+						<Links>
+							{links.map(link => {
+								return <li>{link}</li>;
+							})}
+						</Links>
 					</Summary>
 				</Animetext>
 			</Animeinfo>

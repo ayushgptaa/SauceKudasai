@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const DropArea = styled.div`
 	background: var(--primary);
 	width: 90%;
-	height: 320px;
+	height: 300px;
 	padding: 1rem;
 	margin: 1.5em auto;
 	text-align: center;

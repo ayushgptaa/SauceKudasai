@@ -5,7 +5,7 @@ export const Animecard = styled.div`
 	bottom: 0;
 	height: 43vh;
 	width: 100vw;
-	background: #0a0a0a;
+	background: #151515;
 	border-radius: var(--card-radius);
 `;
 
@@ -45,7 +45,9 @@ export const Animeinfo = styled.div`
 	padding: 0 1rem;
 	display: grid;
 	grid-template-columns: 1fr 2fr;
+	height: 57%;
 	gap: 10px;
+	/* border: 1px solid red; */
 `;
 export const Animetext = styled.div`
 	/* border: 1px solid red; */
