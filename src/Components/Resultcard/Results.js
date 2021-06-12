@@ -18,25 +18,23 @@ const Results = ({ animeinfo }) => {
 		return (
 			// <Animeinfo>
 			<div>
-				<img src={bannerImage} alt='xyz' />
+				<img src={bannerImage} alt="xyz" />
 				<p>{description}</p>
 			</div>
 		);
 	}
 	return (
 		<Animecard>
-			<Animeinfo>
-				<Banner>
-					<Bannerimg src={bannerimg}></Bannerimg>
-					<Banneroverlay></Banneroverlay>
-				</Banner>
-				<Animedetails>
-					<Cover>
-						<Coverimg src={coverimg} alt=''></Coverimg>
-					</Cover>
-					<h1>Kaguya sama</h1>
-				</Animedetails>
-			</Animeinfo>
+			<Banner>
+				<Bannerimg src={bannerimg}></Bannerimg>
+				<Banneroverlay></Banneroverlay>
+			</Banner>
+			<Animedetails>
+				<Cover>
+					<Coverimg src={coverimg} alt=""></Coverimg>
+				</Cover>
+				<h3>Kaguya sama</h3>
+			</Animedetails>
 		</Animecard>
 	);
 };

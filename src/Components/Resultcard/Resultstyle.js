@@ -3,14 +3,12 @@ import styled from 'styled-components';
 export const Animecard = styled.div`
 	position: absolute;
 	bottom: 0;
-`;
-export const Animeinfo = styled.div`
 	height: 45vh;
 	width: 100vw;
 	background: #1d1c1c;
 	border-radius: var(--card-radius);
-	position: relative;
 `;
+
 export const Banner = styled.div`
 	height: 30%;
 	position: relative;
@@ -33,10 +31,11 @@ export const Banneroverlay = styled.div`
 `;
 
 export const Cover = styled.div`
-	width: 110px;
+	width: 120px;
+	height: 180px;
 	border-radius: 0.25rem;
-	position: absolute;
-	top: 4rem;
+	position: relative;
+	bottom: 1rem;
 	left: 1.2rem;
 	z-index: var(--zindex-max);
 `;
@@ -45,7 +44,9 @@ export const Coverimg = styled.img`
 	border-radius: inherit;
 `;
 export const Animedetails = styled.div`
-	height: 100%;
+	/* height: 100%;
+	border: 1px solid red;
 	display: flex;
-	justify-content: flex-end;
+	gap: 10%; */
+	/* justify-content: space-around; */
 `;
