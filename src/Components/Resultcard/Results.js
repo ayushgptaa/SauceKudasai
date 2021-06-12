@@ -2,13 +2,17 @@ import bannerimg from '../images/101921-GgvvFhlNhzlF.jpg';
 import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
 import {
 	Animecard,
-	Animeinfo,
 	Bannerimg,
 	Banner,
 	Banneroverlay,
 	Cover,
 	Coverimg,
-	Animedetails,
+	Animeinfo,
+	Animetext,
+	Title,
+	Details,
+	Summary,
+	Links,
 } from './Resultstyle';
 
 // const Coverimg=
@@ -29,12 +33,26 @@ const Results = ({ animeinfo }) => {
 				<Bannerimg src={bannerimg}></Bannerimg>
 				<Banneroverlay></Banneroverlay>
 			</Banner>
-			<Animedetails>
+			<Animeinfo>
 				<Cover>
 					<Coverimg src={coverimg} alt=""></Coverimg>
 				</Cover>
-				<h3>Kaguya sama</h3>
-			</Animedetails>
+				<Animetext>
+					<Title>Kaguya sama</Title>
+					<Details>
+						{/* <h3>kaguya sama</h3> */}
+						<h3>Ep 1</h3>
+						<h3>At :24:32</h3>
+					</Details>
+					<Summary>
+						<p>
+							Known for being both brilliant and powerful, Miyuki Shirogane and Kaguya
+							.....
+						</p>
+						<Links>Links:</Links>
+					</Summary>
+				</Animetext>
+			</Animeinfo>
 		</Animecard>
 	);
 };

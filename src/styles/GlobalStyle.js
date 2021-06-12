@@ -14,6 +14,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--zindex-max: 99999;
 
 		/* Font Weights */
+		--semi-medium: 500;
 		--medium: 600;
 		--semi-bold: 700;
 		--bold: 800;
@@ -25,7 +26,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		height: 100vh;
+		height: 100%;
 		width: 100vw;
 		color: #fff;
 		-webkit-font-smoothing: antialiased;
