@@ -21,7 +21,6 @@ export const useAnilistid = (image, url) => {
 
 	const fileUpload = async e => {
 		e.stopPropagation();
-		console.log('working');
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
@@ -40,15 +39,11 @@ export const useAnilistid = (image, url) => {
 				setloading(false);
 			} else {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
-				const { anilist_id, filename, at, tokenthumb } = data.docs[0];
-				setanilistid(anilist_id);
-				const { config } = await instance.get(
-					`https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(
-						filename
-					)}?t=${at}&token=${tokenthumb}`
-				);
-				setVideo(config.url);
+				const { anilist, video, from } = data.result[0];
+				setanilistid(anilist);
+				setVideo(video);
 				setloading(false);
+				console.log(data);
 			}
 		} catch (error) {
 			setloading(false);
