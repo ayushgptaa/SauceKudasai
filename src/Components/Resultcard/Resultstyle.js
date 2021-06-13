@@ -48,7 +48,7 @@ export const Animeinfo = styled.div`
 	grid-template-columns: 120px 1fr;
 	gap: 10px;
 	height: 180px;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 `;
 export const Animetext = styled.div`
 	/* border: 1px solid red; */
@@ -78,23 +78,28 @@ export const Summary = styled.div`
 	overflow: hidden;
 
 	& > p {
-		font-size: 0.7rem;
+		font-size: 0.85rem;
 		font-weight: var(--regular);
 		letter-spacing: 0.5px;
 		line-height: 15px;
-		/* text-align: justify; */
-		/* width: 65%; */
-		border: 1px solid red;
+		/* border: 1px solid red; */
 	}
 `;
 
 export const Links = styled.div`
 	margin-left: 10px;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	/* border: 1px solid red; */
 	justify-self: flex-end;
 `;
 export const Moreinfo = styled.div`
 	border-top: 1px solid rgba(255, 255, 255, 0.35);
 	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	& > div {
+	}
+`;
+export const StyledLink = styled.a`
+	color: var(--Styledlinks);
 `;

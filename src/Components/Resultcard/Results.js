@@ -1,5 +1,7 @@
 import bannerimg from '../images/101921-GgvvFhlNhzlF.jpg';
 import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
+import { IoIosArrowForward } from 'react-icons/io';
 import {
 	Animecard,
 	Bannerimg,
@@ -14,6 +16,7 @@ import {
 	Summary,
 	Links,
 	Moreinfo,
+	StyledLink,
 } from './Resultstyle';
 
 // const Coverimg=
@@ -50,17 +53,28 @@ const Results = ({ animeinfo }) => {
 					<Summary>
 						<p>
 							Known for being both brilliant and powerful, Miyuki Shirogane and Kaguya
-							.....
+							....
 						</p>
 						<Links>
 							{links.map(link => {
-								return <li>{link}</li>;
+								return (
+									<StyledLink>
+										<li>{link}</li>
+									</StyledLink>
+								);
 							})}
 						</Links>
 					</Summary>
 				</Animetext>
 			</Animeinfo>
-			<Moreinfo>hello</Moreinfo>
+			<Moreinfo>
+				<div>
+					<AiOutlineInfoCircle />
+					<span>More Info</span>
+					<IoIosArrowForward />
+				</div>
+				<p>Information by Anilist</p>
+			</Moreinfo>
 		</Animecard>
 	);
 };

@@ -9,6 +9,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--link: #0019f6;
 		--nav: #fff;
 		--cardbg: #151515;
+		--Styledlinks: #394ae4;
 
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;

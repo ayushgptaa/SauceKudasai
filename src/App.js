@@ -4,7 +4,7 @@ import Fileupload from './Components/Fileupload/Fileupload';
 import Results from './Components/Resultcard/Results';
 import { GlobalStyle } from './styles/GlobalStyle';
 import Navbar from './Components/Navbar';
-import { Footertext } from './Components/Footer/Footertext';
+// import { Footertext } from './Components/Footer/Footertext';
 
 function App() {
 	useEffect(() => {
