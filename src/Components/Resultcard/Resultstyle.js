@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-
 export const Animecard = styled.div`
 	position: absolute;
 	bottom: 0;
-	height: 43vh;
+	height: 50%;
 	width: 100vw;
-	background: #151515;
+	background: var(--cardbg);
 	border-radius: var(--card-radius);
 `;
 
 export const Banner = styled.div`
 	height: 30%;
 	position: relative;
+	border-radius: var(--card-radius);
 `;
 export const Bannerimg = styled.img`
 	border-radius: var(--card-radius);
@@ -25,15 +25,16 @@ export const Banneroverlay = styled.div`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 2;
 	border-radius: var(--card-radius);
 `;
 
 export const Cover = styled.div`
 	width: 115px;
-	border-radius: 0.25rem;
-	z-index: var(--zindex-max);
+	height: 170px;
+	border-radius: 0.15rem;
+	z-index: 3;
 	position: relative;
 	bottom: 20px;
 `;
@@ -44,10 +45,10 @@ export const Coverimg = styled.img`
 export const Animeinfo = styled.div`
 	padding: 0 1rem;
 	display: grid;
-	grid-template-columns: 1fr 2fr;
-	height: 57%;
+	grid-template-columns: 120px 1fr;
 	gap: 10px;
-	/* border: 1px solid red; */
+	height: 180px;
+	border: 1px solid red;
 `;
 export const Animetext = styled.div`
 	/* border: 1px solid red; */
@@ -70,22 +71,30 @@ export const Details = styled.div`
 	}
 `;
 export const Summary = styled.div`
-	/* border: 1px solid red; */
-	display: flex;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	/* grid-template-rows: 80px; */
 	margin-top: 0.7rem;
-	/* justify-content: space-between; */
+	overflow: hidden;
 
 	& > p {
 		font-size: 0.7rem;
 		font-weight: var(--regular);
 		letter-spacing: 0.5px;
 		line-height: 15px;
-		width: 65%;
-		/* border: 1px solid red; */
+		/* text-align: justify; */
+		/* width: 65%; */
+		border: 1px solid red;
 	}
 `;
 
 export const Links = styled.div`
 	margin-left: 10px;
 	font-size: 0.7rem;
+	/* border: 1px solid red; */
+	justify-self: flex-end;
+`;
+export const Moreinfo = styled.div`
+	border-top: 1px solid rgba(255, 255, 255, 0.35);
+	padding: 1rem;
 `;

@@ -8,12 +8,15 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--lightblue: #2b2bde;
 		--link: #0019f6;
 		--nav: #fff;
+		--cardbg: #151515;
+
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
-		--card-radius: 30px 30px 0px 0px;
-		--zindex-max: 99999;
+		--card-radius: 15px 15px 0px 0px;
+		/* --zindex-max: 99999; */
 
 		/* Font Weights */
+		--regular: 400;
 		--semi-medium: 500;
 		--medium: 600;
 		--semi-bold: 700;

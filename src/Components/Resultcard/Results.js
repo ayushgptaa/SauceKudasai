@@ -13,6 +13,7 @@ import {
 	Details,
 	Summary,
 	Links,
+	Moreinfo,
 } from './Resultstyle';
 
 // const Coverimg=
@@ -39,11 +40,12 @@ const Results = ({ animeinfo }) => {
 					<Coverimg src={coverimg} alt=""></Coverimg>
 				</Cover>
 				<Animetext>
-					<Title>Kaguya sama</Title>
+					<Title>Kaguya sama: Love is War</Title>
 					<Details>
 						{/* <h3>kaguya sama</h3> */}
 						<h3>Ep 1</h3>
 						<h3>At :24:32</h3>
+						<h3>3 seaons</h3>
 					</Details>
 					<Summary>
 						<p>
@@ -58,6 +60,7 @@ const Results = ({ animeinfo }) => {
 					</Summary>
 				</Animetext>
 			</Animeinfo>
+			<Moreinfo>hello</Moreinfo>
 		</Animecard>
 	);
 };

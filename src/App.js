@@ -8,7 +8,7 @@ import { Footertext } from './Components/Footer/Footertext';
 
 function App() {
 	useEffect(() => {
-		document.body.style.minHeight = window.innerHeight + 'px';
+		document.body.style.height = window.innerHeight + 'px';
 		const setheight = () => {
 			document.body.style.height = window.innerHeight + 'px';
 		};
@@ -35,7 +35,7 @@ function App() {
 				loading={loading}
 				video={video}
 			/>
-			<Footertext />
+			{/* <Footertext /> */}
 
 			<Results animeinfo={info} />
 		</div>
