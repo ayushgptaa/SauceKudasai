@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 export const Animecard = styled.div`
+	/* transform: translateY(100%);
+	transition: 0.5 ease-in-out; */
 	position: absolute;
 	bottom: 0;
 	height: 50%;
@@ -37,6 +39,7 @@ export const Cover = styled.div`
 	z-index: 3;
 	position: relative;
 	bottom: 20px;
+	/* z-index: 222; */
 `;
 
 export const Coverimg = styled.img`
@@ -47,7 +50,8 @@ export const Animeinfo = styled.div`
 	display: grid;
 	grid-template-columns: 120px 1fr;
 	gap: 10px;
-	height: 180px;
+	height: 170px;
+	overflow: hidden;
 	/* border: 1px solid red; */
 `;
 export const Animetext = styled.div`
@@ -90,11 +94,12 @@ export const Links = styled.div`
 	margin-left: 10px;
 	font-size: 0.8rem;
 	/* border: 1px solid red; */
+	display: none;
 	justify-self: flex-end;
 `;
 export const Moreinfo = styled.div`
 	border-top: 1px solid rgba(255, 255, 255, 0.35);
-	padding: 0.9rem;
+	padding: 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

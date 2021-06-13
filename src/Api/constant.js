@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const TRACE_MOE_QUERY = 'https://trace.moe/api/search';
+export const TRACE_MOE_QUERY = 'https://api.trace.moe/search';
 
 export const ANILIST_QUERY = 'https://graphql.anilist.co';
 
