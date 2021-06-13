@@ -8,9 +8,9 @@ import Navbar from './Components/Navbar';
 
 function App() {
 	useEffect(() => {
-		document.body.style.height = window.innerHeight + 'px';
+		document.body.style.maxHeight = window.innerHeight + 'px';
 		const setheight = () => {
-			document.body.style.height = window.innerHeight + 'px';
+			document.body.style.maxHeight = window.innerHeight + 'px';
 		};
 		window.addEventListener('resize', setheight);
 

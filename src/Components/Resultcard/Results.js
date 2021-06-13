@@ -47,18 +47,15 @@ const Results = ({ animeinfo }) => {
 					<Details>
 						{/* <h3>kaguya sama</h3> */}
 						<h3>Ep 1</h3>
-						<h3>At :24:32</h3>
-						<h3>3 seaons</h3>
+						<h3>At : 24:32</h3>
+						<h3>3 Seaons</h3>
 					</Details>
 					<Summary>
-						<p>
-							Known for being both brilliant and powerful, Miyuki Shirogane and Kaguya
-							....
-						</p>
+						<p>Known for being both brilliant and powerful, Miyuki Shirogane ....</p>
 						<Links>
 							{links.map(link => {
 								return (
-									<StyledLink>
+									<StyledLink href="https://crunchyroll.com" target="_blank">
 										<li>{link}</li>
 									</StyledLink>
 								);
@@ -69,11 +66,16 @@ const Results = ({ animeinfo }) => {
 			</Animeinfo>
 			<Moreinfo>
 				<div>
-					<AiOutlineInfoCircle />
+					<AiOutlineInfoCircle size={20} />
 					<span>More Info</span>
-					<IoIosArrowForward />
+					<IoIosArrowForward size={19} />
 				</div>
-				<p>Information by Anilist</p>
+				<span>
+					Information by{' '}
+					<StyledLink href="https://anilist.com" target="_blank">
+						Anilist
+					</StyledLink>
+				</span>
 			</Moreinfo>
 		</Animecard>
 	);

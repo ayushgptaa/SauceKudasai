@@ -58,10 +58,10 @@ export const Animetext = styled.div`
 
 export const Title = styled.h1`
 	font-size: 1.2rem;
-	font-weight: var(--medium);
+	font-weight: var(--bold);
 `;
 export const Details = styled.div`
-	margin-top: 0.7rem;
+	margin-top: 0.5rem;
 	font-size: 0.6rem;
 	/* border: 1px solid red; */
 	display: flex;
@@ -73,7 +73,7 @@ export const Details = styled.div`
 export const Summary = styled.div`
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	/* grid-template-rows: 80px; */
+	grid-template-rows: 80px;
 	margin-top: 0.7rem;
 	overflow: hidden;
 
@@ -94,10 +94,20 @@ export const Links = styled.div`
 `;
 export const Moreinfo = styled.div`
 	border-top: 1px solid rgba(255, 255, 255, 0.35);
-	padding: 1rem;
+	padding: 0.9rem;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	& > span {
+		font-size: 0.7rem;
+	}
+
 	& > div {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		font-weight: var(--semi-bold);
+		gap: 6px;
 	}
 `;
 export const StyledLink = styled.a`

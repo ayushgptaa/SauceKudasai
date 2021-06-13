@@ -26,6 +26,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 
 	html,
 	body {
+		position: relative;
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
