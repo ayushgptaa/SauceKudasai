@@ -21,7 +21,7 @@ import {
 } from './Resultstyle';
 
 // const Coverimg=
-const Results = ({ animeinfo }) => {
+const Results = ({ animeinfo, time, episode }) => {
 	// const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
 	if (animeinfo) {
 		console.log(animeinfo);
@@ -42,8 +42,8 @@ const Results = ({ animeinfo }) => {
 						<Title>{title.english}</Title>
 						<Details>
 							{/* <h3>kaguya sama</h3> */}
-							<h3>Ep 1</h3>
-							<h3>At : 24:32</h3>
+							<h3>Ep {episode}</h3>
+							<h3>At : {Math.floor(time / 60)}</h3>
 							<h3>{seasonYear}</h3>
 						</Details>
 						<Summary>

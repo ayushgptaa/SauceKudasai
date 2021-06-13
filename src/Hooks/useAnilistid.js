@@ -6,6 +6,8 @@ export const useAnilistid = (image, url) => {
 	const [anilistid, setanilistid] = useState(null);
 	const [loading, setloading] = useState(false);
 	const [video, setVideo] = useState(null);
+	const [time, settime] = useState('');
+	const [episode, setepisode] = useState('');
 
 	// Use effect is used to remove video when new image is selected
 	useEffect(() => {
@@ -39,9 +41,11 @@ export const useAnilistid = (image, url) => {
 				setloading(false);
 			} else {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
-				const { anilist, video, from } = data.result[0];
+				const { anilist, video, episode, from } = data.result[0];
 				setanilistid(anilist);
 				setVideo(video);
+				settime(from);
+				setepisode(episode);
 				setloading(false);
 				console.log(data);
 			}
@@ -52,5 +56,5 @@ export const useAnilistid = (image, url) => {
 			return console.log('something else happened', error);
 		}
 	};
-	return { fileUpload, anilistid, loading, video };
+	return { fileUpload, anilistid, loading, video, time, episode };
 };

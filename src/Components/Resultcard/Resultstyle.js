@@ -90,6 +90,7 @@ export const Links = styled.div`
 	justify-self: flex-start;
 	& > li {
 		padding-right: 0.6rem;
+		padding-bottom: 0.3rem;
 	}
 `;
 export const Moreinfo = styled.div`

@@ -8,7 +8,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--lightblue: #2b2bde;
 		--link: #0019f6;
 		--nav: #fff;
-		--cardbg: #151515;
+		--cardbg: #080808;
 		--Styledlinks: #394ae4;
 
 		--border: 1.5px solid #fff;
