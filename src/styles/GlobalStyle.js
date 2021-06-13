@@ -79,5 +79,6 @@ export const GlobalStyle = styled.createGlobalStyle`
 	li {
 		/* display: inline-block; */
 		list-style: none;
+		display: inline-block;
 	}
 `;

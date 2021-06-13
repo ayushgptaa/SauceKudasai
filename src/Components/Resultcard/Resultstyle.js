@@ -1,7 +1,6 @@
 import styled from 'styled-components';
+
 export const Animecard = styled.div`
-	/* transform: translateY(100%);
-	transition: 0.5 ease-in-out; */
 	position: absolute;
 	bottom: 0;
 	height: 50%;
@@ -39,7 +38,6 @@ export const Cover = styled.div`
 	z-index: 3;
 	position: relative;
 	bottom: 20px;
-	/* z-index: 222; */
 `;
 
 export const Coverimg = styled.img`
@@ -50,8 +48,7 @@ export const Animeinfo = styled.div`
 	display: grid;
 	grid-template-columns: 120px 1fr;
 	gap: 10px;
-	height: 170px;
-	overflow: hidden;
+	height: 180px;
 	/* border: 1px solid red; */
 `;
 export const Animetext = styled.div`
@@ -67,7 +64,6 @@ export const Title = styled.h1`
 export const Details = styled.div`
 	margin-top: 0.5rem;
 	font-size: 0.6rem;
-	/* border: 1px solid red; */
 	display: flex;
 	gap: 10px;
 	& > h3 {
@@ -76,7 +72,7 @@ export const Details = styled.div`
 `;
 export const Summary = styled.div`
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr;
 	grid-template-rows: 80px;
 	margin-top: 0.7rem;
 	overflow: hidden;
@@ -86,20 +82,19 @@ export const Summary = styled.div`
 		font-weight: var(--regular);
 		letter-spacing: 0.5px;
 		line-height: 15px;
-		/* border: 1px solid red; */
 	}
 `;
 
 export const Links = styled.div`
-	margin-left: 10px;
-	font-size: 0.8rem;
-	/* border: 1px solid red; */
-	display: none;
-	justify-self: flex-end;
+	font-size: 0.85rem;
+	justify-self: flex-start;
+	& > li {
+		padding-right: 0.6rem;
+	}
 `;
 export const Moreinfo = styled.div`
 	border-top: 1px solid rgba(255, 255, 255, 0.35);
-	padding: 1rem;
+	padding: 0.9rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

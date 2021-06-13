@@ -36,7 +36,7 @@ const Results = ({ animeinfo }) => {
 				</Banner>
 				<Animeinfo>
 					<Cover>
-						<Coverimg src={coverImage.medium} alt=""></Coverimg>
+						<Coverimg src={coverImage.large} alt=""></Coverimg>
 					</Cover>
 					<Animetext>
 						<Title>{title.english}</Title>
@@ -47,13 +47,15 @@ const Results = ({ animeinfo }) => {
 							<h3>{seasonYear}</h3>
 						</Details>
 						<Summary>
-							<p>{description}</p>
+							{/* <p>{description}</p> */}
 							<Links>
 								{externalLinks.map(({ id, site, url }) => {
 									return (
-										<StyledLink href={url} target="_blank">
-											<li key={id}>{site}</li>
-										</StyledLink>
+										<li key={id}>
+											<StyledLink href={url} target="_blank">
+												{site}
+											</StyledLink>
+										</li>
 									);
 								})}
 							</Links>
