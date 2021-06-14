@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Animecard = styled.div`
+export const Animecard = styled(motion.div)`
 	position: absolute;
 	bottom: 0;
 	height: 50%;
