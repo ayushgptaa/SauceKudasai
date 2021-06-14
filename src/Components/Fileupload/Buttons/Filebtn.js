@@ -10,20 +10,20 @@ const Button = styled.button`
 	border: none;
 	background: var(--lavender);
 	cursor: pointer;
-	margin: 0.5rem 0.3rem 0;
+	margin: 1.2rem 0.3rem 0 0;
 	cursor: pointer;
 `;
 
-export const Filebtn = () => {
+export const Filebtn = ({ open }) => {
 	return (
 		<>
-			<Button>
-				<IconContext.Provider value={{ size: '1.5rem', color: '#303133' }}>
+			<Button onClick={open}>
+				<IconContext.Provider value={{ size: '1.3rem', color: '#303133' }}>
 					<FiFolderPlus />
 				</IconContext.Provider>
 			</Button>
 			<Button>
-				<IconContext.Provider value={{ size: '1.5rem', color: '#303133' }}>
+				<IconContext.Provider value={{ size: '1.3rem', color: '#303133' }}>
 					<FiLink2 />
 				</IconContext.Provider>
 			</Button>

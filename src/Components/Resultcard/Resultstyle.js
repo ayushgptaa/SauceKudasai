@@ -35,7 +35,7 @@ export const Banneroverlay = styled.div`
 export const Cover = styled.div`
 	width: 115px;
 	height: 170px;
-	border-radius: 0.15rem;
+	border-radius: 0.2rem;
 	z-index: 3;
 	position: relative;
 	bottom: 20px;
@@ -124,5 +124,6 @@ export const Closebtn = styled.div`
 	border-radius: 50%;
 	height: 25px;
 	width: 25px;
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 `;

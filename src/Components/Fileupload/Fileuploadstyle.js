@@ -2,15 +2,14 @@ import styled from 'styled-components';
 
 export const DropArea = styled.div`
 	background: var(--primary);
-	width: 90%;
-	height: 320px;
+	width: 88%;
+	height: 310px;
 	padding: 1.6rem;
 	margin: 1.5em auto;
 	text-align: center;
 	background: #ffffff;
-	/* box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.25); */
 	/* box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.14), 0px 2px 12px rgba(0, 0, 0, 0.06); */
-	box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25), inset 0px 1px 8px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25), inset 0px 1px 5px rgba(0, 0, 0, 0.25);
 	border-radius: 24px;
 
 	& p {

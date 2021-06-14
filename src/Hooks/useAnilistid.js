@@ -26,7 +26,9 @@ export const useAnilistid = (image, url) => {
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
-		setloading(true);
+		if (image) {
+			setloading(true);
+		}
 		try {
 			if (url) {
 				const { data } = await instance.post(`?url=${url}`, body);

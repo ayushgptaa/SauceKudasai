@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, Loadingimg, Uploadimg, Uploadtext, Video } from './PreviewStyles';
 import Upload from '../images/Ei-share-apple.svg';
 
-const Previewimage = ({ image, video, loading, url, click }) => {
+const Previewimage = ({ image, video, loading, url, click, open }) => {
 	const [preview, setpreview] = useState(null);
 
 	// This is use to set preview to the image selected by the user
@@ -31,7 +31,7 @@ const Previewimage = ({ image, video, loading, url, click }) => {
 					<>
 						<Uploadimg src={Upload} alt="Upload" />
 						<Uploadtext>
-							Drop your images, <span onClick={click}> browse </span> or import from
+							Drop your images, <span onClick={open}> browse </span> or import from
 						</Uploadtext>
 					</>
 				)

@@ -25,7 +25,7 @@ function App() {
 	return (
 		<div className="App">
 			<GlobalStyle />
-			<Navbar></Navbar>
+			<Navbar />
 			<Fileupload
 				onchange={onChange}
 				urlhandler={urlhandler}

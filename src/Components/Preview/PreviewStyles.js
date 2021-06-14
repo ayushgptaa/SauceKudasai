@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const Image = styled.img`
-	border-radius: calc(var(--radius) / 2);
+	border-radius: calc(var(--radius) / 3);
 `;
-
 export const Loadingimg = styled(Image)`
-	filter: blur(0.8px);
+	filter: blur(1px);
 `;
 export const Uploadimg = styled.img`
 	margin-top: 0.6rem;
