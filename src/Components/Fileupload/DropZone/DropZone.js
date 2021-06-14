@@ -15,7 +15,7 @@ const Dropcontainer = styled.div`
 `;
 
 const PreviewContainer = styled(Imagecontainer)`
-	height: clamp(130px, 8vh, 200px);
+	height: clamp(140px, 8vh, 200px);
 	width: clamp(220px, 10vw, 400px);
 	margin: auto;
 	padding-top: 1rem;

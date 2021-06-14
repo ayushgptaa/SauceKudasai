@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Image, Uploadimg, Uploadtext, Video } from './PreviewStyles';
+import { Image, Loadingimg, Uploadimg, Uploadtext, Video } from './PreviewStyles';
 import Upload from '../images/Ei-share-apple.svg';
 
 const Previewimage = ({ image, video, loading, url, click }) => {
@@ -24,12 +24,12 @@ const Previewimage = ({ image, video, loading, url, click }) => {
 		<>
 			{video === null ? (
 				loading ? (
-					<p>Loading....</p>
+					<Loadingimg src={preview} alt="Loading..."></Loadingimg>
 				) : preview ? (
-					<Image src={preview} alt='' onClick={e => e.stopPropagation()} />
+					<Image src={preview} alt="Your image" onClick={e => e.stopPropagation()} />
 				) : (
 					<>
-						<Uploadimg src={Upload} alt='Upload' />
+						<Uploadimg src={Upload} alt="Upload" />
 						<Uploadtext>
 							Drop your images, <span onClick={click}> browse </span> or import from
 						</Uploadtext>

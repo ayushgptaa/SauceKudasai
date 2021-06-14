@@ -7,7 +7,7 @@ const Footer = styled.footer`
 	text-align: center;
 	position: absolute;
 	bottom: 0.5rem;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	color: #000;
 	font-weight: var(--semi-bold);
 
@@ -20,8 +20,8 @@ export const Footertext = () => {
 		<Footer>
 			<p>
 				Powered by &nbsp;
-				<a href='https://github.com/soruly/trace.moe' target='_blank' rel='noreferrer'>
-					trace.moe api
+				<a href="https://github.com/soruly/trace.moe" target="_blank" rel="noreferrer">
+					trace.moe
 				</a>
 			</p>
 		</Footer>

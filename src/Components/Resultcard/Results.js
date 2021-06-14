@@ -43,7 +43,7 @@ const Results = ({ animeinfo, time, episode }) => {
 						<Details>
 							{/* <h3>kaguya sama</h3> */}
 							<h3>Ep {episode}</h3>
-							<h3>At : {Math.floor(time / 60)}</h3>
+							<h3>At : {(time / 60).toFixed(2)}</h3>
 							<h3>{seasonYear}</h3>
 						</Details>
 						<Summary>
