@@ -8,7 +8,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--lightblue: #2b2bde;
 		--link: #0019f6;
 		--nav: #fff;
-		--cardbg: #080808;
+		--cardbg: #151515;
 		--Styledlinks: #394ae4;
 
 		--border: 1.5px solid #fff;
@@ -37,7 +37,8 @@ export const GlobalStyle = styled.createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-family: 'Inter', sans-serif;
-		background: linear-gradient(116.2deg, #d9e5fa -0.48%, #fad9f3 102.36%);
+		/* background: linear-gradient(116.2deg, #d9e5fa -0.48%, #fad9f3 102.36%); */
+		background: linear-gradient(164.58deg, #cff1ff -4.48%, #d3d3ff 47.17%, #ffdef8 96.57%);
 	}
 
 	*,
@@ -69,9 +70,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 	a {
 		text-decoration: none;
 	}
-	button:hover {
-		background: #d1d1e6;
-	}
+
 	ul {
 		list-style: none;
 		display: inline-block;
