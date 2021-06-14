@@ -115,3 +115,14 @@ export const Moreinfo = styled.div`
 export const StyledLink = styled.a`
 	color: var(--Styledlinks);
 `;
+export const Closebtn = styled.div`
+	display: grid;
+	place-items: center;
+	position: absolute;
+	top: 0.6rem;
+	right: 0.8rem;
+	border-radius: 50%;
+	height: 25px;
+	width: 25px;
+	background: rgba(255, 255, 255, 0.7);
+`;

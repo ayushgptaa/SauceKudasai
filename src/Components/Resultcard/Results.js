@@ -1,8 +1,8 @@
 import bannerimg from '../images/101921-GgvvFhlNhzlF.jpg';
 import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import { IoIosArrowForward } from 'react-icons/io';
-// import { motion } from 'framer-motion';
+import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
+
 import {
 	Animecard,
 	Bannerimg,
@@ -18,6 +18,7 @@ import {
 	Links,
 	Moreinfo,
 	StyledLink,
+	Closebtn,
 } from './Resultstyle';
 
 // const Coverimg=
@@ -84,8 +85,11 @@ const Results = ({ animeinfo, time, episode }) => {
 			<Animecard
 				initial={{ y: '100%' }}
 				animate={{ y: 0 }}
-				transition={{ duration: 0.5, ease: 'linear', type: 'Tween', delay: 0.5 }}>
+				transition={{ duration: 0.35, ease: 'linear', type: 'Tween', delay: 0.2 }}>
 				<Banner>
+					<Closebtn>
+						<IoMdClose color={'black'} size={20} />
+					</Closebtn>
 					<Bannerimg src={bannerimg}></Bannerimg>
 					<Banneroverlay></Banneroverlay>
 				</Banner>
