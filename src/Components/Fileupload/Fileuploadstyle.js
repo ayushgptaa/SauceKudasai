@@ -8,9 +8,8 @@ export const DropArea = styled.div`
 	margin: 1.5em auto;
 	text-align: center;
 	background: #ffffff;
-	/* box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.14), 0px 2px 12px rgba(0, 0, 0, 0.06); */
 	box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25), inset 0px 1px 5px rgba(0, 0, 0, 0.25);
-	border-radius: 24px;
+	border-radius: 35px;
 
 	& p {
 		font-weight: 600;
@@ -18,9 +17,19 @@ export const DropArea = styled.div`
 		margin-top: 1rem;
 		letter-spacing: 1px;
 	}
-	@media (min-width: 768px) {
+	@media (min-width: 500px) {
 		height: 400px;
-		width: 700px;
+		width: 450px;
+	}
+	@media (min-width: 750px) {
+		/* margin-top: 100px; */
+		height: 400px;
+		width: 550px;
+	}
+	@media (min-width: 900px) {
+		margin-top: 50px;
+		height: 380px;
+		width: 720px;
 	}
 `;
 export const Url = styled.input`

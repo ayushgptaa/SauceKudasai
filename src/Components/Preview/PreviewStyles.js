@@ -11,6 +11,12 @@ export const Uploadimg = styled.img`
 	height: 65px;
 	width: 40px;
 	opacity: 80%;
+	@media (min-width: 900px) {
+		margin-top: 1rem;
+		height: 80px;
+		width: 60px;
+		opacity: 70%;
+	}
 `;
 export const Uploadtext = styled.div`
 	margin: 0;
@@ -22,6 +28,10 @@ export const Uploadtext = styled.div`
 	span {
 		color: var(--lightblue);
 		cursor: pointer;
+	}
+	@media (min-width: 900px) {
+		font-weight: var(--medium);
+		font-size: 1.25rem;
 	}
 `;
 export const Video = styled.video`

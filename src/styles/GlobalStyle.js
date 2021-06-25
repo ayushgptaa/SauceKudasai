@@ -14,7 +14,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
 		--card-radius: 15px 15px 0px 0px;
-		/* --zindex-max: 99999; */
+		--box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25), inset 0px 1px 5px rgba(0, 0, 0, 0.25);
 
 		/* Font Weights */
 		--regular: 400;
@@ -22,6 +22,8 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--medium: 600;
 		--semi-bold: 700;
 		--bold: 800;
+
+		--mobile-lg: 500px;
 	}
 
 	html,
@@ -37,8 +39,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-family: 'Inter', sans-serif;
-		/* background: linear-gradient(116.2deg, #d9e5fa -0.48%, #fad9f3 102.36%); */
-		background: linear-gradient(164.58deg, #cff1ff -4.48%, #d3d3ff 47.17%, #ffdef8 96.57%);
+		background: linear-gradient(116.2deg, #d9e5fa -0.48%, #fad9f3 102.36%);
 	}
 
 	*,
