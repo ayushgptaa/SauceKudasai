@@ -35,7 +35,6 @@ query ($id: Int) {
     }
     coverImage {
       large
-      medium
       color
     }
     bannerImage

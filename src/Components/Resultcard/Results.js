@@ -1,5 +1,5 @@
-import bannerimg from '../images/101921-GgvvFhlNhzlF.jpg';
-import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
+// import bannerimg from '../images/101921-GgvvFhlNhzlF.jpg';
+// import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
 
@@ -23,7 +23,7 @@ import {
 
 // const Coverimg=
 const Results = ({ animeinfo, time, episode }) => {
-	const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
+	// const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
 	if (animeinfo) {
 		console.log(animeinfo);
 		const { bannerImage, coverImage, description, title, seasonYear, externalLinks } =
