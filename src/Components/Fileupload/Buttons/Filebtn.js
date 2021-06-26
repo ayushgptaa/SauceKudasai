@@ -12,6 +12,9 @@ const Button = styled.button`
 	cursor: pointer;
 	margin: 1.2rem 0.3rem 0 0;
 	cursor: pointer;
+	@media (min-width: 500px) {
+		margin: 1.5rem 0.6rem 0 0;
+	}
 `;
 
 export const Filebtn = ({ open }) => {
