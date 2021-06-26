@@ -14,6 +14,10 @@ const Footer = styled.footer`
 	a {
 		color: var(--link);
 	}
+	@media (min-width: 500px) {
+		font-size: 1.15rem;
+		font-weight: var(--medium);
+	}
 `;
 export const Footertext = () => {
 	return (
