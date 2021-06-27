@@ -4,7 +4,7 @@ import { respondTo } from '../../styles/mixins';
 export const DropArea = styled.div`
 	background: var(--primary);
 	width: 88%;
-	height: 310px;
+	height: 320px;
 	padding: 1.3rem;
 	padding-bottom: 0.5rem;
 	margin: 1.5em auto;

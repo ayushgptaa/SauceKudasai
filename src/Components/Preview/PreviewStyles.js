@@ -28,9 +28,9 @@ export const Uploadimg = styled.img`
 `;
 export const Uploadtext = styled.div`
 	margin: 0;
-	font-size: 0.85rem;
+	font-size: 1rem;
 	letter-spacing: 0px;
-	font-weight: var(--semi-bold);
+	font-weight: var(--medium);
 	opacity: 80%;
 
 	span {
