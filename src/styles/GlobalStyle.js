@@ -22,8 +22,6 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--medium: 600;
 		--semi-bold: 700;
 		--bold: 800;
-
-		--mobile-lg: 500px;
 	}
 
 	html,

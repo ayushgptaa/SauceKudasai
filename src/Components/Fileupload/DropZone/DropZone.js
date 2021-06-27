@@ -2,7 +2,7 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 import Previewimage from '../../Preview/Previewimage';
-import { Imagecontainer } from '../../../styles/mixins';
+import { Imagecontainer, respondTo } from '../../../styles/mixins';
 import { Filebtn } from '../Buttons/Filebtn';
 const Dropcontainer = styled.div`
 	color: #000;
@@ -12,26 +12,40 @@ const Dropcontainer = styled.div`
 	background: var(--lavenderlight);
 	border-radius: 20px;
 	user-select: none;
+	${respondTo.md`
+		height: 77%;
+	`}
 
-	@media (min-width: 900px) {
+	${respondTo.lg`
 		height: 80%;
 		border-radius: 25px;
 		margin: 0.8rem 1.5rem;
 		margin-top: 0.2rem;
-	}
+	`}
 `;
 
 const PreviewContainer = styled(Imagecontainer)`
-	height: 120px;
-	width: 200px;
+	height: 130px;
+	width: 210px;
 	margin: auto;
 	padding-top: 1rem;
 	border-radius: calc(var(--radius) / 2);
 	/* border: 1px solid red; */
-
+	${respondTo.xs`
+		height: 160px;
+		width: 280px;
+	`}
+	${respondTo.sm`
+		height: 180px;
+		width: 300px;
+	`} 
+	${respondTo.md`
+		height: 200px;
+		width: 330px;
+	`} 
 	@media (min-width: 900px) {
-		height: 70%;
-		width: 50%;
+		height: 75%;
+		width: 55%;
 	}
 `;
 export const DropZone = ({ onchange, image, video, url, loading }) => {

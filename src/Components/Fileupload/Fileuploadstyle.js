@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { respondTo } from '../../styles/mixins';
 
 export const DropArea = styled.div`
 	background: var(--primary);
 	width: 88%;
 	height: 310px;
-	padding: 1.6rem;
+	padding: 1.3rem;
+	padding-bottom: 0.5rem;
 	margin: 1.5em auto;
 	text-align: center;
 	background: #ffffff;
@@ -17,19 +19,27 @@ export const DropArea = styled.div`
 		margin-top: 1rem;
 		letter-spacing: 1px;
 	}
-	@media (min-width: 500px) {
-		height: 400px;
+	${respondTo.xs`
+		padding-bottom:0;
+		height: 350px;
+		width: 400px;
+	`}
+	${respondTo.sm`
+		height: 360px;
 		width: 450px;
-	}
-	@media (min-width: 750px) {
-		/* margin-top: 100px; */
-		height: 400px;
-		width: 550px;
-	}
-	@media (min-width: 900px) {
-		margin-top: 50px;
+		padding:1.7rem;
+		padding-bottom:0;
+	`}
+
+		${respondTo.md`
 		height: 380px;
+		width: 550px;
+	`}
+	@media (min-width: 900px) {
+		margin-top: 30px;
+		height: 400px;
 		width: 720px;
+		padding-bottom: 1.1rem;
 	}
 `;
 export const Url = styled.input`
