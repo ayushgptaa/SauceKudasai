@@ -64,7 +64,7 @@ export const Title = styled.h1`
 `;
 export const Details = styled.div`
 	margin-top: 0.5rem;
-	font-size: 0.6rem;
+	font-size: 0.8rem;
 	display: flex;
 	gap: 10px;
 	& > h3 {

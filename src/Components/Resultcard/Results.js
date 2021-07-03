@@ -21,7 +21,6 @@ import {
 	Closebtn,
 } from './Resultstyle';
 
-// const Coverimg=
 const Results = ({ animeinfo, time, episode }) => {
 	// const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
 	if (animeinfo) {
@@ -47,7 +46,6 @@ const Results = ({ animeinfo, time, episode }) => {
 					<Animetext>
 						<Title>{title.english}</Title>
 						<Details>
-							{/* <h3>kaguya sama</h3> */}
 							<h3>Ep {episode}</h3>
 							<h3>At : {(time / 60).toFixed(2)}</h3>
 							<h3>{seasonYear}</h3>
@@ -139,7 +137,6 @@ const Results = ({ animeinfo, time, episode }) => {
 		// 		</Moreinfo>
 		// 	</Animecard>
 		// );
-	}
-	return null;
+	} else return null;
 };
 export default Results;

@@ -6,15 +6,18 @@ import { respondTo } from '../../../styles/mixins';
 
 const Button = styled.button`
 	border-radius: 50%;
-	height: 40px;
-	width: 40px;
+	height: 45px;
+	width: 45px;
 	border: none;
 	background: var(--lavender);
 	cursor: pointer;
-	margin: 1.2rem 0.3rem 0 0;
+	margin: 1.4rem 0.5rem 0 0;
 	cursor: pointer;
 	${respondTo.sm`
 		margin: 1rem 0.6rem 0 0;
+	`}
+	${respondTo.md`
+		margin: 0rem 0.6rem 0 0;
 	`}
 `;
 

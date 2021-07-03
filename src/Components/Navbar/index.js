@@ -5,12 +5,12 @@ import { GoMarkGithub } from 'react-icons/go';
 import { respondTo } from '../../styles/mixins';
 
 const Navbar = styled.nav`
-	padding: 0.6em 2rem;
+	padding: 0.5em 1.5rem;
 	background: var(--nav);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-radius: 35px;
+	border-radius: 30px;
 	width: 90%;
 	margin: auto;
 	margin-top: 1rem;
@@ -31,7 +31,7 @@ const Navbar = styled.nav`
 `;
 
 const Title = styled.h1`
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: var(--medium);
 	color: #000;
 `;
@@ -45,7 +45,7 @@ const index = () => {
 					href="https://github.com/Ayush6968/whats-the-sauce"
 					target="_blank"
 					rel="noreferrer">
-					<IconContext.Provider value={{ size: '1.6rem', color: '#000000' }}>
+					<IconContext.Provider value={{ size: '1.4rem', color: '#000000' }}>
 						<GoMarkGithub />
 					</IconContext.Provider>
 				</a>
