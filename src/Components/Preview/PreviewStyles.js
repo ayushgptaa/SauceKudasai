@@ -1,3 +1,5 @@
+/** @format */
+
 import styled from 'styled-components';
 import { respondTo } from '../../styles/mixins';
 
@@ -27,7 +29,7 @@ export const Uploadimg = styled.img`
 `;
 export const Uploadtext = styled.div`
 	margin: 0;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	letter-spacing: 0px;
 	font-weight: var(--medium);
 	opacity: 80%;

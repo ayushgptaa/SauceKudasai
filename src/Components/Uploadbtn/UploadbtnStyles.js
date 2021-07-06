@@ -1,9 +1,11 @@
+/** @format */
+
 import styled from 'styled-components';
 import { respondTo } from '../../styles/mixins';
 
 export const SearchBtn = styled.button`
 	border: none;
-	padding: 0.5rem 1.6rem;
+	padding: 0.8rem 1.7rem;
 	background: var(--lavender);
 	font-family: inherit;
 	font-weight: var(--semi-medium);

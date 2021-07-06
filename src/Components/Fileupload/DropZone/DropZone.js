@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
@@ -8,7 +10,7 @@ const Dropcontainer = styled.div`
 	color: #000;
 	box-sizing: border-box;
 	height: 75%;
-	margin: 0.2rem;
+	margin: 0.3rem;
 	background: var(--lavenderlight);
 	border-radius: 20px;
 	user-select: none;
@@ -51,7 +53,11 @@ const PreviewContainer = styled(Imagecontainer)`
 export const DropZone = ({ onchange, image, video, url, loading }) => {
 	return (
 		<>
-			<Dropzone onDrop={onchange} accept="image/*" multiple={false} noClick={true}>
+			<Dropzone
+				onDrop={onchange}
+				accept="image/*"
+				multiple={false}
+				noClick={true}>
 				{({ getRootProps, getInputProps, open }) => (
 					<Dropcontainer {...getRootProps()}>
 						<input {...getInputProps()} />

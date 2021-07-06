@@ -1,5 +1,12 @@
+/** @format */
+
 import { useEffect } from 'react';
-import { useAnilistid, useAnimeinfo, useImagehandler, useUrlhandler } from './Hooks/index';
+import {
+	useAnilistid,
+	useAnimeinfo,
+	useImagehandler,
+	useUrlhandler,
+} from './Hooks/index';
 import Fileupload from './Components/Fileupload/Fileupload';
 import Results from './Components/Resultcard/Results';
 import { GlobalStyle } from './styles/GlobalStyle';
@@ -8,9 +15,9 @@ import { Footertext } from './Components/Footer/Footertext';
 
 function App() {
 	useEffect(() => {
-		document.body.style.maxHeight = window.innerHeight + 'px';
+		document.body.style.height = window.innerHeight + 'px';
 		const setheight = () => {
-			document.body.style.maxHeight = window.innerHeight + 'px';
+			document.body.style.height = window.innerHeight + 'px';
 		};
 		window.addEventListener('resize', setheight);
 
@@ -20,7 +27,8 @@ function App() {
 	}, []);
 	const { onChange, image } = useImagehandler(); // Hook that get input image
 	const { urlhandler, url } = useUrlhandler(image);
-	const { fileUpload, anilistid, loading, video, time, episode } = useAnilistid(image, url); //  Hook that fetches anilistid from server using tracemoe api
+	const { fileUpload, anilistid, loading, video, time, episode } =
+		useAnilistid(image, url); //  Hook that fetches anilistid from server using tracemoe api
 	const info = useAnimeinfo(anilistid, image, url); // Hook that fetches animeinfo with anilistid using Anilist api
 	return (
 		<div className="App">
