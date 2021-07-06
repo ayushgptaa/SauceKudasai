@@ -60,7 +60,9 @@ const Results = ({ animeinfo, time, episode }) => {
 						<Title>{title.english}</Title>
 						<Details>
 							<h3>Ep {episode}</h3>
-							<h3>At : {(time / 60).toFixed(2)}</h3>
+							<h3>
+								at {(time / 60).toFixed(2).replace('.', ':')}
+							</h3>
 							<h3>{seasonYear}</h3>
 						</Details>
 						<Summary>

@@ -51,7 +51,7 @@ export const Animeinfo = styled.div`
 	display: grid;
 	grid-template-columns: 120px 1fr;
 	gap: 10px;
-	height: 180px;
+	height: 170px;
 	/* border: 1px solid red; */
 `;
 export const Animetext = styled.div`
