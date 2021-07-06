@@ -1,8 +1,18 @@
+/** @format */
+
 import Uploadbtn from '../Uploadbtn/Uploadbtn';
-import { DropZone } from './DropZone/DropZone';
+import Dropzone from './DropZone/DropZone';
 import { DropArea } from './Fileuploadstyle';
 
-export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loading, video }) => {
+export const Fileupload = ({
+	onchange,
+	urlhandler,
+	url,
+	fileUpload,
+	image,
+	loading,
+	video,
+}) => {
 	return (
 		<DropArea>
 			{/*
@@ -18,7 +28,13 @@ export const Fileupload = ({ onchange, urlhandler, url, fileUpload, image, loadi
 								value={url}
 							/>
 	 */}
-			<DropZone onchange={onchange} image={image} loading={loading} video={video} url={url} />
+			<Dropzone
+				onchange={onchange}
+				image={image}
+				loading={loading}
+				video={video}
+				url={url}
+			/>
 			<Uploadbtn fileupload={fileUpload} />
 		</DropArea>
 	);

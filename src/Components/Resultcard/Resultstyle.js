@@ -1,10 +1,12 @@
+/** @format */
+
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Animecard = styled(motion.div)`
 	position: absolute;
 	bottom: 0;
-	height: 50%;
+	height: 48%;
 	width: 100vw;
 	background: var(--cardbg);
 	border-radius: var(--card-radius);
@@ -79,6 +81,7 @@ export const Summary = styled.div`
 	overflow: hidden;
 
 	& > p {
+		display: none;
 		font-size: 0.85rem;
 		font-weight: var(--regular);
 		letter-spacing: 0.5px;

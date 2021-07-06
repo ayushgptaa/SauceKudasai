@@ -50,7 +50,7 @@ const PreviewContainer = styled(Imagecontainer)`
 		width: 55%;
 	}
 `;
-export const DropZone = ({ onchange, image, video, url, loading }) => {
+const DropZone = ({ onchange, image, video, url, loading }) => {
 	return (
 		<>
 			<Dropzone
@@ -77,3 +77,5 @@ export const DropZone = ({ onchange, image, video, url, loading }) => {
 		</>
 	);
 };
+
+export default DropZone;

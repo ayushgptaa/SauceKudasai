@@ -1,3 +1,5 @@
+/** @format */
+
 // import bannerimg from '../images/101921-GgvvFhlNhzlF.jpg';
 // import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
@@ -25,13 +27,24 @@ const Results = ({ animeinfo, time, episode }) => {
 	// const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
 	if (animeinfo) {
 		console.log(animeinfo);
-		const { bannerImage, coverImage, description, title, seasonYear, externalLinks } =
-			animeinfo;
+		const {
+			bannerImage,
+			coverImage,
+			description,
+			title,
+			seasonYear,
+			externalLinks,
+		} = animeinfo;
 		return (
 			<Animecard
 				initial={{ y: '100%' }}
 				animate={{ y: 0 }}
-				transition={{ duration: 0.35, ease: 'linear', type: 'Tween', delay: 0.2 }}>
+				transition={{
+					duration: 0.35,
+					ease: 'linear',
+					type: 'Tween',
+					delay: 0.2,
+				}}>
 				<Banner>
 					<Closebtn>
 						<IoMdClose color={'black'} size={20} />
@@ -51,12 +64,14 @@ const Results = ({ animeinfo, time, episode }) => {
 							<h3>{seasonYear}</h3>
 						</Details>
 						<Summary>
-							{/* <p>{description}</p> */}
+							<p>{description}</p>
 							<Links>
 								{externalLinks.map(({ id, site, url }) => {
 									return (
 										<li key={id}>
-											<StyledLink href={url} target="_blank">
+											<StyledLink
+												href={url}
+												target="_blank">
 												{site}
 											</StyledLink>
 										</li>

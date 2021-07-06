@@ -1,6 +1,8 @@
+/** @format */
+
 import React, { useEffect, useState } from 'react';
-import { Image, Loadingimg, Uploadimg, Uploadtext, Video } from './PreviewStyles';
-import Upload from '../images/Ei-share-apple.svg';
+import { Image, Loadingimg, Video } from './PreviewStyles';
+import { Uploadinfo } from './Uploadinfo/Uploadinfo';
 
 const Previewimage = ({ image, video, loading, url, click, open }) => {
 	const [preview, setpreview] = useState(null);
@@ -26,14 +28,13 @@ const Previewimage = ({ image, video, loading, url, click, open }) => {
 				loading ? (
 					<Loadingimg src={preview} alt="Loading..."></Loadingimg>
 				) : preview ? (
-					<Image src={preview} alt="Your image" onClick={e => e.stopPropagation()} />
+					<Image
+						src={preview}
+						alt="Your image"
+						onClick={e => e.stopPropagation()}
+					/>
 				) : (
-					<>
-						<Uploadimg src={Upload} alt="Upload" />
-						<Uploadtext>
-							Drop your images, <span onClick={open}> browse </span> or import from
-						</Uploadtext>
-					</>
+					<Uploadinfo open={open} />
 				)
 			) : (
 				<Video autoPlay loop muted src={video}></Video>
