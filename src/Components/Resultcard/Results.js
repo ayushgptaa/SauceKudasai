@@ -25,6 +25,12 @@ import {
 
 const Results = ({ animeinfo, time, episode }) => {
 	// const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
+
+	const truncate = ({ str, num }) => {
+		console.log(str);
+		// if (str.length <= num) return str;
+		// return str.substring(0, num).concat('...');
+	};
 	if (animeinfo) {
 		console.log(animeinfo);
 		const {
@@ -66,7 +72,8 @@ const Results = ({ animeinfo, time, episode }) => {
 							<h3>{seasonYear}</h3>
 						</Details>
 						<Summary>
-							<p>{description}</p>
+							{console.log(description)}
+							<p>{truncate(description, 250)}</p>
 							<Links>
 								{externalLinks.map(({ id, site, url }) => {
 									return (

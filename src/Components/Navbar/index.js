@@ -1,8 +1,10 @@
+/** @format */
+
 import React from 'react';
 import styled from 'styled-components';
 import { IconContext } from 'react-icons';
 import { GoMarkGithub } from 'react-icons/go';
-import { respondTo } from '../../styles/mixins';
+import { respondTo } from 'styles/mixins';
 
 const Navbar = styled.nav`
 	padding: 0.5em 1.5rem;
@@ -45,7 +47,8 @@ const index = () => {
 					href="https://github.com/Ayush6968/whats-the-sauce"
 					target="_blank"
 					rel="noreferrer">
-					<IconContext.Provider value={{ size: '1.4rem', color: '#000000' }}>
+					<IconContext.Provider
+						value={{ size: '1.4rem', color: '#000000' }}>
 						<GoMarkGithub />
 					</IconContext.Provider>
 				</a>

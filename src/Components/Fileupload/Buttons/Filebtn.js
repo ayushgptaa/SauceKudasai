@@ -1,8 +1,10 @@
+/** @format */
+
 import React from 'react';
 import { FiFolderPlus, FiLink2 } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 import styled from 'styled-components';
-import { respondTo } from '../../../styles/mixins';
+import { respondTo } from 'styles/mixins';
 
 const Button = styled.button`
 	border-radius: 50%;
@@ -25,12 +27,14 @@ export const Filebtn = ({ open }) => {
 	return (
 		<>
 			<Button onClick={open}>
-				<IconContext.Provider value={{ size: '1.3rem', color: '#303133' }}>
+				<IconContext.Provider
+					value={{ size: '1.3rem', color: '#303133' }}>
 					<FiFolderPlus />
 				</IconContext.Provider>
 			</Button>
 			<Button>
-				<IconContext.Provider value={{ size: '1.3rem', color: '#303133' }}>
+				<IconContext.Provider
+					value={{ size: '1.3rem', color: '#303133' }}>
 					<FiLink2 />
 				</IconContext.Provider>
 			</Button>

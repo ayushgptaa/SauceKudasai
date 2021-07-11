@@ -3,9 +3,9 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
-import Previewimage from '../../Preview/Previewimage';
-import { Imagecontainer, respondTo } from '../../../styles/mixins';
-import { Filebtn } from '../Buttons/Filebtn';
+import Previewimage from 'Components/Preview/Previewimage';
+import { Imagecontainer, respondTo } from 'styles/mixins';
+import { Filebtn } from 'Components/Fileupload/Buttons/Filebtn';
 const Dropcontainer = styled.div`
 	color: #000;
 	box-sizing: border-box;

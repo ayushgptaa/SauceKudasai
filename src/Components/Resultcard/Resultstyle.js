@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { respondTo } from 'styles/mixins';
 
 export const Animecard = styled(motion.div)`
 	position: absolute;
@@ -86,6 +87,9 @@ export const Summary = styled.div`
 		font-weight: var(--regular);
 		letter-spacing: 0.5px;
 		line-height: 15px;
+		${respondTo.tab`
+			display:block;		
+		`}
 	}
 `;
 
