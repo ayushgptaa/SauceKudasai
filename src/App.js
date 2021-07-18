@@ -29,7 +29,8 @@ function App() {
 	const { urlhandler, url } = useUrlhandler(image);
 	const { fileUpload, anilistid, loading, video, time, episode } =
 		useAnilistid(image, url); //  Hook that fetches anilistid from server using tracemoe api
-	const info = useAnimeinfo(anilistid, image, url); // Hook that fetches animeinfo with anilistid using Anilist api
+	const { animeinfo, setanimeinfo } = useAnimeinfo(anilistid, image, url); // Hook that fetches animeinfo with anilistid using Anilist api
+	// console.log(setanimeinfo);
 	return (
 		<div className="App">
 			<GlobalStyle />
@@ -45,7 +46,12 @@ function App() {
 			/>
 			<Footertext />
 
-			<Results animeinfo={info} time={time} episode={episode} />
+			<Results
+				animeinfo={animeinfo}
+				time={time}
+				episode={episode}
+				setanimeinfo={setanimeinfo}
+			/>
 		</div>
 	);
 }

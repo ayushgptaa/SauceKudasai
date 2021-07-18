@@ -23,7 +23,7 @@ import {
 	Closebtn,
 } from './Resultstyle';
 
-const Results = ({ animeinfo, time, episode }) => {
+const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 	// const links = ['Crunchyroll', 'Funimation', 'Hulu', 'AnimeLab'];
 
 	const truncate = (str, num) => {
@@ -31,7 +31,6 @@ const Results = ({ animeinfo, time, episode }) => {
 		return str.substring(0, num).concat('...');
 	};
 	if (animeinfo) {
-		console.log(animeinfo);
 		const {
 			bannerImage,
 			coverImage,
@@ -52,7 +51,10 @@ const Results = ({ animeinfo, time, episode }) => {
 					delay: 0.2,
 				}}>
 				<Banner>
-					<Closebtn>
+					<Closebtn
+						onClick={() => {
+							setanimeinfo(null);
+						}}>
 						<IoMdClose color={'black'} size={20} />
 					</Closebtn>
 					<Bannerimg src={bannerImage}></Bannerimg>
@@ -74,7 +76,7 @@ const Results = ({ animeinfo, time, episode }) => {
 						<Summary>
 							<p>
 								{description
-									? truncate(description, 200)
+									? truncate(description, 150)
 									: console.log('no des')}
 							</p>
 							<Links>

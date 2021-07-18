@@ -30,7 +30,7 @@ export const Banneroverlay = styled.div`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 2;
 	border-radius: var(--card-radius);
 `;
@@ -42,6 +42,11 @@ export const Cover = styled.div`
 	z-index: 3;
 	position: relative;
 	bottom: 20px;
+	${respondTo.tab`
+	width: 160px;
+	height: 230px;
+	bottom: 70px;
+	`}
 `;
 
 export const Coverimg = styled.img`
@@ -50,26 +55,35 @@ export const Coverimg = styled.img`
 export const Animeinfo = styled.div`
 	padding: 0 1rem;
 	display: grid;
-	grid-template-columns: 120px 1fr;
+	grid-template-columns: auto 1fr;
 	gap: 10px;
 	height: 170px;
-	/* border: 1px solid red; */
+	${respondTo.tab`
+	gap: 20px;
+	`}/* border: 1px solid red; */
 `;
 export const Animetext = styled.div`
-	/* border: 1px solid red; */
-	padding-top: 0.5rem;
+	padding-top: 0.4rem;
 	color: var(--lavender);
 `;
 
 export const Title = styled.h1`
 	font-size: 1.2rem;
 	font-weight: var(--bold);
+	${respondTo.tab`
+	font-size: 1.8rem;
+	`}
 `;
 export const Details = styled.div`
 	margin-top: 0.5rem;
 	font-size: 0.8rem;
 	display: flex;
 	gap: 10px;
+	${respondTo.tab`
+	font-size: 0.7rem;
+	margin-top: 0.2rem;
+	`}
+	font-size: 1.2rem;
 	& > h3 {
 		font-weight: var(--semi-medium);
 	}
@@ -80,10 +94,15 @@ export const Summary = styled.div`
 	grid-template-rows: 80px;
 	margin-top: 0.7rem;
 	overflow: hidden;
+	${respondTo.tab`
+			grid-template-rows: auto;	
+			grid-gap:15px;
+		
+		`}
 
 	& > p {
 		display: none;
-		font-size: 0.85rem;
+		font-size: 0.8rem;
 		font-weight: var(--regular);
 		letter-spacing: 0.5px;
 		line-height: 15px;
@@ -102,11 +121,18 @@ export const Links = styled.div`
 	}
 `;
 export const Moreinfo = styled.div`
-	border-top: 1px solid rgba(255, 255, 255, 0.35);
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
 	padding: 0.9rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	${respondTo.tab`
+		padding: 0.8rem;		
+	`}
+
 	& > span {
 		font-size: 0.7rem;
 	}
@@ -131,6 +157,7 @@ export const Closebtn = styled.div`
 	border-radius: 50%;
 	height: 25px;
 	width: 25px;
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(255, 255, 255, 0.7);
 	cursor: pointer;
+	z-index: 99;
 `;

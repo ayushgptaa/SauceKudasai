@@ -1,3 +1,5 @@
+/** @format */
+
 // This is the Hook for getting Amilistid
 import { useState, useEffect } from 'react';
 import { instance, TRACE_MOE_QUERY } from '../Api/constant';
@@ -28,6 +30,7 @@ export const useAnilistid = (image, url) => {
 		const body = formData;
 		if (image) {
 			setloading(true);
+			setanilistid(null);
 		}
 		try {
 			if (url) {
@@ -53,8 +56,13 @@ export const useAnilistid = (image, url) => {
 			}
 		} catch (error) {
 			setloading(false);
-			if (error.response) return console.log('Something went wrong in the backend', error);
-			if (error.request) return console.log('Due to network issue', error);
+			if (error.response)
+				return console.log(
+					'Something went wrong in the backend',
+					error
+				);
+			if (error.request)
+				return console.log('Due to network issue', error);
 			return console.log('something else happened', error);
 		}
 	};
