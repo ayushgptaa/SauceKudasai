@@ -4,6 +4,7 @@
 // import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
+import { AnimatePresence } from 'framer-motion';
 
 import {
 	Animecard,
@@ -44,6 +45,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 			<Animecard
 				initial={{ y: '100%' }}
 				animate={{ y: 0 }}
+				exit={{ y: '100%' }}
 				transition={{
 					duration: 0.35,
 					ease: 'linear',
@@ -76,8 +78,8 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 						<Summary>
 							<p>
 								{description
-									? truncate(description, 150)
-									: console.log('no des')}
+									? truncate(description, 200)
+									: null}
 							</p>
 							<Links>
 								{externalLinks.map(({ id, site, url }) => {

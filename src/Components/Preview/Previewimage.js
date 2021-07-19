@@ -1,9 +1,9 @@
 /** @format */
 
 import React, { useEffect, useState } from 'react';
+import { Loader } from './loader';
 import { Image, Loadingimg, Video } from './PreviewStyles';
 import { Uploadinfo } from './Uploadinfo/Uploadinfo';
-
 const Previewimage = ({ image, video, loading, url, click, open }) => {
 	const [preview, setpreview] = useState(null);
 
@@ -26,7 +26,10 @@ const Previewimage = ({ image, video, loading, url, click, open }) => {
 		<>
 			{video === null ? (
 				loading ? (
-					<Loadingimg src={preview} alt="Loading..."></Loadingimg>
+					<>
+						<Loadingimg src={preview} alt="Loading..." />
+						<Loader />
+					</>
 				) : preview ? (
 					<Image
 						src={preview}

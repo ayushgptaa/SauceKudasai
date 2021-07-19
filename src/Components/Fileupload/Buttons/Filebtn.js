@@ -20,6 +20,7 @@ const Button = styled.button`
 	`}
 	${respondTo.md`
 		margin: 0rem 0.6rem 0 0;
+		margin-top:1rem;
 	`}
 `;
 

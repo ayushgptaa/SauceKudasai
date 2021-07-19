@@ -11,12 +11,18 @@ export const Animecard = styled(motion.div)`
 	width: 100vw;
 	background: var(--cardbg);
 	border-radius: var(--card-radius);
+	${respondTo.lg`
+	height: 50%;
+		`};
 `;
 
 export const Banner = styled.div`
 	height: 30%;
 	position: relative;
 	border-radius: var(--card-radius);
+	${respondTo.lg`
+	height: 35%;
+		`}
 `;
 export const Bannerimg = styled.img`
 	border-radius: var(--card-radius);
@@ -47,6 +53,12 @@ export const Cover = styled.div`
 	height: 230px;
 	bottom: 70px;
 	`}
+
+	${respondTo.lg`
+	width: 240px;
+	height: 345px;
+	bottom: 114px;
+		`}
 `;
 
 export const Coverimg = styled.img`
@@ -60,7 +72,7 @@ export const Animeinfo = styled.div`
 	height: 170px;
 	${respondTo.tab`
 	gap: 20px;
-	`}/* border: 1px solid red; */
+	`}
 `;
 export const Animetext = styled.div`
 	padding-top: 0.4rem;
@@ -70,20 +82,26 @@ export const Animetext = styled.div`
 export const Title = styled.h1`
 	font-size: 1.2rem;
 	font-weight: var(--bold);
-	${respondTo.tab`
+	${respondTo.md`
 	font-size: 1.8rem;
+	`}
+	${respondTo.lg`
+	font-size: 2.5rem;
 	`}
 `;
 export const Details = styled.div`
 	margin-top: 0.5rem;
-	font-size: 0.8rem;
 	display: flex;
 	gap: 10px;
+	font-size: 0.8rem;
 	${respondTo.tab`
 	font-size: 0.7rem;
 	margin-top: 0.2rem;
 	`}
-	font-size: 1.2rem;
+	${respondTo.lg`
+	font-size: 1rem;
+		gap: 20px;
+	`}
 	& > h3 {
 		font-weight: var(--semi-medium);
 	}
@@ -91,30 +109,38 @@ export const Details = styled.div`
 export const Summary = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 80px;
+	grid-template-rows: auto;
 	margin-top: 0.7rem;
 	overflow: hidden;
 	${respondTo.tab`
-			grid-template-rows: auto;	
 			grid-gap:15px;
-		
-		`}
+	`}
+
+	${respondTo.lg`
+		grid-template-columns: 60% 30%;
+			grid-gap:45px;
+	`}
 
 	& > p {
 		display: none;
 		font-size: 0.8rem;
 		font-weight: var(--regular);
-		letter-spacing: 0.5px;
-		line-height: 15px;
 		${respondTo.tab`
-			display:block;		
+			display:block;	
+		`}
+		${respondTo.lg`
+				font-size: 1.2rem;
+
 		`}
 	}
 `;
 
 export const Links = styled.div`
 	font-size: 0.85rem;
-	justify-self: flex-start;
+	${respondTo.lg`
+	font-size: 1.2rem;
+	justify-self: end;
+		`}
 	& > li {
 		padding-right: 0.6rem;
 		padding-bottom: 0.3rem;
@@ -130,8 +156,13 @@ export const Moreinfo = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	${respondTo.tab`
-		padding: 0.8rem;		
+		padding: 0.8rem;	
 	`}
+	${respondTo.lg`
+		width: calc(100% - 17%);
+		margin-left: 17%;	
+	`}
+
 
 	& > span {
 		font-size: 0.7rem;

@@ -16,7 +16,7 @@ export const Uploadimg = styled.img`
 	`}
 
 	${respondTo.lg`{
-		margin-top: 0.5rem;
+		margin-top: 0.9rem;
 		height: 80px;
 		width: 60px;
 		opacity: 70%;
@@ -40,8 +40,8 @@ export const Uploadtext = styled.div`
 		font-size: 1.3rem;
 	`}
 	${respondTo.lg`
-		font-weight: var(--medium);
-		font-size: 1.2rem;
+		font-weight: var(--semi-medium);
+		font-size: 1.5rem;
 	`}
 `;
 

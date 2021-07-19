@@ -27,7 +27,7 @@ const Navbar = styled.nav`
 	`}
 
 	${respondTo.lg`
-		margin-top: 2.5rem;
+		margin-top: 1.5rem;
 		width: 600px;
 	`}
 `;

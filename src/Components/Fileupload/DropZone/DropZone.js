@@ -14,12 +14,13 @@ const Dropcontainer = styled.div`
 	background: var(--lavenderlight);
 	border-radius: 20px;
 	user-select: none;
+	padding-top: 1rem;
 	${respondTo.md`
 		height: 77%;
 	`}
 
 	${respondTo.lg`
-		height: 80%;
+		height: 75%;
 		border-radius: 25px;
 		margin: 0.8rem 1.5rem;
 		margin-top: 0.2rem;
@@ -30,9 +31,9 @@ const PreviewContainer = styled(Imagecontainer)`
 	height: 130px;
 	width: 210px;
 	margin: auto;
-	padding-top: 1rem;
+	/* padding-top: 1rem; */
+	position: relative;
 	border-radius: calc(var(--radius) / 2);
-	/* border: 1px solid red; */
 	${respondTo.xs`
 		height: 160px;
 		width: 280px;

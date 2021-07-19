@@ -6,7 +6,6 @@ import { instance, ANILIST_QUERY, query } from '../Api/constant';
 
 export const useAnimeinfo = (anilistid, image, url) => {
 	const [animeinfo, setanimeinfo] = useState(null);
-	console.log(anilistid);
 
 	// to remove the anime info card when new image is selected
 	useEffect(() => {

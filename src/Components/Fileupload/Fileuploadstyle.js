@@ -37,14 +37,13 @@ export const DropArea = styled.div`
 		${respondTo.md`
 		height: 380px;
 		width: 550px;
-		
 	`}
-	@media (min-width: 900px) {
+	
+		${respondTo.lg` {
 		margin-top: 30px;
-		height: 420px;
+		height: 400px;
 		width: 720px;
-		padding-bottom: 1.5rem;
-	}
+	`}
 `;
 export const Url = styled.input`
 	margin-top: 1rem;
