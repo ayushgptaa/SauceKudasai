@@ -4,7 +4,7 @@
 // import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
-import { AnimatePresence } from 'framer-motion';
+// import { AnimatePresence } from 'framer-motion';
 
 import {
 	Animecard,

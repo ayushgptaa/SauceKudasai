@@ -11,6 +11,15 @@ export const useAnilistid = (image, url) => {
 	const [time, settime] = useState('');
 	const [episode, setepisode] = useState('');
 
+	// This function is called to setstates
+	const Changestates = (anilist, video, episode, from) => {
+		setanilistid(anilist);
+		setVideo(video);
+		settime(from);
+		setepisode(episode);
+		setloading(false);
+	};
+
 	// Use effect is used to remove video when new image is selected
 	useEffect(() => {
 		if (image) return setVideo(null);
@@ -34,25 +43,13 @@ export const useAnilistid = (image, url) => {
 		}
 		try {
 			if (url) {
-				const { data } = await instance.post(`?url=${url}`, body);
-				const { anilist_id, filename, at, tokenthumb } = data.docs[0];
-				setanilistid(anilist_id);
-				const { config } = await instance.get(
-					`https://media.trace.moe/video/${anilist_id}/${encodeURIComponent(
-						filename
-					)}?t=${at}&token=${tokenthumb}`
-				);
-				setVideo(config.url);
-				setloading(false);
+				const { data } = await instance.post(`?${url}`, body);
+				const { anilist, video, episode, from } = data.result[0];
+				Changestates(anilist, video, episode, from);
 			} else {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
 				const { anilist, video, episode, from } = data.result[0];
-				setanilistid(anilist);
-				setVideo(video);
-				settime(from);
-				setepisode(episode);
-				setloading(false);
-				console.log(data);
+				Changestates(anilist, video, episode, from);
 			}
 		} catch (error) {
 			setloading(false);
