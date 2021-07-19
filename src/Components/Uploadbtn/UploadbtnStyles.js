@@ -11,13 +11,13 @@ export const SearchBtn = styled.button`
 	font-weight: var(--semi-medium);
 	color: #000;
 	border-radius: calc(var(--radius) * 2);
-	margin-top: 0.7rem;
+	margin-top: 0.5rem;
 	letter-spacing: 0;
 	font-size: 1rem;
 	filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.25));
 
 	${respondTo.md`
-		margin-top: 0.2rem;
+		margin-top: 0rem;
 		padding: 0.9rem 2rem;
 	`}
 	${respondTo.lg`

@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { respondTo } from 'styles/mixins';
 
 const Button = styled.button`
+	/* display: grid; */
 	border-radius: 50%;
 	height: 45px;
 	width: 45px;
@@ -19,8 +20,9 @@ const Button = styled.button`
 		margin: 1rem 0.6rem 0 0;
 	`}
 	${respondTo.md`
-		margin: 0rem 0.6rem 0 0;
-		margin-top:1rem;
+		margin: 0.5rem 0.6rem 0 0;
+		height: 40px;
+		width: 40px;
 	`}
 `;
 
@@ -29,13 +31,13 @@ export const Filebtn = ({ open }) => {
 		<>
 			<Button onClick={open}>
 				<IconContext.Provider
-					value={{ size: '1.3rem', color: '#303133' }}>
+					value={{ size: '1.1rem', color: '#303133' }}>
 					<FiFolderPlus />
 				</IconContext.Provider>
 			</Button>
 			<Button>
 				<IconContext.Provider
-					value={{ size: '1.3rem', color: '#303133' }}>
+					value={{ size: '1.1rem', color: '#303133' }}>
 					<FiLink2 />
 				</IconContext.Provider>
 			</Button>

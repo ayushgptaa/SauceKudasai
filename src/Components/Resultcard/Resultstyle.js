@@ -12,7 +12,7 @@ export const Animecard = styled(motion.div)`
 	background: var(--cardbg);
 	border-radius: var(--card-radius);
 	${respondTo.lg`
-	height: 50%;
+	height: 49%;
 		`};
 `;
 

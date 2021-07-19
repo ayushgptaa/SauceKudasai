@@ -14,16 +14,15 @@ const Dropcontainer = styled.div`
 	background: var(--lavenderlight);
 	border-radius: 20px;
 	user-select: none;
-	padding-top: 1rem;
+	padding-top: 1.1rem;
 	${respondTo.md`
 		height: 77%;
 	`}
 
 	${respondTo.lg`
-		height: 75%;
+		height: 78%;
 		border-radius: 25px;
 		margin: 0.8rem 1.5rem;
-		margin-top: 0.2rem;
 	`}
 `;
 
@@ -31,7 +30,6 @@ const PreviewContainer = styled(Imagecontainer)`
 	height: 130px;
 	width: 210px;
 	margin: auto;
-	/* padding-top: 1rem; */
 	position: relative;
 	border-radius: calc(var(--radius) / 2);
 	${respondTo.xs`
@@ -46,10 +44,10 @@ const PreviewContainer = styled(Imagecontainer)`
 		height: 200px;
 		width: 330px;
 	`} 
-	@media (min-width: 900px) {
+	${respondTo.lg`{
 		height: 75%;
-		width: 55%;
-	}
+		width: 45%;
+	`}
 `;
 const DropZone = ({ onchange, image, video, url, loading }) => {
 	return (

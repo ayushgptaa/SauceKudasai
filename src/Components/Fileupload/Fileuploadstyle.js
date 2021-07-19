@@ -41,8 +41,9 @@ export const DropArea = styled.div`
 	
 		${respondTo.lg` {
 		margin-top: 30px;
-		height: 400px;
-		width: 720px;
+		height: 350px;
+		width: 750px;
+		padding:1rem;
 	`}
 `;
 export const Url = styled.input`

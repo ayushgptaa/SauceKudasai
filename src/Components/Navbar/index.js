@@ -28,7 +28,8 @@ const Navbar = styled.nav`
 
 	${respondTo.lg`
 		margin-top: 1.5rem;
-		width: 600px;
+		width: 700px;
+		padding: 0.8rem 2rem;
 	`}
 `;
 
@@ -36,6 +37,10 @@ const Title = styled.h1`
 	font-size: 1rem;
 	font-weight: var(--medium);
 	color: #000;
+
+	${respondTo.lg`
+		font-size: 1.2rem;
+	`}
 `;
 
 const index = () => {
