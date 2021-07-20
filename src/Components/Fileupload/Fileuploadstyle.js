@@ -28,20 +28,21 @@ export const DropArea = styled.div`
 		width: 400px;
 	`}
 	${respondTo.sm`
-		height: 380px;
+		height: 350px;
 		width: 450px;
 		padding:1.7rem;
-		padding-bottom:0;
+		padding-bottom:1rem;
 	`}
 
 		${respondTo.md`
-		height: 380px;
+		height: 350px;
 		width: 550px;
+		padding-bottom:0rem;
 	`}
 	
 		${respondTo.lg` {
 		margin-top: 30px;
-		height: 350px;
+		height: 370px;
 		width: 750px;
 		padding:1rem;
 	`}

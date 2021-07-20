@@ -17,10 +17,11 @@ export const SearchBtn = styled.button`
 	filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.25));
 
 	${respondTo.md`
-		margin-top: 0rem;
+		margin-top: 0.5rem;
 		padding: 0.9rem 2rem;
 	`}
 	${respondTo.lg`
+			margin-top: 0rem;
 		font-weight: var(--medium);
 		font-size: 1.1rem;
 	`}

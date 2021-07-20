@@ -15,8 +15,11 @@ const Dropcontainer = styled.div`
 	border-radius: 20px;
 	user-select: none;
 	padding-top: 1.1rem;
+	${respondTo.sm`
+		height: 80%;
+	`}
 	${respondTo.md`
-		height: 77%;
+		height: 75%;
 	`}
 
 	${respondTo.lg`
@@ -27,8 +30,8 @@ const Dropcontainer = styled.div`
 `;
 
 const PreviewContainer = styled(Imagecontainer)`
-	height: 130px;
-	width: 210px;
+	height: 120px;
+	width: 200px;
 	margin: auto;
 	position: relative;
 	border-radius: calc(var(--radius) / 2);
@@ -37,13 +40,13 @@ const PreviewContainer = styled(Imagecontainer)`
 		width: 280px;
 	`}
 	${respondTo.sm`
-		height: 180px;
-		width: 300px;
+		height: 160px;
+		width: 280px;
 	`} 
-	${respondTo.md`
+	/* ${respondTo.md`
 		height: 200px;
 		width: 330px;
-	`} 
+	`}  */
 	${respondTo.lg`{
 		height: 75%;
 		width: 45%;

@@ -7,10 +7,10 @@ import styled from 'styled-components';
 import { respondTo } from 'styles/mixins';
 
 const Button = styled.button`
-	/* display: grid; */
+	/* display: flex; */
 	border-radius: 50%;
-	height: 45px;
-	width: 45px;
+	height: 40px;
+	width: 40px;
 	border: none;
 	background: var(--lavender);
 	cursor: pointer;
@@ -20,9 +20,7 @@ const Button = styled.button`
 		margin: 1rem 0.6rem 0 0;
 	`}
 	${respondTo.md`
-		margin: 0.5rem 0.6rem 0 0;
-		height: 40px;
-		width: 40px;
+		margin: 0.7rem 0.6rem 0 0;
 	`}
 `;
 
