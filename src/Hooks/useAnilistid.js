@@ -3,6 +3,7 @@
 // This is the Hook for getting Amilistid
 import { useState, useEffect } from 'react';
 import { instance, TRACE_MOE_QUERY } from '../Api/constant';
+import { axios } from 'axios';
 
 export const useAnilistid = (image, url) => {
 	const [anilistid, setanilistid] = useState(null);
@@ -37,13 +38,15 @@ export const useAnilistid = (image, url) => {
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
-		if (image) {
+		if (image || url) {
 			setloading(true);
 			setanilistid(null);
 		}
 		try {
 			if (url) {
-				const { data } = await instance.post(`?${url}`, body);
+				const { data } = await instance.get(
+					`?url=${encodeURIComponent(url)}`
+				);
 				const { anilist, video, episode, from } = data.result[0];
 				Changestates(anilist, video, episode, from);
 			} else {
