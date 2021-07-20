@@ -24,7 +24,7 @@ export const Uploadimg = styled.img`
 `;
 export const Uploadtext = styled.div`
 	margin: 0;
-	font-size: 0==9rem;
+	font-size: 0.9rem;
 	letter-spacing: 0px;
 	font-weight: var(--medium);
 	opacity: 80%;
@@ -41,7 +41,7 @@ export const Uploadtext = styled.div`
 	`}
 	${respondTo.lg`
 		font-weight: var(--semi-medium);
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 	`}
 `;
 

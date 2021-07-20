@@ -47,19 +47,18 @@ export const DropArea = styled.div`
 	`}
 `;
 export const Url = styled.input`
-	margin-top: 1rem;
 	border: none;
+	outline: none;
 	width: 250px;
-	background: #f1880c;
+	background: var(--lavender);
 	padding: 0.7rem 3rem;
-	border: var(--border);
 	font-family: inherit;
-	font-weight: 500;
-	color: #fff;
+	color: #000;
+	border-radius: calc(var(--radius) * 2);
 	&::placeholder {
 		text-align: center;
-		font-weight: 700;
+		font-weight: var(--semi-medium);
 		color: inherit;
-		letter-spacing: 1px;
+		font-size: 1rem;
 	}
 `;

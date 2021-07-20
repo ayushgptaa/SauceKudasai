@@ -49,7 +49,7 @@ const PreviewContainer = styled(Imagecontainer)`
 		width: 45%;
 	`}
 `;
-const DropZone = ({ onchange, image, video, url, loading }) => {
+const DropZone = ({ onchange, image, video, url, loading, toggleurl }) => {
 	return (
 		<>
 			<Dropzone
@@ -69,7 +69,7 @@ const DropZone = ({ onchange, image, video, url, loading }) => {
 								open={open}
 							/>
 						</PreviewContainer>
-						<Filebtn open={open} />
+						<Filebtn open={open} toggleurl={toggleurl} />
 					</Dropcontainer>
 				)}
 			</Dropzone>
