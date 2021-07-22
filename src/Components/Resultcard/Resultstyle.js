@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { respondTo } from 'styles/mixins';
 
 export const Animecard = styled(motion.div)`
+	z-index: 99;
 	position: absolute;
 	bottom: 0;
 	height: 48%;
@@ -36,14 +37,14 @@ export const Banneroverlay = styled.div`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.3);
 	z-index: 2;
 	border-radius: var(--card-radius);
 `;
 
 export const Cover = styled.div`
-	width: 110px;
-	height: 150px;
+	width: 120px;
+	height: 170px;
 	border-radius: 0.2rem;
 	z-index: 3;
 	position: relative;
