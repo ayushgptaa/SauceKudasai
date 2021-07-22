@@ -1,3 +1,5 @@
+/** @format */
+
 import axios from 'axios';
 
 export const TRACE_MOE_QUERY = 'https://api.trace.moe/search';
@@ -23,27 +25,26 @@ export const instance = axios.create({
 // Query data for Anilist GraphQL Api
 export const query = `
 query ($id: Int) {
-  Media (id:$id, type: ANIME) { 
+ Media (id:$id , type: ANIME) { 
+    id
     title {
       english
       native
     }
     description(asHtml:false)
     seasonYear
-    trailer {
-      id
-    }
     coverImage {
       large
-      color
     }
     bannerImage
+    genres
     externalLinks {
       id
       url
       site
     }
     averageScore
+    siteUrl
   }
 }
 

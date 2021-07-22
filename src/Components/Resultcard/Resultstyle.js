@@ -42,12 +42,17 @@ export const Banneroverlay = styled.div`
 `;
 
 export const Cover = styled.div`
-	width: 115px;
-	height: 170px;
+	width: 110px;
+	height: 150px;
 	border-radius: 0.2rem;
 	z-index: 3;
 	position: relative;
 	bottom: 20px;
+
+	${respondTo.sm`
+	width: 140px;
+	height: 200px;
+	`}
 	${respondTo.tab`
 	width: 160px;
 	height: 230px;
@@ -55,21 +60,25 @@ export const Cover = styled.div`
 	`}
 
 	${respondTo.lg`
-	width: 240px;
-	height: 345px;
-	bottom: 114px;
-		`}
+	width: 180px;
+	height: 250px;
+	bottom:85px;
+	`}
+	${respondTo.xl`
+	width: 210px;
+	height: 280px;
+	bottom:90px;
+	`}
 `;
 
 export const Coverimg = styled.img`
 	border-radius: inherit;
 `;
 export const Animeinfo = styled.div`
-	padding: 0 1rem;
+	padding: 0 0.8rem;
 	display: grid;
 	grid-template-columns: auto 1fr;
-	gap: 10px;
-	height: 170px;
+	grid-column-gap: 10px;
 	${respondTo.tab`
 	gap: 20px;
 	`}
@@ -86,14 +95,20 @@ export const Title = styled.h1`
 	font-size: 1.8rem;
 	`}
 	${respondTo.lg`
-	font-size: 2.5rem;
+	font-size: 2.3rem;
 	`}
+`;
+
+export const Info = styled.div`
+	display: flex;
+	/* justify-content: space-between; */
+	align-items: center;
 `;
 export const Details = styled.div`
 	margin-top: 0.5rem;
 	display: flex;
 	gap: 10px;
-	font-size: 0.8rem;
+	font-size: 0.65rem;
 	${respondTo.tab`
 	font-size: 0.7rem;
 	margin-top: 0.2rem;
@@ -101,6 +116,7 @@ export const Details = styled.div`
 	${respondTo.lg`
 	font-size: 1rem;
 		gap: 20px;
+		width:60%;
 	`}
 	& > h3 {
 		font-weight: var(--semi-medium);
@@ -117,8 +133,8 @@ export const Summary = styled.div`
 	`}
 
 	${respondTo.lg`
-		grid-template-columns: 60% 30%;
-			grid-gap:45px;
+		grid-template-columns: 66% 30%;
+		grid-gap:45px;
 	`}
 
 	& > p {
@@ -129,51 +145,67 @@ export const Summary = styled.div`
 			display:block;	
 		`}
 		${respondTo.lg`
-				font-size: 1.2rem;
-
+			font-size: 1rem;
+		`}
+		${respondTo.xl`
+		font-size: 1.3rem;
 		`}
 	}
 `;
-
+export const Genre = styled.div`
+	display: none;
+	width: 30%;
+	${respondTo.xl`
+		// display:block;
+		`};
+`;
 export const Links = styled.div`
 	font-size: 0.85rem;
+	overflow: hidden;
 	${respondTo.lg`
-	font-size: 1.2rem;
-	justify-self: end;
+	font-size: 1rem;
+	justify-self:end;
+	`}
+	${respondTo.xl`
+		font-size: 1.2rem;
 		`}
 	& > li {
 		padding-right: 0.6rem;
 		padding-bottom: 0.3rem;
 	}
 `;
-export const Moreinfo = styled.div`
+export const Resultfooter = styled.div`
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
-	padding: 0.9rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0.7rem 1rem;
+
 	${respondTo.tab`
 		padding: 0.8rem;	
 	`}
 	${respondTo.lg`
-		width: calc(100% - 17%);
-		margin-left: 17%;	
-	`}
-
-
+	padding: 0.6rem 1.5rem;
+		`}
 	& > span {
 		font-size: 0.7rem;
 	}
+`;
 
-	& > div {
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-		font-weight: var(--semi-bold);
-		gap: 6px;
+export const Moreinfo = styled.a`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: var(--semi-medium);
+	gap: 4px;
+	& > span {
+		font-size: 0.7rem;
+		${respondTo.lg`
+		font-size: 1rem;
+		`}
 	}
 `;
 export const StyledLink = styled.a`

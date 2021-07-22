@@ -38,7 +38,7 @@ export const useAnimeinfo = (anilistid, image, url) => {
 		};
 		try {
 			const { data } = await instance.post(ANILIST_QUERY, body);
-
+			console.log(data);
 			setanimeinfo(data.data.Media);
 		} catch (error) {
 			console.log(error);

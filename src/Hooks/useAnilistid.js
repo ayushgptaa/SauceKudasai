@@ -3,7 +3,6 @@
 // This is the Hook for getting Amilistid
 import { useState, useEffect } from 'react';
 import { instance, TRACE_MOE_QUERY } from '../Api/constant';
-import { axios } from 'axios';
 
 export const useAnilistid = (image, url) => {
 	const [anilistid, setanilistid] = useState(null);

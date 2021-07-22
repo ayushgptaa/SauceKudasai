@@ -1,7 +1,5 @@
 /** @format */
 
-// import bannerimg from '../images/101921-GgvvFhlNhzlF.jpg';
-// import coverimg from '../images/bx101921-qSV6zMacSDm4.png';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
 // import { AnimatePresence } from 'framer-motion';
@@ -16,12 +14,15 @@ import {
 	Animeinfo,
 	Animetext,
 	Title,
+	Info,
 	Details,
 	Summary,
 	Links,
+	Resultfooter,
 	Moreinfo,
 	StyledLink,
 	Closebtn,
+	Genre,
 } from './Resultstyle';
 
 const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
@@ -39,6 +40,8 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 			title,
 			seasonYear,
 			externalLinks,
+			siteUrl,
+			genres,
 		} = animeinfo;
 
 		return (
@@ -68,13 +71,20 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 					</Cover>
 					<Animetext>
 						<Title>{title.english}</Title>
-						<Details>
-							<h3>Ep {episode}</h3>
-							<h3>
-								at {(time / 60).toFixed(2).replace('.', ':')}
-							</h3>
-							<h3>{seasonYear}</h3>
-						</Details>
+						<Info>
+							<Details>
+								<h3>Ep {episode}</h3>
+								<h3>
+									at{' '}
+									{(time / 60).toFixed(2).replace('.', ':')}
+								</h3>
+								<h3>{seasonYear}</h3>
+							</Details>
+							<Genre>
+								<p>Genre: {genres.toString()} </p>
+							</Genre>
+						</Info>
+
 						<Summary>
 							<p>
 								{description
@@ -97,19 +107,20 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 						</Summary>
 					</Animetext>
 				</Animeinfo>
-				<Moreinfo>
-					<div>
-						<AiOutlineInfoCircle size={20} />
+				<Resultfooter>
+					<Moreinfo href={siteUrl} target="_blank">
+						<AiOutlineInfoCircle size={15} />
+
 						<span>More Info</span>
-						<IoIosArrowForward size={19} />
-					</div>
+						<IoIosArrowForward size={15} />
+					</Moreinfo>
 					<span>
 						Information by{' '}
 						<StyledLink href="https://anilist.com" target="_blank">
 							Anilist
 						</StyledLink>
 					</span>
-				</Moreinfo>
+				</Resultfooter>
 			</Animecard>
 		);
 
@@ -153,7 +164,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 		// 				</Summary>
 		// 			</Animetext>
 		// 		</Animeinfo>
-		// 		<Moreinfo>
+		// 		<Resultfooter>
 		// 			<div>
 		// 				<AiOutlineInfoCircle size={20} />
 		// 				<span>More Info</span>
@@ -165,7 +176,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 		// 					Anilist
 		// 				</StyledLink>
 		// 			</span>
-		// 		</Moreinfo>
+		// 		</Resultfooter>
 		// 	</Animecard>
 		// );
 	} else return null;
