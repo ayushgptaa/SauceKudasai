@@ -5,7 +5,7 @@ import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 import Previewimage from 'Components/Preview/Previewimage';
 import { Imagecontainer, respondTo } from 'styles/mixins';
-import { Filebtn } from 'Components/Fileupload/Buttons/Filebtn';
+import { Filebtn } from 'Components/Ui/Filebtn';
 import Urlinput from 'Components/Ui/Urlinput';
 
 const Dropcontainer = styled.div`

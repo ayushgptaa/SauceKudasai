@@ -1,6 +1,6 @@
 /** @format */
 
-import Upload from '../../images/Ei-share-apple.svg';
+import Upload from './images/Ei-share-apple.svg';
 import styled from 'styled-components';
 import { respondTo } from '../../../styles/mixins';
 
@@ -50,8 +50,7 @@ export const Uploadinfo = ({ open }) => {
 		<>
 			<Uploadimg src={Upload} alt="Upload" />
 			<Uploadtext>
-				Drop your images, <span onClick={open}> browse </span> or import
-				from
+				Drop your images, <span onClick={open}> browse </span> or import from
 			</Uploadtext>
 		</>
 	);

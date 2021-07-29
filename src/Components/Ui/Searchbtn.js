@@ -2,8 +2,7 @@
 
 import styled from 'styled-components';
 import { respondTo } from '../../styles/mixins';
-
-export const SearchBtn = styled.button`
+const Search = styled.button`
 	border: none;
 	padding: 0.8rem 1.7rem;
 	background: var(--lavender);
@@ -26,3 +25,14 @@ export const SearchBtn = styled.button`
 		font-size: 1.1rem;
 	`}
 `;
+
+const Searchbtn = ({ fileupload }) => {
+	return (
+		<div>
+			<Search onClick={fileupload} type="submit">
+				Search
+			</Search>
+		</div>
+	);
+};
+export default Searchbtn;

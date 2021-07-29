@@ -1,6 +1,6 @@
 /** @format */
 import { useState } from 'react';
-import Uploadbtn from '../Uploadbtn/Uploadbtn';
+import Uploadbtn from '../Ui/Searchbtn';
 import Dropzone from './DropZone/DropZone';
 import { DropArea } from './Fileuploadstyle';
 

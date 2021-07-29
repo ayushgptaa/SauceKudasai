@@ -3,7 +3,7 @@
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
 // import { AnimatePresence } from 'framer-motion';
-import Overlay from '../Overlay/Overlay';
+import Overlay from '../Ui/Overlay';
 import {
 	Animecard,
 	Bannerimg,
@@ -31,16 +31,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 		return str.substring(0, num).concat('...');
 	};
 	if (animeinfo) {
-		const {
-			bannerImage,
-			coverImage,
-			description,
-			title,
-			seasonYear,
-			externalLinks,
-			siteUrl,
-			genres,
-		} = animeinfo;
+		const { bannerImage, coverImage, description, title, seasonYear, externalLinks, siteUrl, genres } = animeinfo;
 
 		return (
 			<>
@@ -79,12 +70,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 							<Info>
 								<Details>
 									<h3>Ep {episode}</h3>
-									<h3>
-										at{' '}
-										{(time / 60)
-											.toFixed(2)
-											.replace('.', ':')}
-									</h3>
+									<h3>at {(time / 60).toFixed(2).replace('.', ':')}</h3>
 									<h3>{seasonYear}</h3>
 								</Details>
 								<Genre>
@@ -93,18 +79,12 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 							</Info>
 
 							<Summary>
-								<p>
-									{description
-										? truncate(description, 200)
-										: null}
-								</p>
+								<p>{description ? truncate(description, 200) : null}</p>
 								<Links>
 									{externalLinks.map(({ id, site, url }) => {
 										return (
 											<li key={id}>
-												<StyledLink
-													href={url}
-													target="_blank">
+												<StyledLink href={url} target="_blank">
 													{site}
 												</StyledLink>
 											</li>
@@ -123,9 +103,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 						</Moreinfo>
 						<span>
 							Information by{' '}
-							<StyledLink
-								href="https://anilist.com"
-								target="_blank">
+							<StyledLink href="https://anilist.com" target="_blank">
 								Anilist
 							</StyledLink>
 						</span>
