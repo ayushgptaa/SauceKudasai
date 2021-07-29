@@ -3,7 +3,6 @@
 import styled from 'styled-components';
 
 const Url = styled.input`
-	position: absolute;
 	border: none;
 	outline: none;
 	width: 250px;
@@ -12,6 +11,7 @@ const Url = styled.input`
 	font-family: inherit;
 	color: #000;
 	border-radius: calc(var(--radius) * 2);
+	margin-top: 1rem;
 	&::placeholder {
 		text-align: center;
 		font-weight: var(--semi-medium);
