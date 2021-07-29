@@ -34,6 +34,7 @@ export const useAnilistid = (image, url) => {
 
 	const fileUpload = async e => {
 		e.stopPropagation();
+		console.log('clicked');
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
@@ -43,9 +44,7 @@ export const useAnilistid = (image, url) => {
 		}
 		try {
 			if (url) {
-				const { data } = await instance.get(
-					`?url=${encodeURIComponent(url)}`
-				);
+				const { data } = await instance.get(`?url=${encodeURIComponent(url)}`);
 				const { anilist, video, episode, from } = data.result[0];
 				Changestates(anilist, video, episode, from);
 			} else {
@@ -55,13 +54,8 @@ export const useAnilistid = (image, url) => {
 			}
 		} catch (error) {
 			setloading(false);
-			if (error.response)
-				return console.log(
-					'Something went wrong in the backend',
-					error
-				);
-			if (error.request)
-				return console.log('Due to network issue', error);
+			if (error.response) return console.log('Something went wrong in the backend', error);
+			if (error.request) return console.log('Due to network issue', error);
 			return console.log('something else happened', error);
 		}
 	};

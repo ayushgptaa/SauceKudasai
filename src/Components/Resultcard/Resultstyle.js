@@ -12,9 +12,9 @@ export const Animecard = styled(motion.div)`
 	width: 100vw;
 	background: var(--cardbg);
 	border-radius: var(--card-radius);
-	${respondTo.lg`
+	/* ${respondTo.lg`
 	height: 49%;
-		`};
+		`}; */
 `;
 
 export const Banner = styled.div`

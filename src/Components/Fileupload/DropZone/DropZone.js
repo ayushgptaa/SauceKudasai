@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import Previewimage from 'Components/Preview/Previewimage';
 import { Imagecontainer, respondTo } from 'styles/mixins';
 import { Filebtn } from 'Components/Fileupload/Buttons/Filebtn';
+import Urlinput from 'Components/Ui/Urlinput';
+
 const Dropcontainer = styled.div`
 	color: #000;
 	box-sizing: border-box;
@@ -52,26 +54,17 @@ const PreviewContainer = styled(Imagecontainer)`
 		width: 45%;
 	`}
 `;
-const DropZone = ({ onchange, image, video, url, loading, toggleurl }) => {
+const DropZone = ({ onchange, image, video, url, loading, urlhandler, showurl, toggleurl }) => {
 	return (
 		<>
-			<Dropzone
-				onDrop={onchange}
-				accept="image/*"
-				multiple={false}
-				noClick={true}>
+			<Dropzone onDrop={onchange} accept="image/*" multiple={false} noClick={true}>
 				{({ getRootProps, getInputProps, open }) => (
 					<Dropcontainer {...getRootProps()}>
 						<input {...getInputProps()} />
 						<PreviewContainer>
-							<Previewimage
-								image={image}
-								loading={loading}
-								video={video}
-								url={url}
-								open={open}
-							/>
+							<Previewimage image={image} loading={loading} video={video} url={url} open={open} />
 						</PreviewContainer>
+						{showurl && <Urlinput url={url} toggleurl={toggleurl} urlhandler={urlhandler} />}
 						<Filebtn open={open} toggleurl={toggleurl} />
 					</Dropcontainer>
 				)}

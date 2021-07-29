@@ -12,8 +12,7 @@ export const DropArea = styled.div`
 	margin: 1.5em auto;
 	text-align: center;
 	background: #ffffff;
-	box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25),
-		inset 0px 1px 5px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25), inset 0px 1px 5px rgba(0, 0, 0, 0.25);
 	border-radius: 35px;
 
 	& p {
@@ -46,20 +45,4 @@ export const DropArea = styled.div`
 		width: 750px;
 		padding:1rem;
 	`}
-`;
-export const Url = styled.input`
-	border: none;
-	outline: none;
-	width: 250px;
-	background: var(--lavender);
-	padding: 0.7rem 3rem;
-	font-family: inherit;
-	color: #000;
-	border-radius: calc(var(--radius) * 2);
-	&::placeholder {
-		text-align: center;
-		font-weight: var(--semi-medium);
-		color: inherit;
-		font-size: 1rem;
-	}
 `;
