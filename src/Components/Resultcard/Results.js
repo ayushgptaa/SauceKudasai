@@ -58,8 +58,12 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 							}}>
 							<IoMdClose color={'black'} size={20} />
 						</Closebtn>
-						<Bannerimg src={bannerImage}></Bannerimg>
-						<Banneroverlay></Banneroverlay>
+						{bannerImage ? (
+							<>
+								<Bannerimg src={bannerImage}></Bannerimg>
+								<Banneroverlay></Banneroverlay>{' '}
+							</>
+						) : null}
 					</Banner>
 					<Animeinfo>
 						<Cover>
@@ -79,7 +83,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 							</Info>
 
 							<Summary>
-								<p>{description ? truncate(description, 200) : null}</p>
+								<p>{description ? truncate(description, 250) : null}</p>
 								<Links>
 									{externalLinks.map(({ id, site, url }) => {
 										return (
@@ -93,21 +97,22 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 								</Links>
 							</Summary>
 						</Animetext>
-					</Animeinfo>
-					<Resultfooter>
-						<Moreinfo href={siteUrl} target="_blank">
-							<AiOutlineInfoCircle size={15} />
 
-							<span>More Info</span>
-							<IoIosArrowForward size={15} />
-						</Moreinfo>
-						<span>
-							Information by{' '}
-							<StyledLink href="https://anilist.com" target="_blank">
-								Anilist
-							</StyledLink>
-						</span>
-					</Resultfooter>
+						<Resultfooter>
+							<Moreinfo href={siteUrl} target="_blank">
+								<AiOutlineInfoCircle size={15} />
+
+								<span>More Info</span>
+								<IoIosArrowForward size={15} />
+							</Moreinfo>
+							<span>
+								Information by{' '}
+								<StyledLink href="https://anilist.com" target="_blank">
+									Anilist
+								</StyledLink>
+							</span>
+						</Resultfooter>
+					</Animeinfo>
 				</Animecard>
 			</>
 		);

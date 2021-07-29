@@ -16,8 +16,7 @@ export const GlobalStyle = styled.createGlobalStyle`
 		--border: 1.5px solid #fff;
 		--radius: 0.9rem;
 		--card-radius: 15px 15px 0px 0px;
-		--box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25),
-			inset 0px 1px 5px rgba(0, 0, 0, 0.25);
+		--box-shadow: 0px 5px 29px -4px rgba(0, 0, 0, 0.25), inset 0px 1px 5px rgba(0, 0, 0, 0.25);
 
 		/* Font Weights */
 		--regular: 400;

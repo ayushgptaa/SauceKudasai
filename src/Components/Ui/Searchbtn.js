@@ -14,6 +14,7 @@ const Search = styled.button`
 	letter-spacing: 0;
 	font-size: 1rem;
 	filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.25));
+	cursor: ${props => (props.image || props.url ? 'pointer' : 'not-allowed')};
 
 	${respondTo.md`
 		margin-top: 0.5rem;
@@ -26,10 +27,10 @@ const Search = styled.button`
 	`}
 `;
 
-const Searchbtn = ({ fileupload }) => {
+const Searchbtn = ({ fileupload, image, url }) => {
 	return (
 		<div>
-			<Search onClick={fileupload} type="submit">
+			<Search onClick={fileupload} type="submit" image={image} url={url}>
 				Search
 			</Search>
 		</div>

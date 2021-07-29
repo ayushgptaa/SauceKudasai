@@ -18,6 +18,7 @@ export const Animecard = styled(motion.div)`
 `;
 
 export const Banner = styled.div`
+	background-color: var(--cardbg);
 	height: 30%;
 	position: relative;
 	border-radius: var(--card-radius);
@@ -27,6 +28,7 @@ export const Banner = styled.div`
 `;
 export const Bannerimg = styled.img`
 	border-radius: var(--card-radius);
+	background-color: var(--cardbg);
 `;
 
 export const Banneroverlay = styled.div`
@@ -57,7 +59,7 @@ export const Cover = styled.div`
 	${respondTo.tab`
 	width: 160px;
 	height: 230px;
-	bottom: 70px;
+	bottom: 50px;
 	`}
 
 	${respondTo.lg`
@@ -67,7 +69,7 @@ export const Cover = styled.div`
 	`}
 	${respondTo.xl`
 	width: 210px;
-	height: 280px;
+	height: 270px;
 	bottom:90px;
 	`}
 `;
@@ -149,7 +151,7 @@ export const Summary = styled.div`
 			font-size: 1rem;
 		`}
 		${respondTo.xl`
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 		`}
 	}
 `;
@@ -165,10 +167,9 @@ export const Links = styled.div`
 	overflow: hidden;
 	${respondTo.lg`
 	font-size: 1rem;
-	justify-self:end;
 	`}
 	${respondTo.xl`
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		`}
 	& > li {
 		padding-right: 0.6rem;
@@ -178,6 +179,7 @@ export const Links = styled.div`
 export const Resultfooter = styled.div`
 	position: fixed;
 	bottom: 0;
+	left: 0;
 	width: 100%;
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
 	display: flex;
