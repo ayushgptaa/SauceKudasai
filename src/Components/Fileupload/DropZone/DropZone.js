@@ -64,11 +64,14 @@ const DropZone = ({ onchange, image, video, url, loading, urlhandler, showurl, t
 						<PreviewContainer>
 							<Previewimage image={image} loading={loading} video={video} url={url} open={open} />
 						</PreviewContainer>
-						{showurl ? (
-							<Urlinput url={url} toggleurl={toggleurl} urlhandler={urlhandler} />
-						) : (
-							<Filebtn open={open} toggleurl={toggleurl} showurl={showurl} />
-						)}
+						<Urlinput
+							url={url}
+							toggleurl={toggleurl}
+							urlhandler={urlhandler}
+							showurl={showurl}
+							open={open}
+						/>
+						{/* <Filebtn open={open} toggleurl={toggleurl} showurl={showurl} /> */}
 					</Dropcontainer>
 				)}
 			</Dropzone>

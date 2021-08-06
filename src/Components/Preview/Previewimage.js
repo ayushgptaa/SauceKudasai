@@ -2,12 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { Loader } from 'Components/Ui/loader';
-import { Image, Loadingimg, Video } from './PreviewStyles';
+import { Image, Loadingimg, Video, Mutebtn } from './PreviewStyles';
 import { Uploadinfo } from 'Components/Ui/Uploadinfo/Uploadinfo';
 
 const Previewimage = ({ image, video, loading, url, click, open }) => {
 	const [preview, setpreview] = useState(null);
-
 	// This is use to set preview to the image selected by the user
 	useEffect(() => {
 		if (image) return setpreview(URL.createObjectURL(image));
@@ -37,7 +36,9 @@ const Previewimage = ({ image, video, loading, url, click, open }) => {
 					<Uploadinfo open={open} />
 				)
 			) : (
-				<Video autoPlay loop muted src={video}></Video>
+				<>
+					<Video autoPlay loop muted={true} src={video}></Video>
+				</>
 			)}
 		</>
 	);

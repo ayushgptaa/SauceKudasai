@@ -1,17 +1,21 @@
 /** @format */
 
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
+import { Filebtn } from 'Components/Ui/Filebtn';
 
-const Url = styled.input`
+const Url = styled(motion.input)`
 	border: none;
 	outline: none;
-	width: 250px;
+	/* width: 250px; */
 	background: var(--lavender);
-	padding: 0.7rem 3rem;
+	padding: 0rem 3rem;
+	height: 40px;
 	font-family: inherit;
 	color: #000;
 	border-radius: calc(var(--radius) * 2);
-	margin-top: 1rem;
+	margin-top: 0.8rem;
 	&::placeholder {
 		text-align: center;
 		font-weight: var(--semi-medium);
@@ -20,21 +24,42 @@ const Url = styled.input`
 	}
 `;
 
-const Urlinput = ({ url, toggleurl, urlhandler }) => {
+const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 	return (
 		<>
-			<Url
-				onClick={e => e.stopPropagation()}
-				onBlur={toggleurl}
-				type="url"
-				name="url"
-				id="url"
-				placeholder="Paste image or url"
-				pattern="https://.*"
-				autoComplete="off"
-				onChange={urlhandler}
-				value={url}
-			/>
+			<AnimatePresence>
+				{showurl ? (
+					<Url
+						onClick={e => e.stopPropagation()}
+						onBlur={toggleurl}
+						type="url"
+						name="url"
+						id="url"
+						placeholder="Paste image or url"
+						pattern="https://.*"
+						autoComplete="off"
+						onChange={urlhandler}
+						value={url}
+						initial={{ width: 0 }}
+						animate={{ width: '250px' }}
+						exit={{
+							width: 0,
+							padding: 0,
+							transition: {
+								duration: 1,
+								ease: 'easeInOut',
+							},
+						}}
+						transition={{
+							duration: 1,
+							ease: 'easeInOut',
+							type: 'spring',
+						}}
+					/>
+				) : (
+					<Filebtn open={open} toggleurl={toggleurl} />
+				)}
+			</AnimatePresence>
 		</>
 	);
 };

@@ -12,3 +12,8 @@ export const Loadingimg = styled(Image)`
 export const Video = styled.video`
 	border-radius: calc(var(--radius) / 2);
 `;
+
+export const Mutebtn = styled.button`
+	position: absolute;
+	top: -100px;
+`;

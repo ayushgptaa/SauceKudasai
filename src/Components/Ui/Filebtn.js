@@ -24,7 +24,7 @@ const Button = styled.button`
 	`}
 `;
 
-export const Filebtn = ({ open, toggleurl, showurl }) => {
+export const Filebtn = ({ open, toggleurl }) => {
 	return (
 		<>
 			<Button onClick={open}>

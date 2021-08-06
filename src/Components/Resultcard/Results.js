@@ -46,9 +46,9 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 					animate={{ y: 0 }}
 					exit={{ y: '100%' }}
 					transition={{
-						duration: 0.35,
-						ease: 'linear',
-						type: 'Tween',
+						duration: 0.6,
+						ease: 'easeInOut',
+						type: 'linear',
 						delay: 0.2,
 					}}>
 					<Banner>
