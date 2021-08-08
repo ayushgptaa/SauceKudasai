@@ -14,6 +14,7 @@ const defaultstate = {
 	loading: false,
 	animeinfo: null,
 	animeinfoexits: false,
+	cardhandler: () => {},
 };
 
 export const Context = createContext(defaultstate);
@@ -25,11 +26,16 @@ export const ContextProvider = props => {
 	const [animeinfoexits, setanimeinfoexits] = useState(false);
 	const [animeinfo, setanimeinfo] = useState({});
 
-	const Changestates = video => {
-		setvideo(video);
+	const Changestates = () => {
+		seturl('');
 		setloading(false);
+		setvideo(null);
+		setanimeinfo({});
+		setanimeinfoexits(false);
 	};
-
+	const cardhandler = () => {
+		setanimeinfoexits(false);
+	};
 	const fetchdata = async (anilistid, episode, from) => {
 		var variables = {
 			id: anilistid,
@@ -52,18 +58,19 @@ export const ContextProvider = props => {
 		}
 	};
 	const imagehandler = async acceptedfile => {
-		// seturl(null);
-		// setloading(false);
-		// setvideo(null);
+		Changestates();
 		const file = acceptedfile[0];
 		if (file && file.type.substr(0, 5) === 'image') return setimage(file);
 	};
 	const urlhandler = async e => {
+		Changestates();
 		const url = e.target.value;
 		if (url) return seturl(url);
 		return seturl('');
 	};
 	const fileUpload = async e => {
+		seturl('');
+		setloading(false);
 		e.stopPropagation();
 		let formData = new FormData();
 		formData.set('image', image);
@@ -74,10 +81,15 @@ export const ContextProvider = props => {
 		try {
 			if (url) {
 				const { data } = await instance.get(`?url=${encodeURIComponent(url)}`);
+				const { anilist, video, episode, from } = data.result[0];
+				setvideo(video);
+				setloading(false);
+				fetchdata(anilist, episode, from);
 			} else {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
 				const { anilist, video, episode, from } = data.result[0];
-				Changestates(anilist, video);
+				setvideo(video);
+				setloading(false);
 				fetchdata(anilist, episode, from);
 			}
 		} catch (error) {
@@ -98,6 +110,7 @@ export const ContextProvider = props => {
 		video: video,
 		animeinfo: animeinfo,
 		animeinfoexits: animeinfoexits,
+		cardhandler: cardhandler,
 	};
 
 	return <Context.Provider value={createContext}>{props.children}</Context.Provider>;

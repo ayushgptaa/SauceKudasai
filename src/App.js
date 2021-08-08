@@ -1,6 +1,6 @@
 /** @format */
 
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import Fileupload from 'Components/Fileupload/Fileupload';
 import Results from 'Components/Resultcard/Results';
 import { GlobalStyle } from 'styles/GlobalStyle';

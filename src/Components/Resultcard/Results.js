@@ -22,12 +22,11 @@ import {
 	Moreinfo,
 	StyledLink,
 	Closebtn,
-	Genre,
+	// Genre,
 } from './Resultstyle';
 
 const Results = () => {
 	const ctx = useContext(Context);
-	console.log(ctx);
 	const truncate = (str, num) => {
 		if (str.length <= num) return str;
 		return str.substring(0, num).concat('...');
@@ -52,7 +51,7 @@ const Results = () => {
 					<Banner>
 						<Closebtn
 							onClick={() => {
-								console.log('working');
+								ctx.cardhandler();
 							}}>
 							<IoMdClose color={'black'} size={20} />
 						</Closebtn>
