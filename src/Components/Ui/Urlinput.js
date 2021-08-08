@@ -27,9 +27,10 @@ const Url = styled(motion.input)`
 const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 	return (
 		<>
-			<AnimatePresence>
+			<AnimatePresence exitBeforeEnter={true}>
 				{showurl ? (
 					<Url
+						key="url"
 						onClick={e => e.stopPropagation()}
 						onBlur={toggleurl}
 						type="url"
@@ -57,7 +58,7 @@ const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 						}}
 					/>
 				) : (
-					<Filebtn open={open} toggleurl={toggleurl} />
+					<Filebtn open={open} toggleurl={toggleurl} key="Filebtn" />
 				)}
 			</AnimatePresence>
 		</>
