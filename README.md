@@ -43,7 +43,7 @@ npm run getsauce
 -   Twitter: [@ayushgptaa](https://twitter.com/ayushgptaa)
 -   Github: [@ayushgptaa](https://github.com/ayushgptaa)
 
-## Show your support
+## Please Show you support to the origional Creater of the API 🙏
 
 ---
 
