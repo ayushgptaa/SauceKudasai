@@ -1,6 +1,6 @@
 <!-- @format -->
 
-<h1 align="center"> SauceKudasai  👋</h1>
+<h1 align="center"> SauceKudasai ✨</h1>
 
 ![SauceKudasai ](public/SauceKudasai.png)
 
@@ -21,7 +21,7 @@
 
 ## Requirements 🧰
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+For development, you will only need Node.js and a node global package, npm or Yarn, installed in your environement.
 
 ## Install 📦
 
@@ -32,7 +32,7 @@ npm install
 ## Dev Server 🚀
 
 ```sh
-npm run get sauce
+npm run getsauce
 ```
 
 ## Author
