@@ -46,7 +46,6 @@ export const ContextProvider = props => {
 		};
 		try {
 			const { data } = await instance.post(ANILIST_QUERY, body);
-			console.log(data);
 			setanimeinfo({
 				episode: episode,
 				time: from,
