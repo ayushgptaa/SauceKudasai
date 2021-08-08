@@ -1,8 +1,8 @@
 /** @format */
-
+import { useContext } from 'react';
+import { Context } from 'store/Context-Provider';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
-// import { AnimatePresence } from 'framer-motion';
 import Overlay from '../Ui/Overlay';
 import {
 	Animecard,
@@ -25,22 +25,20 @@ import {
 	Genre,
 } from './Resultstyle';
 
-const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
+const Results = () => {
+	const ctx = useContext(Context);
+	console.log(ctx);
 	const truncate = (str, num) => {
 		if (str.length <= num) return str;
 		return str.substring(0, num).concat('...');
 	};
-	if (animeinfo) {
-		const { bannerImage, coverImage, description, title, seasonYear, externalLinks, siteUrl, genres } = animeinfo;
+	if (ctx.animeinfoexits) {
+		const { episode, time, bannerImage, coverImage, description, externalLinks, seasonYear, title, siteUrl } =
+			ctx.animeinfo;
 
 		return (
 			<>
-				<Overlay
-					onClick={() => {
-						console.log('working???');
-						setanimeinfo(null);
-					}}
-				/>
+				<Overlay />
 				<Animecard
 					initial={{ y: '100%' }}
 					animate={{ y: 0 }}
@@ -54,7 +52,7 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 					<Banner>
 						<Closebtn
 							onClick={() => {
-								setanimeinfo(null);
+								console.log('working');
 							}}>
 							<IoMdClose color={'black'} size={20} />
 						</Closebtn>
@@ -77,9 +75,9 @@ const Results = ({ animeinfo, time, episode, setanimeinfo }) => {
 									<h3>at {(time / 60).toFixed(2).replace('.', ':')}</h3>
 									<h3>{seasonYear}</h3>
 								</Details>
-								<Genre>
+								{/* <Genre>
 									<p>Genre: {genres.toString()} </p>
-								</Genre>
+								</Genre> */}
 							</Info>
 
 							<Summary>

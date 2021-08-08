@@ -4,7 +4,7 @@ import Searchbtn from '../Ui/Searchbtn';
 import Dropzone from './DropZone/DropZone';
 import { DropArea } from './Fileuploadstyle';
 
-export const Fileupload = ({ loading, video }) => {
+export const Fileupload = () => {
 	const [showurl, setShowurl] = useState(false);
 	const toggleurl = () => {
 		setShowurl(prevstate => !prevstate);
@@ -12,7 +12,7 @@ export const Fileupload = ({ loading, video }) => {
 
 	return (
 		<DropArea>
-			<Dropzone loading={loading} video={video} showurl={showurl} toggleurl={toggleurl} />
+			<Dropzone showurl={showurl} toggleurl={toggleurl} />
 			<Searchbtn />
 		</DropArea>
 	);

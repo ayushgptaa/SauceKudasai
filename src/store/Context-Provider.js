@@ -1,7 +1,7 @@
 /** @format */
 
-import { createContext, useState, useReducer } from 'react';
-import { instance, TRACE_MOE_QUERY } from '../Api/constant';
+import { createContext, useState } from 'react';
+import { instance, TRACE_MOE_QUERY, ANILIST_QUERY, query } from '../Api/constant';
 import React from 'react';
 
 const defaultstate = {
@@ -10,58 +10,56 @@ const defaultstate = {
 	urlhandler: () => {},
 	url: null,
 	fileUpload: () => {},
-};
-
-const initialState = {
-	anilistid: null,
 	video: null,
-	time: null,
-	episode: null,
-};
-
-const reducerfn = (state, action) => {
-	if (action.type === 'BTN_CLICKED') {
-		const { anilist, video, episode, from } = action.animeinfo;
-		return {
-			anilistid: anilist,
-			video: video,
-			time: from,
-			episode: episode,
-		};
-	}
-	if (action.type === 'INITIAL_STATE') {
-		return initialState;
-	}
+	loading: false,
+	animeinfo: null,
+	animeinfoexits: false,
 };
 
 export const Context = createContext(defaultstate);
 export const ContextProvider = props => {
-	const [animeinfo, dispatch] = useReducer(reducerfn, initialState);
-
 	const [image, setimage] = useState(null);
-	const [url, seturl] = useState(null);
+	const [url, seturl] = useState('');
+	const [video, setvideo] = useState(null);
 	const [loading, setloading] = useState(false);
+	const [animeinfoexits, setanimeinfoexits] = useState(false);
+	const [animeinfo, setanimeinfo] = useState({});
 
-	// if user selects an image or if the image exits the value of url is set to empty
-	// useEffect(() => {
-	// 	if (image) {
-	// 		return {};
-	// 	}
-	// }, [image]);
-
-	const imagehandler = async acceptedfile => {
-		seturl(null);
+	const Changestates = video => {
+		setvideo(video);
 		setloading(false);
-		dispatch({ type: 'INITIAL_STATE' });
+	};
+
+	const fetchdata = async (anilistid, episode, from) => {
+		var variables = {
+			id: anilistid,
+		};
+		const body = {
+			query: query,
+			variables: variables,
+		};
+		try {
+			const { data } = await instance.post(ANILIST_QUERY, body);
+			console.log(data);
+			setanimeinfo({
+				episode: episode,
+				time: from,
+				...data.data.Media,
+			});
+			setanimeinfoexits(true);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	const imagehandler = async acceptedfile => {
+		// seturl(null);
+		// setloading(false);
+		// setvideo(null);
 		const file = acceptedfile[0];
 		if (file && file.type.substr(0, 5) === 'image') return setimage(file);
 	};
 	const urlhandler = async e => {
-		seturl(null);
-		setloading(false);
-		dispatch({ type: 'INITIAL_STATE' });
 		const url = e.target.value;
-		console.log(url);
 		if (url) return seturl(url);
 		return seturl('');
 	};
@@ -76,10 +74,11 @@ export const ContextProvider = props => {
 		try {
 			if (url) {
 				const { data } = await instance.get(`?url=${encodeURIComponent(url)}`);
-				dispatch({ type: 'BTN_CLICKED', animeinfo: data.result[0] });
 			} else {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
-				dispatch({ type: 'BTN_CLICKED', animeinfo: data.result[0] });
+				const { anilist, video, episode, from } = data.result[0];
+				Changestates(anilist, video);
+				fetchdata(anilist, episode, from);
 			}
 		} catch (error) {
 			setloading(false);
@@ -96,7 +95,10 @@ export const ContextProvider = props => {
 		url: url,
 		fileUpload: fileUpload,
 		loading: loading,
+		video: video,
 		animeinfo: animeinfo,
+		animeinfoexits: animeinfoexits,
 	};
+
 	return <Context.Provider value={createContext}>{props.children}</Context.Provider>;
 };

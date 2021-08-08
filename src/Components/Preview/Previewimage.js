@@ -1,11 +1,13 @@
 /** @format */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Loader } from 'Components/Ui/loader';
-import { Image, Loadingimg, Video, Mutebtn } from './PreviewStyles';
+import { Image, Loadingimg, Video } from './PreviewStyles';
 import { Uploadinfo } from 'Components/Ui/Uploadinfo/Uploadinfo';
-
-const Previewimage = ({ image, video, loading, url, click, open }) => {
+import { Context } from 'store/Context-Provider';
+const Previewimage = ({ click, open }) => {
+	const ctx = useContext(Context);
+	const { image, url, loading, video } = ctx;
 	const [preview, setpreview] = useState(null);
 	// This is use to set preview to the image selected by the user
 	useEffect(() => {

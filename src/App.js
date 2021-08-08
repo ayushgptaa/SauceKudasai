@@ -1,17 +1,13 @@
 /** @format */
 
 import { useEffect, useContext } from 'react';
-import { useAnilistid, useAnimeinfo } from 'Hooks/index';
 import Fileupload from 'Components/Fileupload/Fileupload';
 import Results from 'Components/Resultcard/Results';
 import { GlobalStyle } from 'styles/GlobalStyle';
 import Navbar from 'Components/Navbar';
 import { Footertext } from 'Components/Footer/Footertext';
-import { Context } from 'store/Context-Provider';
 
 function App() {
-	const ctx = useContext(Context);
-	const { loading, animeinfo } = ctx;
 	useEffect(() => {
 		document.body.style.height = window.innerHeight + 'px';
 		const setheight = () => {
@@ -24,17 +20,13 @@ function App() {
 		};
 	}, []);
 
-	// const {  anilistid, loading, video, time, episode } = useAnilistid(ctx.image, url); //  Hook that fetches anilistid from server using tracemoe api
-	// const { animeinfo, setanimeinfo } = useAnimeinfo(anilistid, ctx.image, url); // Hook that fetches animeinfo with anilistid using Anilist api
-	console.log(animeinfo);
-
 	return (
 		<div className="App">
 			<GlobalStyle />
 			<Navbar />
-			<Fileupload loading={loading} video={animeinfo.video} />
+			<Fileupload />
 			<Footertext />
-			{/* <Results animeinfo={animeinfo} time={time} episode={episode} setanimeinfo={setanimeinfo} /> */}
+			<Results />
 		</div>
 	);
 }

@@ -55,9 +55,9 @@ const PreviewContainer = styled(Imagecontainer)`
 		width: 45%;
 	`}
 `;
-const DropZone = ({ video, loading, showurl, toggleurl }) => {
+const DropZone = ({ showurl, toggleurl }) => {
 	const ctx = useContext(Context);
-	const { imagehandler, image, urlhandler, url } = ctx;
+	const { imagehandler, urlhandler, url } = ctx;
 	return (
 		<>
 			<Dropzone onDrop={imagehandler} accept="image/*" multiple={false} noClick={true}>
@@ -65,7 +65,7 @@ const DropZone = ({ video, loading, showurl, toggleurl }) => {
 					<Dropcontainer {...getRootProps()}>
 						<input {...getInputProps()} />
 						<PreviewContainer>
-							<Previewimage image={image} loading={loading} video={video} url={url} open={open} />
+							<Previewimage open={open} />
 						</PreviewContainer>
 						<Urlinput
 							url={url}
