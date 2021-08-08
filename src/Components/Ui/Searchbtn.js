@@ -1,7 +1,8 @@
 /** @format */
-
+import { useContext } from 'react';
 import styled from 'styled-components';
 import { respondTo } from '../../styles/mixins';
+import { Context } from 'store/Context-Provider';
 const Search = styled.button`
 	border: none;
 	padding: 0.8rem 1.7rem;
@@ -27,10 +28,12 @@ const Search = styled.button`
 	`}
 `;
 
-const Searchbtn = ({ fileupload, image, url }) => {
+const Searchbtn = () => {
+	const ctx = useContext(Context);
+	const { image, url, fileUpload } = ctx;
 	return (
 		<div>
-			<Search onClick={fileupload} type="submit">
+			<Search onClick={fileUpload} type="submit" image={image} url={url}>
 				Search
 			</Search>
 		</div>

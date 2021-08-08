@@ -5,7 +5,7 @@ import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 import Previewimage from 'Components/Preview/Previewimage';
 import { Imagecontainer, respondTo } from 'styles/mixins';
-import { Filebtn } from 'Components/Ui/Filebtn';
+// import { Filebtn } from 'Components/Ui/Filebtn';
 import Urlinput from 'Components/Ui/Urlinput';
 import { Context } from 'store/Context-Provider';
 
@@ -57,10 +57,10 @@ const PreviewContainer = styled(Imagecontainer)`
 `;
 const DropZone = ({ video, loading, showurl, toggleurl }) => {
 	const ctx = useContext(Context);
-	const { onChange, image, urlhandler, url } = ctx;
+	const { imagehandler, image, urlhandler, url } = ctx;
 	return (
 		<>
-			<Dropzone onDrop={onChange} accept="image/*" multiple={false} noClick={true}>
+			<Dropzone onDrop={imagehandler} accept="image/*" multiple={false} noClick={true}>
 				{({ getRootProps, getInputProps, open }) => (
 					<Dropcontainer {...getRootProps()}>
 						<input {...getInputProps()} />
