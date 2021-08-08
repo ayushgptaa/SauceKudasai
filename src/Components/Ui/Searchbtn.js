@@ -30,7 +30,7 @@ const Search = styled.button`
 const Searchbtn = ({ fileupload, image, url }) => {
 	return (
 		<div>
-			<Search onClick={fileupload} type="submit" image={image} url={url}>
+			<Search onClick={fileupload} type="submit">
 				Search
 			</Search>
 		</div>

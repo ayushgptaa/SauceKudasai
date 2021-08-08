@@ -1,12 +1,13 @@
 /** @format */
 
-import React from 'react';
+import { useContext } from 'react';
 import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 import Previewimage from 'Components/Preview/Previewimage';
 import { Imagecontainer, respondTo } from 'styles/mixins';
 import { Filebtn } from 'Components/Ui/Filebtn';
 import Urlinput from 'Components/Ui/Urlinput';
+import { Context } from 'store/Context-Provider';
 
 const Dropcontainer = styled.div`
 	color: #000;
@@ -54,10 +55,12 @@ const PreviewContainer = styled(Imagecontainer)`
 		width: 45%;
 	`}
 `;
-const DropZone = ({ onchange, image, video, url, loading, urlhandler, showurl, toggleurl }) => {
+const DropZone = ({ video, loading, showurl, toggleurl }) => {
+	const ctx = useContext(Context);
+	const { onChange, image, urlhandler, url } = ctx;
 	return (
 		<>
-			<Dropzone onDrop={onchange} accept="image/*" multiple={false} noClick={true}>
+			<Dropzone onDrop={onChange} accept="image/*" multiple={false} noClick={true}>
 				{({ getRootProps, getInputProps, open }) => (
 					<Dropcontainer {...getRootProps()}>
 						<input {...getInputProps()} />
