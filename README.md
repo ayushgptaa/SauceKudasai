@@ -19,6 +19,10 @@
 
 > A Anime search engine that fetches anime info based on the image provided.
 
+## Please Show you support to the origional Creater of the API 🙏<a href="https://github.com/soruly"> @soruly</a>
+
+<a style='font-size:1.5rem;' href="https://www.patreon.com/soruly">Her Pateron Link</a> <a style='padding-left:20px ;font-size:1.5rem;' href="https://www.paypal.com/paypalme/soruly/">Paypal Link</a> <a style='padding-left:20px ;font-size:1.5rem;'  href='https://github.com/sponsors/soruly'>Github Sponser</a>
+
 ## Requirements 🧰
 
 For development, you will only need Node.js and a node global package, npm or Yarn, installed in your environement.
@@ -42,9 +46,3 @@ npm run getsauce
 -   Website: ayushguptaa.com
 -   Twitter: [@ayushgptaa](https://twitter.com/ayushgptaa)
 -   Github: [@ayushgptaa](https://github.com/ayushgptaa)
-
-## Please Show you support to the origional Creater of the API 🙏
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
