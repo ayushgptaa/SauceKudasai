@@ -8,13 +8,10 @@ export const Animecard = styled(motion.div)`
 	z-index: 99;
 	position: absolute;
 	bottom: 0;
-	height: 48%;
+	height: 50%;
 	width: 100vw;
 	background: var(--cardbg);
 	border-radius: var(--card-radius);
-	/* ${respondTo.lg`
-	height: 49%;
-		`}; */
 `;
 
 export const Banner = styled.div`
@@ -50,7 +47,7 @@ export const Cover = styled.div`
 	border-radius: 0.2rem;
 	z-index: 3;
 	position: relative;
-	bottom: 20px;
+	bottom: 30px;
 
 	${respondTo.sm`
 	width: 140px;
@@ -104,7 +101,6 @@ export const Title = styled.h1`
 
 export const Info = styled.div`
 	display: flex;
-	/* justify-content: space-between; */
 	align-items: center;
 `;
 export const Details = styled.div`
@@ -146,6 +142,9 @@ export const Summary = styled.div`
 		font-weight: var(--regular);
 		${respondTo.tab`
 			display:block;	
+		`}
+		${respondTo.md`
+			font-size: 0.9rem;
 		`}
 		${respondTo.lg`
 			font-size: 1rem;

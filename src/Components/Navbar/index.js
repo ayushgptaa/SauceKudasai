@@ -47,13 +47,9 @@ const index = () => {
 	return (
 		<>
 			<Navbar>
-				<Title>WhatstheSauce</Title>
-				<a
-					href="https://github.com/Ayush6968/whats-the-sauce"
-					target="_blank"
-					rel="noreferrer">
-					<IconContext.Provider
-						value={{ size: '1.4rem', color: '#000000' }}>
+				<Title>SauceKudsai</Title>
+				<a href="https://github.com/Ayush6968/whats-the-sauce" target="_blank" rel="noreferrer">
+					<IconContext.Provider value={{ size: '1.4rem', color: '#000000' }}>
 						<GoMarkGithub />
 					</IconContext.Provider>
 				</a>

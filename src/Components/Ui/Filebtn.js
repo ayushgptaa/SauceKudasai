@@ -24,15 +24,15 @@ const Button = styled.button`
 	`}
 `;
 
-export const Filebtn = ({ open, toggleurl }) => {
+export const Filebtn = ({ open, toggleurl, key1, key2 }) => {
 	return (
 		<>
-			<Button onClick={open}>
+			<Button onClick={open} key={key1}>
 				<IconContext.Provider value={{ size: '1.1rem', color: '#303133' }}>
 					<FiFolderPlus />
 				</IconContext.Provider>
 			</Button>
-			<Button onClick={toggleurl}>
+			<Button onClick={toggleurl} key={key2}>
 				<IconContext.Provider value={{ size: '1.1rem', color: '#303133' }}>
 					<FiLink2 />
 				</IconContext.Provider>

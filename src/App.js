@@ -6,6 +6,7 @@ import Results from 'Components/Resultcard/Results';
 import { GlobalStyle } from 'styles/GlobalStyle';
 import Navbar from 'Components/Navbar';
 import { Footertext } from 'Components/Footer/Footertext';
+import { ContextProvider } from 'store/Context-Provider';
 
 function App() {
 	useEffect(() => {
@@ -24,9 +25,12 @@ function App() {
 		<div className="App">
 			<GlobalStyle />
 			<Navbar />
-			<Fileupload />
+			<ContextProvider>
+				<Fileupload />
+				<Results />
+			</ContextProvider>
+
 			<Footertext />
-			<Results />
 		</div>
 	);
 }

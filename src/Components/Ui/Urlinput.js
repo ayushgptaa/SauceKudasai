@@ -30,7 +30,7 @@ const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 			<AnimatePresence exitBeforeEnter={true}>
 				{showurl ? (
 					<Url
-						key="url"
+						key="urlbtn"
 						onClick={e => e.stopPropagation()}
 						onBlur={toggleurl}
 						type="url"
@@ -58,7 +58,7 @@ const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 						}}
 					/>
 				) : (
-					<Filebtn open={open} toggleurl={toggleurl} key="Filebtn" />
+					<Filebtn open={open} toggleurl={toggleurl} key1="btn1" key2="btn2" />
 				)}
 			</AnimatePresence>
 		</>
