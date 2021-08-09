@@ -114,8 +114,15 @@ export const Details = styled.div`
 	`}
 	${respondTo.lg`
 	font-size: 1rem;
-		gap: 20px;
-		width:60%;
+	width:60%;
+	& > h3 {
+		&:nth-child(2) {
+			margin-left: 15px;
+		}
+		&:nth-child(3) {
+			margin-left: 15px;
+		}
+	}
 	`}
 	& > h3 {
 		font-weight: var(--semi-medium);
