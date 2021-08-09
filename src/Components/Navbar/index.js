@@ -47,7 +47,7 @@ const index = () => {
 	return (
 		<>
 			<Navbar>
-				<Title>SauceKudsai</Title>
+				<Title>SauceKudasai</Title>
 				<a href="https://github.com/Ayush6968/whats-the-sauce" target="_blank" rel="noreferrer">
 					<IconContext.Provider value={{ size: '1.4rem', color: '#000000' }}>
 						<GoMarkGithub />
