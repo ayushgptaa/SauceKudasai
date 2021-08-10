@@ -4,24 +4,32 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import { Filebtn } from 'Components/Ui/Filebtn';
+import { respondTo } from 'styles/mixins';
 
 const Url = styled(motion.input)`
 	border: none;
 	outline: none;
-	/* width: 250px; */
 	background: var(--lavender);
 	padding: 0rem 3rem;
 	height: 40px;
 	font-family: inherit;
 	color: #000;
 	border-radius: calc(var(--radius) * 2);
-	margin-top: 0.8rem;
+	margin-top: 1.4rem;
 	&::placeholder {
-		text-align: center;
 		font-weight: var(--semi-medium);
 		color: inherit;
-		font-size: 1rem;
 	}
+	${respondTo.xs`
+		margin: -1rem 0.6rem 0 0;
+	`}
+	${respondTo.sm`
+		margin-top: 0rem;
+	`}
+	${respondTo.md`
+		margin-top: 0.5rem ;
+		font-size: 1rem;
+	`}
 `;
 
 const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {

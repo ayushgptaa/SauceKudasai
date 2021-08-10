@@ -23,7 +23,7 @@ const Search = styled.button`
 	`}
 	${respondTo.lg`
 			margin-top: 0rem;
-		font-weight: var(--medium);
+		font-weight: var(--semi-medium);
 		font-size: 1.1rem;
 	`}
 `;

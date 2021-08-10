@@ -1,5 +1,4 @@
 /** @format */
-
 import { useEffect } from 'react';
 import Fileupload from 'Components/Fileupload/Fileupload';
 import Results from 'Components/Resultcard/Results';
@@ -29,7 +28,6 @@ function App() {
 				<Fileupload />
 				<Results />
 			</ContextProvider>
-
 			<Footertext />
 		</div>
 	);

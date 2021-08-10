@@ -23,7 +23,7 @@ export const DropArea = styled.div`
 	}
 	${respondTo.xs`
 		padding-bottom:0;
-		height: 350px;
+		height: 320px;
 		width: 400px;
 	`}
 	${respondTo.sm`

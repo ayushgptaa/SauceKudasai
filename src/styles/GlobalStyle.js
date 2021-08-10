@@ -33,8 +33,8 @@ export const GlobalStyle = styled.createGlobalStyle`
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		height: 100%;
-		width: 100vw;
+		max-height: 100vh;
+		width: 100%;
 		color: #fff;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;

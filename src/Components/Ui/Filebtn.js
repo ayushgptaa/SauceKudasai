@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { respondTo } from 'styles/mixins';
 
 const Button = styled.button`
-	/* display: flex; */
+	position: relative;
 	border-radius: 50%;
 	height: 40px;
 	width: 40px;
@@ -16,11 +16,20 @@ const Button = styled.button`
 	cursor: pointer;
 	margin: 1.4rem 0.5rem 0 0;
 	cursor: pointer;
+	& > svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	${respondTo.xs`
+		margin: -1rem 0.6rem 0 0;
+	`}
 	${respondTo.sm`
-		margin: 1rem 0.6rem 0 0;
+		margin: 0rem 0.6rem 0 0;
 	`}
 	${respondTo.md`
-		margin: 0.7rem 0.6rem 0 0;
+		margin: 0.5rem 0.6rem 0 0;
 	`}
 `;
 
@@ -28,7 +37,7 @@ export const Filebtn = ({ open, toggleurl, key1, key2 }) => {
 	return (
 		<>
 			<Button onClick={open} key={key1}>
-				<IconContext.Provider value={{ size: '1.1rem', color: '#303133' }}>
+				<IconContext.Provider value={{ size: '1.1rem', color: '#303133', border: '1px solid red' }}>
 					<FiFolderPlus />
 				</IconContext.Provider>
 			</Button>

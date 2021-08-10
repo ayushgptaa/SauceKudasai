@@ -19,7 +19,7 @@ const Dropcontainer = styled.div`
 	user-select: none;
 	padding-top: 1.1rem;
 	${respondTo.sm`
-		height: 80es%;
+		height: 80%;
 	`}
 	${respondTo.md`
 		height: 75%;

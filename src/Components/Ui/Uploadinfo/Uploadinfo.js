@@ -7,7 +7,7 @@ import { respondTo } from '../../../styles/mixins';
 export const Uploadimg = styled.img`
 	height: 65px;
 	width: 40px;
-	opacity: 70%;
+	opacity: 75%;
 
 	${respondTo.sm`
 		height: 80px;
@@ -19,14 +19,14 @@ export const Uploadimg = styled.img`
 		margin-top: 0.9rem;
 		height: 80px;
 		width: 60px;
-		opacity: 70%;
+		opacity: 75%;
 	`}
 `;
 export const Uploadtext = styled.div`
 	margin: 0;
-	font-size: 0.9rem;
+	font-size: 1.1rem;
 	letter-spacing: 0px;
-	font-weight: var(--medium);
+	font-weight: var(--semi-medium);
 	opacity: 80%;
 
 	span {
@@ -34,14 +34,14 @@ export const Uploadtext = styled.div`
 		cursor: pointer;
 	}
 	${respondTo.xs`
-		font-size: 1.1rem;
+		font-size: 1.4rem;
 	`}
 	${respondTo.md`
 		font-size: 1.3rem;
 	`}
 	${respondTo.lg`
 		font-weight: var(--semi-medium);
-		font-size: 1.3rem;
+		font-size: 1.6rem;
 	`}
 `;
 

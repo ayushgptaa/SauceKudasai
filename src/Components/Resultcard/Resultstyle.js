@@ -117,10 +117,10 @@ export const Details = styled.div`
 	width:60%;
 	& > h3 {
 		&:nth-child(2) {
-			margin-left: 15px;
+			margin-left: 10px;
 		}
 		&:nth-child(3) {
-			margin-left: 15px;
+			margin-left: 10px;
 		}
 	}
 	`}
