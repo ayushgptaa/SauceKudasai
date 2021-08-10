@@ -24,7 +24,6 @@ import {
 	StyledLink,
 	Closebtn,
 	Similarity,
-	// Genre,
 } from './Resultstyle';
 
 const Results = () => {
@@ -37,7 +36,7 @@ const Results = () => {
 	// 	const { episode, time, bannerImage, coverImage, description, externalLinks, seasonYear, title, siteUrl } =
 	// 		ctx.animeinfo;
 	// }
-	console.log(ctx.animeinfo);
+
 	return (
 		<>
 			{ctx.animeinfoexits ? (

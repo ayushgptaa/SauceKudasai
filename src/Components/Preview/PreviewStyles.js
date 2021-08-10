@@ -14,6 +14,8 @@ export const Video = styled.video`
 `;
 
 export const Mutebtn = styled.button`
+	background: transparent;
 	position: absolute;
-	top: -100px;
+	right: 6px;
+	bottom: 5px;
 `;

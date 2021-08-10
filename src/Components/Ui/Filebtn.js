@@ -37,7 +37,7 @@ export const Filebtn = ({ open, toggleurl, key1, key2 }) => {
 	return (
 		<>
 			<Button onClick={open} key={key1}>
-				<IconContext.Provider value={{ size: '1.1rem', color: '#303133', border: '1px solid red' }}>
+				<IconContext.Provider value={{ size: '1.1rem', color: '#303133' }}>
 					<FiFolderPlus />
 				</IconContext.Provider>
 			</Button>
