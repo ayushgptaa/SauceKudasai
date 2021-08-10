@@ -122,11 +122,18 @@ export const Details = styled.div`
 		&:nth-child(3) {
 			margin-left: 10px;
 		}
+			&:nth-child(4) {
+			margin-left: 10px;
+		}
 	}
 	`}
 	& > h3 {
 		font-weight: var(--semi-medium);
 	}
+`;
+export const Similarity = styled.h3`
+	font-weight: var(--semi-medium);
+	color: ${props => (props.props > 90 ? '#15f115' : '#c7e423')};
 `;
 export const Summary = styled.div`
 	display: grid;

@@ -36,7 +36,7 @@ export const ContextProvider = props => {
 	const cardhandler = () => {
 		setanimeinfoexits(false);
 	};
-	const fetchdata = async (anilistid, episode, from) => {
+	const fetchdata = async (anilistid, episode, from, similarity) => {
 		var variables = {
 			id: anilistid,
 		};
@@ -49,6 +49,7 @@ export const ContextProvider = props => {
 			setanimeinfo({
 				episode: episode,
 				time: from,
+				similarity: similarity,
 				...data.data.Media,
 			});
 			setanimeinfoexits(true);
@@ -80,16 +81,17 @@ export const ContextProvider = props => {
 		try {
 			if (url) {
 				const { data } = await instance.get(`?url=${encodeURIComponent(url)}`);
-				const { anilist, video, episode, from } = data.result[0];
+				console.log(data);
+				const { anilist, video, episode, from, similarity } = data.result[0];
 				setvideo(video);
 				setloading(false);
-				fetchdata(anilist, episode, from);
+				fetchdata(anilist, episode, from, similarity);
 			} else {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
-				const { anilist, video, episode, from } = data.result[0];
+				const { anilist, video, episode, from, similarity } = data.result[0];
 				setvideo(video);
 				setloading(false);
-				fetchdata(anilist, episode, from);
+				fetchdata(anilist, episode, from, similarity);
 			}
 		} catch (error) {
 			setloading(false);

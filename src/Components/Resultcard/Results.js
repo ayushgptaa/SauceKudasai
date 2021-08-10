@@ -23,6 +23,7 @@ import {
 	Moreinfo,
 	StyledLink,
 	Closebtn,
+	Similarity,
 	// Genre,
 } from './Resultstyle';
 
@@ -36,12 +37,14 @@ const Results = () => {
 	// 	const { episode, time, bannerImage, coverImage, description, externalLinks, seasonYear, title, siteUrl } =
 	// 		ctx.animeinfo;
 	// }
+	console.log(ctx.animeinfo);
 	return (
 		<>
 			{ctx.animeinfoexits ? (
-				<AnimatePresence key="animecard">
+				<AnimatePresence>
 					<Overlay />
 					<Animecard
+						key="animecard"
 						initial={{ y: '100%' }}
 						animate={{ y: 0 }}
 						exit={{
@@ -82,6 +85,9 @@ const Results = () => {
 										<h3>Ep {ctx.animeinfo.episode}</h3>
 										<h3>at {(ctx.animeinfo.time / 60).toFixed(2).replace('.', ':')}</h3>
 										<h3>{ctx.animeinfo.seasonYear}</h3>
+										<Similarity props={ctx.animeinfo.similarity.toFixed(2) * 100}>
+											{ctx.animeinfo.similarity.toFixed(2) * 100}%
+										</Similarity>
 									</Details>
 								</Info>
 								<Summary>
