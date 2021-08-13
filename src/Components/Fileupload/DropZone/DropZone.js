@@ -5,7 +5,6 @@ import Dropzone from 'react-dropzone';
 import styled from 'styled-components';
 import Previewimage from 'Components/Preview/Previewimage';
 import { Imagecontainer, respondTo } from 'styles/mixins';
-// import { Filebtn } from 'Components/Ui/Filebtn';
 import Urlinput from 'Components/Ui/Urlinput';
 import { Context } from 'store/Context-Provider';
 
@@ -33,6 +32,7 @@ const Dropcontainer = styled.div`
 `;
 
 const PreviewContainer = styled(Imagecontainer)`
+	position: relative;
 	height: 120px;
 	width: 200px;
 	margin: auto;

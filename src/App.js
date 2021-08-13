@@ -6,6 +6,7 @@ import { GlobalStyle } from 'styles/GlobalStyle';
 import Navbar from 'Components/Navbar';
 import { Footertext } from 'Components/Footer/Footertext';
 import { ContextProvider } from 'store/Context-Provider';
+import { Errorcard } from 'Components/Ui/Errorcard';
 
 function App() {
 	useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
 				<Results />
 			</ContextProvider>
 			<Footertext />
+			<Errorcard />
 		</div>
 	);
 }

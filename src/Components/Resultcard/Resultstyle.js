@@ -59,6 +59,12 @@ export const Cover = styled.div`
 	bottom: 50px;
 	`}
 
+	${respondTo.tab`
+	width: 160px;
+	height: 230px;
+	bottom: 60px;
+	`}
+
 	${respondTo.lg`
 	width: 180px;
 	height: 250px;
@@ -161,10 +167,10 @@ export const Summary = styled.div`
 			font-size: 0.9rem;
 		`}
 		${respondTo.lg`
-			font-size: 1rem;
+			font-size: 0.9rem;
 		`}
 		${respondTo.xl`
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		`}
 	}
 `;
@@ -179,7 +185,7 @@ export const Links = styled.div`
 	font-size: 0.85rem;
 	overflow: hidden;
 	${respondTo.lg`
-	font-size: 1rem;
+	font-size: 0.9rem;
 	`}
 	${respondTo.xl`
 		font-size: 1.1rem;

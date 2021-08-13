@@ -69,9 +69,12 @@ export const ContextProvider = props => {
 		return seturl('');
 	};
 	const fileUpload = async e => {
+		e.stopPropagation();
+		// if (!image) {
+		// 	return;
+		// }
 		seturl('');
 		setloading(false);
-		e.stopPropagation();
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
@@ -96,7 +99,7 @@ export const ContextProvider = props => {
 		} catch (error) {
 			setloading(false);
 			if (error.response) return console.log('Something went wrong in the backend', error);
-			if (error.request) return console.log('Due to network issue', error);
+			if (error.request) return console.log('Due to network issue or image not provided', error);
 			return console.log('something else happened', error);
 		}
 	};
