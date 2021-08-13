@@ -15,6 +15,9 @@
   <a href="https://twitter.com/ayushgptaa" target="_blank">
     <img alt="Twitter: ayushgptaa" src="https://img.shields.io/twitter/follow/ayushgptaa.svg?style=social" />
   </a>
+    <a href="https://app.netlify.com/sites/saucekudasai/deploys" target="_blank">
+    <img alt="Twitter: ayushgptaa" src="https://api.netlify.com/api/v1/badges/70ad1cd7-bc28-4b42-9db9-3082f7830861/deploy-status" />
+  </a>
 </p>
 
 > A Anime search engine that fetches anime info based on the image provided.
