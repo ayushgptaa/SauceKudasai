@@ -24,7 +24,7 @@
 
 ## Please Show your support to the origional Creater of the API 🙏<a href="https://github.com/soruly"> @soruly</a>
 
-<a style='font-size:2rem;' href="https://www.patreon.com/soruly">Her Pateron Link</a> </br>
+<a style='font-size:2rem;' href="https://www.patreon.com/soruly"> Pateron Link</a> </br>
 <a style='font-size:2rem;'  href='https://github.com/sponsors/soruly'>Github Sponser</a></br>
 <a style='font-size:2rem;' href="https://www.paypal.com/paypalme/soruly/">Paypal Link</a> </br>
 
