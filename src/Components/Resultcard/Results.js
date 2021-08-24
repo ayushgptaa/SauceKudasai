@@ -62,7 +62,6 @@ const Results = () => {
 						<Banner>
 							<Closebtn
 								onClick={() => {
-									console.log('object');
 									ctx.cardhandler();
 								}}></Closebtn>
 							{ctx.animeinfo.bannerImage ? (

@@ -36,12 +36,12 @@ const Button = styled.button`
 export const Filebtn = ({ open, toggleurl, key1, key2 }) => {
 	return (
 		<>
-			<Button onClick={open} key={key1}>
+			<Button onClick={open} key={key1} aria-label="Fileupload button">
 				<IconContext.Provider value={{ size: '1.1rem', color: '#303133' }}>
 					<FiFolderPlus />
 				</IconContext.Provider>
 			</Button>
-			<Button onClick={toggleurl} key={key2}>
+			<Button onClick={toggleurl} key={key2} aria-label="Url button">
 				<IconContext.Provider value={{ size: '1.1rem', color: '#303133' }}>
 					<FiLink2 />
 				</IconContext.Provider>
