@@ -30,7 +30,7 @@ function App() {
 				<Results />
 			</ContextProvider>
 			<Footertext />
-			<Errorcard />
+			{/* <Errorcard /> */}
 		</div>
 	);
 }
