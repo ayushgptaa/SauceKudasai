@@ -39,8 +39,8 @@ const PreviewContainer = styled(Imagecontainer)`
 	position: relative;
 	border-radius: calc(var(--radius) / 2);
 	${respondTo.xs`
-		height: 160px;
-		width: 280px;
+		height: 150px;
+		width: 250px;
 	`}
 	${respondTo.sm`
 		height: 160px;

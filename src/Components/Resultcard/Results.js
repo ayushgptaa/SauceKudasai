@@ -2,8 +2,9 @@
 import { useContext } from 'react';
 import { Context } from 'store/Context-Provider';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import { IoIosArrowForward, IoMdClose } from 'react-icons/io';
+import { IoIosArrowForward } from 'react-icons/io';
 import Overlay from '../Ui/Overlay';
+import { Closebtn } from 'Components/Ui/Closebtn';
 import { AnimatePresence } from 'framer-motion';
 import {
 	Animecard,
@@ -22,7 +23,6 @@ import {
 	Resultfooter,
 	Moreinfo,
 	StyledLink,
-	Closebtn,
 	Similarity,
 } from './Resultstyle';
 
@@ -62,10 +62,9 @@ const Results = () => {
 						<Banner>
 							<Closebtn
 								onClick={() => {
+									console.log('object');
 									ctx.cardhandler();
-								}}>
-								<IoMdClose color={'black'} size={20} />
-							</Closebtn>
+								}}></Closebtn>
 							{ctx.animeinfo.bannerImage ? (
 								<>
 									<Bannerimg src={ctx.animeinfo.bannerImage}></Bannerimg>

@@ -5,8 +5,10 @@ import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import { Filebtn } from 'Components/Ui/Filebtn';
 import { respondTo } from 'styles/mixins';
+import { Closebtn } from './Closebtn';
 
 const Url = styled(motion.input)`
+	position: relative;
 	border: none;
 	outline: none;
 	background: var(--lavender);
@@ -21,13 +23,13 @@ const Url = styled(motion.input)`
 		color: inherit;
 	}
 	${respondTo.xs`
-		margin: -1rem 0.6rem 0 0;
+		margin: 0.6rem 0.6rem 0 0;
 	`}
 	${respondTo.sm`
-		margin-top: 0rem;
+		margin-top: 1rem;
 	`}
 	${respondTo.md`
-		margin-top: 0.5rem ;
+		margin-top: 0.8rem ;
 		font-size: 1rem;
 	`}
 `;
@@ -37,34 +39,37 @@ const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 		<>
 			<AnimatePresence exitBeforeEnter={true}>
 				{showurl ? (
-					<Url
-						key="urlbtn"
-						onClick={e => e.stopPropagation()}
-						onBlur={toggleurl}
-						type="url"
-						name="url"
-						id="url"
-						placeholder="Paste image or url"
-						pattern="https://.*"
-						autoComplete="off"
-						onChange={urlhandler}
-						value={url}
-						initial={{ width: 0 }}
-						animate={{ width: '250px' }}
-						exit={{
-							width: 0,
-							padding: 0,
-							transition: {
+					<>
+						<Url
+							key="urlbtn"
+							onClick={e => e.stopPropagation()}
+							onBlur={toggleurl}
+							type="url"
+							name="url"
+							id="url"
+							placeholder="Paste image or url"
+							pattern="https://.*"
+							autoComplete="off"
+							onChange={urlhandler}
+							value={url}
+							initial={{ width: 0 }}
+							animate={{ width: '250px' }}
+							exit={{
+								width: 0,
+								padding: 0,
+								transition: {
+									duration: 1,
+									ease: 'easeInOut',
+								},
+							}}
+							transition={{
 								duration: 1,
 								ease: 'easeInOut',
-							},
-						}}
-						transition={{
-							duration: 1,
-							ease: 'easeInOut',
-							type: 'spring',
-						}}
-					/>
+								type: 'spring',
+							}}
+						/>
+						<Closebtn />
+					</>
 				) : (
 					<Filebtn open={open} toggleurl={toggleurl} key1="btn1" key2="btn2" />
 				)}

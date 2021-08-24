@@ -23,13 +23,13 @@ const Button = styled.button`
 		transform: translate(-50%, -50%);
 	}
 	${respondTo.xs`
-		margin: -1rem 0.6rem 0 0;
+		margin: 0.6rem 0.6rem 0 0;
 	`}
 	${respondTo.sm`
-		margin: 0rem 0.6rem 0 0;
+		margin: 1rem 0.6rem 0 0;
 	`}
 	${respondTo.md`
-		margin: 0.5rem 0.6rem 0 0;
+		margin: 0.8rem 0.6rem 0 0;
 	`}
 `;
 
