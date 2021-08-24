@@ -15,7 +15,8 @@ const defaultstate = {
 	animeinfo: null,
 	animeinfoexits: false,
 	cardhandler: () => {},
-	error: false,
+	carderror: false,
+	errorhandler: () => {},
 };
 
 export const Context = createContext(defaultstate);
@@ -26,7 +27,7 @@ export const ContextProvider = props => {
 	const [loading, setloading] = useState(false);
 	const [animeinfoexits, setanimeinfoexits] = useState(false);
 	const [animeinfo, setanimeinfo] = useState({});
-	const [carderror, seterror] = useState(false);
+	const [carderror, setError] = useState(false);
 
 	const Changestates = () => {
 		seturl('');
@@ -37,6 +38,9 @@ export const ContextProvider = props => {
 	};
 	const cardhandler = () => {
 		setanimeinfoexits(false);
+	};
+	const errorhandler = () => {
+		setError(false);
 	};
 	const fetchdata = async (anilistid, episode, from, similarity) => {
 		var variables = {
@@ -74,6 +78,7 @@ export const ContextProvider = props => {
 		e.stopPropagation();
 		seturl('');
 		setloading(false);
+		setError(false);
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
@@ -96,17 +101,16 @@ export const ContextProvider = props => {
 				fetchdata(anilist, episode, from, similarity);
 			}
 		} catch (error) {
-			console.log(error);
 			setloading(false);
-			seterror(true);
-			// if (error.response) {
-			// 	console.log('Something went wrong in the backend', error);
-			// }
-			// if (error.request) return console.log('Due to network issue or image not provided', error);
-			// return console.log('something else happened', error);
+
+			if (error.response) {
+				console.log('Something went wrong in the backend', error);
+				setError(true);
+			}
+			if (error.request) return console.log('Due to network issue or image not provided', error);
+			return console.log('something else happened', error);
 		}
 	};
-
 	const createContext = {
 		imagehandler: imagehandler,
 		image: image,
@@ -118,7 +122,8 @@ export const ContextProvider = props => {
 		animeinfo: animeinfo,
 		animeinfoexits: animeinfoexits,
 		cardhandler: cardhandler,
-		error: carderror,
+		carderror: carderror,
+		errorhandler: errorhandler,
 	};
 
 	return <Context.Provider value={createContext}>{props.children}</Context.Provider>;

@@ -7,6 +7,7 @@ import Navbar from 'Components/Navbar';
 import { Footertext } from 'Components/Footer/Footertext';
 import { ContextProvider } from 'store/Context-Provider';
 import { Errorcard } from 'Components/Ui/Errorcard';
+// import { Context } from 'store/Context-Provider';
 
 function App() {
 	useEffect(() => {
@@ -28,9 +29,9 @@ function App() {
 			<ContextProvider>
 				<Fileupload />
 				<Results />
+				<Errorcard />
 			</ContextProvider>
 			<Footertext />
-			{/* <Errorcard /> */}
 		</div>
 	);
 }

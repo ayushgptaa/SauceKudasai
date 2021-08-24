@@ -65,8 +65,8 @@ const Errormsg = styled.div`
 
 export const Errorcard = () => {
 	const ctx = useContext(Context);
-	const error = ctx.error;
-	console.log(ctx);
+	const error = ctx.carderror;
+
 	return (
 		<>
 			{error ? (
@@ -75,7 +75,11 @@ export const Errorcard = () => {
 					<Container>
 						<Gif>
 							<img src={Errorgif} alt="Error" />
-							<Closebtn />
+							<Closebtn
+								onClick={() => {
+									ctx.errorhandler();
+								}}
+							/>
 						</Gif>
 						<Errormsg>
 							<h3>Sāba-chan is a little busy at the moment </h3>
