@@ -15,6 +15,7 @@ const defaultstate = {
 	animeinfo: null,
 	animeinfoexits: false,
 	cardhandler: () => {},
+	error: false,
 };
 
 export const Context = createContext(defaultstate);
@@ -25,6 +26,7 @@ export const ContextProvider = props => {
 	const [loading, setloading] = useState(false);
 	const [animeinfoexits, setanimeinfoexits] = useState(false);
 	const [animeinfo, setanimeinfo] = useState({});
+	const [carderror, seterror] = useState(false);
 
 	const Changestates = () => {
 		seturl('');
@@ -70,9 +72,6 @@ export const ContextProvider = props => {
 	};
 	const fileUpload = async e => {
 		e.stopPropagation();
-		// if (!image) {
-		// 	return;
-		// }
 		seturl('');
 		setloading(false);
 		let formData = new FormData();
@@ -97,10 +96,14 @@ export const ContextProvider = props => {
 				fetchdata(anilist, episode, from, similarity);
 			}
 		} catch (error) {
+			console.log(error);
 			setloading(false);
-			if (error.response) return console.log('Something went wrong in the backend', error);
-			if (error.request) return console.log('Due to network issue or image not provided', error);
-			return console.log('something else happened', error);
+			seterror(true);
+			// if (error.response) {
+			// 	console.log('Something went wrong in the backend', error);
+			// }
+			// if (error.request) return console.log('Due to network issue or image not provided', error);
+			// return console.log('something else happened', error);
 		}
 	};
 
@@ -115,6 +118,7 @@ export const ContextProvider = props => {
 		animeinfo: animeinfo,
 		animeinfoexits: animeinfoexits,
 		cardhandler: cardhandler,
+		error: carderror,
 	};
 
 	return <Context.Provider value={createContext}>{props.children}</Context.Provider>;

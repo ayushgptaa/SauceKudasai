@@ -1,10 +1,12 @@
 /** @format */
 
-import React from 'react';
+import { useContext } from 'react';
 import Overlay from '../Ui/Overlay';
 import styled from 'styled-components';
 import Errorgif from './chika.gif';
 import { respondTo } from '../../styles/mixins';
+import { Closebtn } from './Closebtn';
+import { Context } from 'store/Context-Provider';
 
 const Container = styled.div`
 	width: 280px;
@@ -13,7 +15,7 @@ const Container = styled.div`
 	background: var(--cardbg);
 	border-radius: 15px;
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	${respondTo.xs`
@@ -27,16 +29,18 @@ const Container = styled.div`
 
 	${respondTo.lg` {
 		height: 450px;
-		width: 550px;
+		width: 600px;
 	`}
 `;
 
 const Gif = styled.div`
 	width: 100%;
 	border-radius: 15px;
+	position: relative;
 
 	img {
 		border-radius: 15px 15px 0 0;
+		user-select: none;
 	}
 `;
 
@@ -60,18 +64,26 @@ const Errormsg = styled.div`
 `;
 
 export const Errorcard = () => {
+	const ctx = useContext(Context);
+	const error = ctx.error;
+	console.log(ctx);
 	return (
 		<>
-			<Overlay />
-			<Container>
-				<Gif>
-					<img src={Errorgif} alt="Error" />
-				</Gif>
-				<Errormsg>
-					<h3>Sāba-chan is a little busy at the moment </h3>
-					<h3>Sāba-chan ganbatteimasu 😓</h3>
-				</Errormsg>
-			</Container>
+			{error ? (
+				<>
+					<Overlay />
+					<Container>
+						<Gif>
+							<img src={Errorgif} alt="Error" />
+							<Closebtn />
+						</Gif>
+						<Errormsg>
+							<h3>Sāba-chan is a little busy at the moment </h3>
+							<h3>Sāba-chan ganbatteimasu 😓</h3>
+						</Errormsg>
+					</Container>
+				</>
+			) : null}
 		</>
 	);
 };
