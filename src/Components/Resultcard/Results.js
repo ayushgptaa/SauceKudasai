@@ -32,11 +32,6 @@ const Results = () => {
 		if (str.length <= num) return str;
 		return str.substring(0, num).concat('...');
 	};
-	// if (ctx.animeinfoexits) {
-	// 	const { episode, time, bannerImage, coverImage, description, externalLinks, seasonYear, title, siteUrl } =
-	// 		ctx.animeinfo;
-	// }
-
 	return (
 		<>
 			{ctx.animeinfoexits ? (
@@ -76,7 +71,7 @@ const Results = () => {
 								<Coverimg src={ctx.animeinfo.coverImage.large} alt=""></Coverimg>
 							</Cover>
 							<Animetext>
-								<Title>{ctx.animeinfo.title.english}</Title>
+								<Title>{ctx.animeinfo.title.english || ctx.animeinfo.title.native}</Title>
 								<Info>
 									<Details>
 										<h3>Ep {ctx.animeinfo.episode}</h3>
