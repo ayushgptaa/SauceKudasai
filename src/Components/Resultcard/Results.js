@@ -26,6 +26,24 @@ import {
 	Similarity,
 } from './Resultstyle';
 
+const variants = {
+	initial: { y: '100%' },
+	animate: {
+		y: '0',
+		transition: {
+			duration: 0.5,
+			ease: 'easeInOut',
+			type: 'linear',
+			delay: 0.1,
+		},
+	},
+	exit: {
+		y: '100%',
+		transition: {
+			delay: 0.1,
+		},
+	},
+};
 const Results = () => {
 	const ctx = useContext(Context);
 	const truncate = (str, num) => {
@@ -33,27 +51,11 @@ const Results = () => {
 		return str.substring(0, num).concat('...');
 	};
 	return (
-		<>
+		<AnimatePresence>
 			{ctx.animeinfoexits ? (
-				<AnimatePresence>
-					<Overlay />
-					<Animecard
-						key="animecard"
-						initial={{ y: '100%' }}
-						animate={{ y: 0 }}
-						exit={{
-							y: '-100%',
-							transition: {
-								duration: 2,
-								ease: 'easeInOut',
-							},
-						}}
-						transition={{
-							duration: 0.5,
-							ease: 'easeInOut',
-							type: 'linear',
-							delay: 0.1,
-						}}>
+				<>
+					<Overlay key="Overlay" />
+					<Animecard key="animecard" variants={variants} initial="initial" animate="animate" exit="exit">
 						<Banner>
 							<Closebtn
 								onClick={() => {
@@ -112,9 +114,9 @@ const Results = () => {
 							</Resultfooter>
 						</Animeinfo>
 					</Animecard>
-				</AnimatePresence>
+				</>
 			) : null}
-		</>
+		</AnimatePresence>
 	);
 };
 export default Results;

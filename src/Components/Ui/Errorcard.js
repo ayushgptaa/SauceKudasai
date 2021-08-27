@@ -18,7 +18,7 @@ const Container = styled(motion.div)`
 	position: absolute;
 	top: 45%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+
 	${respondTo.xs`
 		height: 320px;
 		width: 400px;
@@ -63,25 +63,35 @@ const Errormsg = styled.div`
 		`}
 	}
 `;
-
+const variants = {
+	initial: { scale: 0, x: '-50%', y: '-50%' },
+	animate: {
+		scale: 1,
+		transition: {
+			duration: 0.9,
+			ease: 'easeInOut',
+			type: 'spring',
+			delay: 0.1,
+		},
+	},
+	exit: {
+		scale: 0,
+		transition: {
+			duration: 0.6,
+			delay: 0.1,
+		},
+	},
+};
 export const Errorcard = () => {
 	const ctx = useContext(Context);
 	const error = ctx.carderror;
 
 	return (
-		<>
+		<AnimatePresence>
 			{error ? (
-				<AnimatePresence>
+				<>
 					<Overlay />
-					<Container
-						initial={{ scale: 0, x: '-50%', y: '-50%' }}
-						animate={{ scale: 1 }}
-						transition={{
-							duration: 1,
-							ease: 'easeInOut',
-							type: 'spring',
-							delay: 0.1,
-						}}>
+					<Container variants={variants} key="Errorcard" initial="initial" animate="animate" exit="exit">
 						<Gif>
 							<img src={Errorgif} alt="Error" />
 							<Closebtn
@@ -94,8 +104,8 @@ export const Errorcard = () => {
 							<h3>Saba-chan is a little busy at the moment 😓</h3>
 						</Errormsg>
 					</Container>
-				</AnimatePresence>
+				</>
 			) : null}
-		</>
+		</AnimatePresence>
 	);
 };
