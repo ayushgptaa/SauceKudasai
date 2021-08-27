@@ -7,8 +7,9 @@ import Errorgif from './chika.gif';
 import { respondTo } from '../../styles/mixins';
 import { Closebtn } from './Closebtn';
 import { Context } from 'store/Context-Provider';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
 	width: 280px;
 	height: 280px;
 	z-index: 200;
@@ -51,7 +52,7 @@ const Errormsg = styled.div`
 
 	h3 {
 		font-weight: var(--regular);
-		font-size: 1rem;
+		font-size: 1.3rem;
 		margin-top: 0.5rem;
 		${respondTo.sm`
 		font-size: 1.5rem;
@@ -70,9 +71,17 @@ export const Errorcard = () => {
 	return (
 		<>
 			{error ? (
-				<>
+				<AnimatePresence>
 					<Overlay />
-					<Container>
+					<Container
+						initial={{ scale: 0, x: '-50%', y: '-50%' }}
+						animate={{ scale: 1 }}
+						transition={{
+							duration: 1,
+							ease: 'easeInOut',
+							type: 'spring',
+							delay: 0.1,
+						}}>
 						<Gif>
 							<img src={Errorgif} alt="Error" />
 							<Closebtn
@@ -82,11 +91,10 @@ export const Errorcard = () => {
 							/>
 						</Gif>
 						<Errormsg>
-							<h3>Sāba-chan is a little busy at the moment </h3>
-							<h3>Sāba-chan ganbatteimasu 😓</h3>
+							<h3>Saba-chan is a little busy at the moment 😓</h3>
 						</Errormsg>
 					</Container>
-				</>
+				</AnimatePresence>
 			) : null}
 		</>
 	);
