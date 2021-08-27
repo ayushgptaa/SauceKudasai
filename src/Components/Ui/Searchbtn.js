@@ -1,8 +1,9 @@
 /** @format */
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { respondTo } from '../../styles/mixins';
 import { Context } from 'store/Context-Provider';
+
 const Search = styled.button`
 	border: none;
 	padding: 0.8rem 1.7rem;
@@ -21,19 +22,25 @@ const Search = styled.button`
 		margin-top: 0.5rem;
 		padding: 0.9rem 2rem;
 	`}
+
 	${respondTo.lg`
-			margin-top: 0rem;
+		margin-top: 0rem;
 		font-weight: var(--semi-medium);
 		font-size: 1.1rem;
 	`}
 `;
 
 const Searchbtn = () => {
+	const [disable, setdisable] = useState(true);
 	const ctx = useContext(Context);
 	const { image, url, fileUpload } = ctx;
+	useEffect(() => {
+		if (image || url) return setdisable(false);
+	}, [image, url]);
+
 	return (
 		<div>
-			<Search onClick={fileUpload} type="submit" image={image} url={url}>
+			<Search onClick={fileUpload} type="submit" disabled={disable} image={image} url={url}>
 				Search
 			</Search>
 		</div>
