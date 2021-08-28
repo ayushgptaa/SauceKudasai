@@ -6,8 +6,7 @@ import { GlobalStyle } from 'styles/GlobalStyle';
 import Navbar from 'Components/Navbar';
 import { Footertext } from 'Components/Footer/Footertext';
 import { ContextProvider } from 'store/Context-Provider';
-import { Errorcard } from 'Components/Ui/Errorcard';
-// import { Context } from 'store/Context-Provider';
+import { ServerError, UserError } from 'Components/Ui/Errorcard';
 
 function App() {
 	useEffect(() => {
@@ -29,7 +28,8 @@ function App() {
 			<ContextProvider>
 				<Fileupload />
 				<Results />
-				<Errorcard />
+				<UserError />
+				<ServerError />
 			</ContextProvider>
 			<Footertext />
 		</div>

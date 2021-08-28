@@ -15,7 +15,8 @@ const defaultstate = {
 	animeinfo: null,
 	animeinfoexits: false,
 	cardhandler: () => {},
-	carderror: false,
+	servererror: false,
+	usererror: false,
 	errorhandler: () => {},
 };
 
@@ -27,21 +28,27 @@ export const ContextProvider = props => {
 	const [loading, setloading] = useState(false);
 	const [animeinfoexits, setanimeinfoexits] = useState(false);
 	const [animeinfo, setanimeinfo] = useState({});
-	const [carderror, setError] = useState(false);
+	const [servererror, setServerError] = useState(false);
+	const [usererror, setUserError] = useState(false);
 
 	const Changestates = () => {
 		seturl('');
+		setimage(null);
 		setloading(false);
 		setvideo(null);
 		setanimeinfo({});
 		setanimeinfoexits(false);
 	};
+
 	const cardhandler = () => {
 		setanimeinfoexits(false);
 	};
+
 	const errorhandler = () => {
-		setError(false);
+		setServerError(false);
+		setUserError(false);
 	};
+
 	const fetchdata = async (anilistid, episode, from, similarity) => {
 		var variables = {
 			id: anilistid,
@@ -63,6 +70,7 @@ export const ContextProvider = props => {
 			console.log(error);
 		}
 	};
+
 	const imagehandler = async acceptedfile => {
 		Changestates();
 		const file = acceptedfile[0];
@@ -74,11 +82,11 @@ export const ContextProvider = props => {
 		if (url) return seturl(url);
 		return seturl('');
 	};
+
 	const fileUpload = async e => {
 		e.stopPropagation();
-		seturl('');
 		setloading(false);
-		setError(false);
+		setServerError(false);
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
@@ -88,7 +96,6 @@ export const ContextProvider = props => {
 		try {
 			if (url) {
 				const { data } = await instance.get(`?url=${encodeURIComponent(url)}`);
-				console.log(data);
 				const { anilist, video, episode, from, similarity } = data.result[0];
 				setvideo(video);
 				setloading(false);
@@ -102,12 +109,14 @@ export const ContextProvider = props => {
 			}
 		} catch (error) {
 			setloading(false);
-
 			if (error.response) {
 				console.log('Something went wrong in the backend', error);
-				setError(true);
+				return setServerError(true);
 			}
-			if (error.request) return console.log('Due to network issue or image not provided', error);
+			if (error.request) {
+				console.log('Due to network issue or image not provided', error);
+				return setUserError(true);
+			}
 			return console.log('something else happened', error);
 		}
 	};
@@ -122,7 +131,8 @@ export const ContextProvider = props => {
 		animeinfo: animeinfo,
 		animeinfoexits: animeinfoexits,
 		cardhandler: cardhandler,
-		carderror: carderror,
+		servererror: servererror,
+		usererror: usererror,
 		errorhandler: errorhandler,
 	};
 

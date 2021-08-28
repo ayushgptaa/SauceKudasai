@@ -1,6 +1,6 @@
 /** @format */
 
-import Upload from './images/Ei-share-apple.svg';
+import Upload from '../images/Ei-share-apple.svg';
 import styled from 'styled-components';
 import { respondTo } from '../../../styles/mixins';
 

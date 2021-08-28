@@ -3,7 +3,8 @@
 import { useContext } from 'react';
 import Overlay from '../Ui/Overlay';
 import styled from 'styled-components';
-import Errorgif from './chika.gif';
+import Chikagif from 'Components/Ui/images/chika.gif';
+import Kaguyasama from 'Components/Ui/images/kaguya-sama.gif';
 import { respondTo } from '../../styles/mixins';
 import { Closebtn } from './Closebtn';
 import { Context } from 'store/Context-Provider';
@@ -82,10 +83,8 @@ const variants = {
 		},
 	},
 };
-export const Errorcard = () => {
+export const Errorcard = ({ image, error, errormsg }) => {
 	const ctx = useContext(Context);
-	const error = ctx.carderror;
-
 	return (
 		<AnimatePresence>
 			{error ? (
@@ -93,7 +92,7 @@ export const Errorcard = () => {
 					<Overlay />
 					<Container variants={variants} key="Errorcard" initial="initial" animate="animate" exit="exit">
 						<Gif>
-							<img src={Errorgif} alt="Error" />
+							<img src={image} alt="Server Error" />
 							<Closebtn
 								onClick={() => {
 									ctx.errorhandler();
@@ -101,11 +100,29 @@ export const Errorcard = () => {
 							/>
 						</Gif>
 						<Errormsg>
-							<h3>Saba-chan is a little busy at the moment 😓</h3>
+							<h3>{errormsg}</h3>
 						</Errormsg>
 					</Container>
 				</>
 			) : null}
 		</AnimatePresence>
 	);
+};
+
+export const UserError = () => {
+	const ctx = useContext(Context);
+	const error = ctx.usererror;
+	console.log(ctx);
+	return (
+		<Errorcard
+			image={Kaguyasama}
+			errormsg="Maybe try to turn on your internet or search again.... 👉👈"
+			error={error}
+		/>
+	);
+};
+export const ServerError = () => {
+	const ctx = useContext(Context);
+	const error = ctx.servererror;
+	return <Errorcard image={Chikagif} errormsg="Saba-chan is a little busy at the moment 😓" error={error} />;
 };

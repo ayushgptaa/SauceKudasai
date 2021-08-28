@@ -41,6 +41,9 @@ const variants = {
 		y: '100%',
 		transition: {
 			delay: 0.1,
+			ease: 'easeInOut',
+			type: 'linear',
+			duration: 0.8,
 		},
 	},
 };
