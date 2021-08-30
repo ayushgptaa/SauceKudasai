@@ -21,6 +21,7 @@ const defaultstate = {
 };
 
 export const Context = createContext(defaultstate);
+
 export const ContextProvider = props => {
 	const [image, setimage] = useState(null);
 	const [url, seturl] = useState('');
@@ -31,6 +32,7 @@ export const ContextProvider = props => {
 	const [servererror, setServerError] = useState(false);
 	const [usererror, setUserError] = useState(false);
 
+	// This is used to Change states to default when new image or url is used
 	const Changestates = () => {
 		seturl('');
 		setimage(null);
@@ -40,16 +42,18 @@ export const ContextProvider = props => {
 		setanimeinfoexits(false);
 	};
 
+	// This function is used to Remove the Result card
 	const cardhandler = () => {
 		setanimeinfoexits(false);
 	};
 
+	// This function is used to Remove the Error card
 	const errorhandler = () => {
 		setServerError(false);
 		setUserError(false);
 	};
 
-	const fetchdata = async (anilistid, episode, from, similarity) => {
+	const fechanimeinfo = async (anilistid, episode, from, similarity) => {
 		var variables = {
 			id: anilistid,
 		};
@@ -71,11 +75,15 @@ export const ContextProvider = props => {
 		}
 	};
 
+	// Function to get the image when image is selected
 	const imagehandler = async acceptedfile => {
 		Changestates();
 		const file = acceptedfile[0];
 		if (file && file.type.substr(0, 5) === 'image') return setimage(file);
+		return setimage(null);
 	};
+
+	// Function to get the url when url is used
 	const urlhandler = async e => {
 		Changestates();
 		const url = e.target.value;
@@ -83,10 +91,17 @@ export const ContextProvider = props => {
 		return seturl('');
 	};
 
+	// Get data from the trace.moe API and calls Anilist APi to get animeinfo
+	const getdata = data => {
+		const { anilist, video, episode, from, similarity } = data.result[0];
+		setvideo(video);
+		setloading(false);
+		fechanimeinfo(anilist, episode, from, similarity);
+	};
+
 	const fileUpload = async e => {
 		e.stopPropagation();
 		setloading(false);
-		setServerError(false);
 		let formData = new FormData();
 		formData.set('image', image);
 		const body = formData;
@@ -96,16 +111,10 @@ export const ContextProvider = props => {
 		try {
 			if (url) {
 				const { data } = await instance.get(`?url=${encodeURIComponent(url)}`);
-				const { anilist, video, episode, from, similarity } = data.result[0];
-				setvideo(video);
-				setloading(false);
-				fetchdata(anilist, episode, from, similarity);
-			} else {
+				getdata(data);
+			} else if (image) {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
-				const { anilist, video, episode, from, similarity } = data.result[0];
-				setvideo(video);
-				setloading(false);
-				fetchdata(anilist, episode, from, similarity);
+				getdata(data);
 			}
 		} catch (error) {
 			setloading(false);
@@ -120,20 +129,21 @@ export const ContextProvider = props => {
 			return console.log('something else happened', error);
 		}
 	};
+
 	const createContext = {
-		imagehandler: imagehandler,
-		image: image,
-		urlhandler: urlhandler,
-		url: url,
-		fileUpload: fileUpload,
-		loading: loading,
-		video: video,
-		animeinfo: animeinfo,
-		animeinfoexits: animeinfoexits,
-		cardhandler: cardhandler,
-		servererror: servererror,
-		usererror: usererror,
-		errorhandler: errorhandler,
+		imagehandler,
+		image,
+		urlhandler,
+		url,
+		fileUpload,
+		loading,
+		video,
+		animeinfo,
+		animeinfoexits,
+		cardhandler,
+		servererror,
+		usererror,
+		errorhandler,
 	};
 
 	return <Context.Provider value={createContext}>{props.children}</Context.Provider>;
