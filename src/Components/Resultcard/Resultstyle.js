@@ -196,7 +196,7 @@ export const Links = styled.div`
 	}
 `;
 export const Resultfooter = styled.div`
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 100%;
