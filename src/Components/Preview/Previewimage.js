@@ -52,11 +52,11 @@ const Previewimage = ({ open }) => {
 					<Mutebtn onClick={mutehandler}>
 						{mute ? (
 							<IconContext.Provider value={{ size: '1.3rem', color: '#d9d9f9' }}>
-								<GoUnmute></GoUnmute>
+								<GoMute></GoMute>
 							</IconContext.Provider>
 						) : (
 							<IconContext.Provider value={{ size: '1.3rem', color: '#d9d9f9' }}>
-								<GoMute></GoMute>
+								<GoUnmute></GoUnmute>
 							</IconContext.Provider>
 						)}
 					</Mutebtn>
