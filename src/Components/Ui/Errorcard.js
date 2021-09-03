@@ -112,14 +112,7 @@ export const Errorcard = ({ image, error, errormsg }) => {
 export const UserError = () => {
 	const ctx = useContext(Context);
 	const error = ctx.usererror;
-	console.log(ctx);
-	return (
-		<Errorcard
-			image={Kaguyasama}
-			errormsg="Maybe try to turn on your internet or search again.... 👉👈"
-			error={error}
-		/>
-	);
+	return <Errorcard image={Kaguyasama} errormsg="Network issue or wrong image/url provided 👉👈" error={error} />;
 };
 export const ServerError = () => {
 	const ctx = useContext(Context);

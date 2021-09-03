@@ -114,11 +114,15 @@ export const ContextProvider = props => {
 				getdata(data);
 			} else if (image) {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
+				console.log(data);
 				getdata(data);
 			}
 		} catch (error) {
 			setloading(false);
+
 			if (error.response) {
+				const status = Array.from(String(error.response.status), Number);
+				if (status[0] === 4) return setUserError(true);
 				console.log('Something went wrong in the backend', error);
 				return setServerError(true);
 			}

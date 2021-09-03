@@ -72,7 +72,7 @@ const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 							type="url"
 							name="url"
 							id="url"
-							placeholder="Paste image or url"
+							placeholder="Paste your url"
 							pattern="https://.*"
 							autoComplete="off"
 							onChange={urlhandler}
