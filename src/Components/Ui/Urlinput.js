@@ -35,6 +35,7 @@ const Url = styled(motion.input)`
 	font-family: inherit;
 	color: #000;
 	border-radius: calc(var(--radius) * 2);
+	font-size: 1rem;
 	&::placeholder {
 		font-size: 1rem;
 		font-weight: var(--semi-medium);
