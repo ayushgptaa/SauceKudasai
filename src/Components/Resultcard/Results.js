@@ -53,17 +53,17 @@ const Results = () => {
 		if (str.length <= num) return str;
 		return str.substring(0, num).concat('...');
 	};
+	const closeResult = () => {
+		ctx.cardhandler();
+	};
 	return (
 		<AnimatePresence>
 			{ctx.animeinfoexits ? (
 				<>
-					<Overlay key="Overlay" />
+					<Overlay key="Overlay" onClick={closeResult} />
 					<Animecard key="animecard" variants={variants} initial="initial" animate="animate" exit="exit">
 						<Banner>
-							<Closebtn
-								onClick={() => {
-									ctx.cardhandler();
-								}}></Closebtn>
+							<Closebtn onClick={closeResult}></Closebtn>
 							{ctx.animeinfo.bannerImage ? (
 								<>
 									<Bannerimg src={ctx.animeinfo.bannerImage}></Bannerimg>

@@ -14,8 +14,8 @@ export const Overlay = styled.div`
 	cursor: pointer;
 `;
 
-const overlay = () => {
-	return <Overlay />;
+const overlay = ({ onClick }) => {
+	return <Overlay onClick={onClick} />;
 };
 
 export default overlay;
