@@ -42,7 +42,7 @@ const Previewimage = ({ open }) => {
 						<Loader />
 					</>
 				) : preview ? (
-					<Image src={preview} alt="Your image" onClick={e => e.stopPropagation()} />
+					<Image src={preview} alt="Your Search image" onClick={e => e.stopPropagation()} />
 				) : (
 					<Uploadinfo open={open} />
 				)

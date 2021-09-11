@@ -114,7 +114,6 @@ export const ContextProvider = props => {
 				getdata(data);
 			} else if (image) {
 				const { data } = await instance.post(TRACE_MOE_QUERY, body);
-				console.log(data);
 				getdata(data);
 			}
 		} catch (error) {

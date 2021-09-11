@@ -10,7 +10,7 @@ import { IoMdClose } from 'react-icons/io';
 const UrlContainer = styled.div`
 	position: relative;
 	height: 40px;
-	width: 250px;
+	width: 220px;
 	display: inline-block;
 	margin-top: 1.4rem;
 
@@ -79,7 +79,7 @@ const Urlinput = ({ url, toggleurl, urlhandler, showurl, open }) => {
 							onChange={urlhandler}
 							value={url}
 							initial={{ width: 0 }}
-							animate={{ width: '250px' }}
+							animate={{ width: '220px' }}
 							exit={{
 								width: 0,
 								padding: 0,
