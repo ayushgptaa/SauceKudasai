@@ -112,7 +112,13 @@ export const Errorcard = ({ image, error, errormsg }) => {
 export const UserError = () => {
 	const ctx = useContext(Context);
 	const error = ctx.usererror;
-	return <Errorcard image={Kaguyasama} errormsg="Looks like you are offline 👉👈" error={error} />;
+	return (
+		<Errorcard
+			image={Kaguyasama}
+			errormsg="Looks like you are offline or using wrong image/url 👉👈"
+			error={error}
+		/>
+	);
 };
 export const ServerError = () => {
 	const ctx = useContext(Context);
