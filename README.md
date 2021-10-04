@@ -20,7 +20,7 @@
   </a>
 </p>
 
-> A Frontend Search Engine that fetches anime info based on the image provided using  <a href="https://trace.moe" target="_blank">trace.moe </a> and <a href="https://anilist.gitbook.io/anilist-apiv2-docs/" target="_blank"> Anilist</a> Api behind the scenes.
+> A Frontend Search Engine that fetches anime info based on the image provided using <a href="https://trace.moe" target="_blank">trace.moe </a> and <a href="https://anilist.gitbook.io/anilist-apiv2-docs/" target="_blank"> Anilist</a> Api behind the scenes.
 
 ## Please Show your support to the origional Creater of the API if you want to... <a href="https://github.com/soruly"> @soruly</a>
 
@@ -43,6 +43,14 @@ npm install
 ```sh
 npm run getsauce
 ```
+
+## What I learned 🤓
+
+-   React Context Api
+-   Styled components
+-   Graphql
+-   Writing Resuseable Components
+-   Clean code practice
 
 ## Author
 
