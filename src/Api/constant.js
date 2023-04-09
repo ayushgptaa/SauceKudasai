@@ -10,6 +10,8 @@ export const ANILIST_QUERY = 'https://graphql.anilist.co';
 export const options = {
 	headers: {
 		'	Accept': 'application/json',
+    "x-trace-key": process.env.API_KEY,
+
 	},
 };
 
